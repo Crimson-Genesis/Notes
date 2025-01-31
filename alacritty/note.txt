@@ -1,0 +1,7 @@
+esp32 wrom wifi bluetooth ->
+
+live wire
+relay = ac to dc 
+
+ardino cloud
+
