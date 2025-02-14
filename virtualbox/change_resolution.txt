@@ -1,0 +1,1 @@
+VBoxManage setextradata "VM_NAME" "VBoxInternal2/EfiGraphicsResolution" "1920x1080"
