@@ -1,0 +1,15 @@
+1. develop a program to insert and delete an element at desired position in an array.
+2. develop a program to introduce 2d array manipulation and implement matrix multiplication and ensure the rules of multiplication are checked.
+3. write functions to implement string operations such as compare, concatenate, string length. Convince the parameter passing techniques.
+4. develop a program to swap two variable values using call by value and call by reference.
+5. implement recursive function for binary to decimal conversion
+6. queue operations.
+7. develop a program to sort a list of N elements using a quick sort.
+8. develop C program to implement the search techniques of 
+        a. linear search     b. binary search
+9. develop a program to simulate the working of stack providing the following operations - insert, delete and display.
+10. develop a program to convert infix aritmethic exprassion to post fix expressing.
+11. develop a program to simulats the working circular queue providing the following operations - indert, delete and display.
+12. develop a program to simulate the workign of a linked list providing the following operations 
+        a. insert at the beginning    b. insert at the end    c. delete at the deginning  d. delete at the end    e. display
+13. develop a program to sort a list of n elements using insertion sort.

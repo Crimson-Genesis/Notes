@@ -1,0 +1,5 @@
+1 What are the different effort estimation techniques in software engineering, and how do they compare in terms of accuracy?
+2 What are the core principles of Extreme Programming (XP), and how does it impact software quality?
+3 Compare Agile and Waterfall methodologies. What are the strengths and weaknesses of each?
+4 How do test cases and test plans contribute to improving software quality? Provide real-world examples.
+5 What are the latest trends in software quality management, and how are they shaping the future of software development?

@@ -1,0 +1,2 @@
+ffmpeg -i input.mp4 -vf "fps=60,scale=1920:1080:flags=lanczos" -c:v libwebp -quality 90 -loop 0 output_%03d.webp
+
