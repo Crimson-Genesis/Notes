@@ -271,15 +271,15 @@ DROP TABLE EMPLOYEE;
 CREATE TABLE EMPLOYEE (  
     emp_id       NUMBER PRIMARY KEY,             -- Unique Employee ID  
     emp_name     VARCHAR2(50) NOT NULL,          -- Employee name cannot be NULL  
-    birth_date   DATE CHECK (birth_date <= ADD_MONTHS(SYSDATE, -216)),   
-    gender       VARCHAR2(10) CHECK (gender IN ('Male', 'Female')),   
-    dept_no      NUMBER,    
-    address      VARCHAR2(100),   
-    designation  VARCHAR2(20) CHECK (designation IN   
+    birth_date   DATE CHECK (birth_date <= TO_DATE('2007-01-01', 'YYYY-MM-DD')),  
+    gender       VARCHAR2(10) CHECK (gender IN ('Male', 'Female')),  
+    dept_no      NUMBER,  
+    address      VARCHAR2(100),  
+    designation  VARCHAR2(20) CHECK (designation IN  
                  ('manager', 'clerk', 'leader', 'analyst', 'designer', 'coder', 'tester')),  
     salary       NUMBER CHECK (salary > 0),      -- Salary must be greater than 0  
     experience   NUMBER DEFAULT 0,               -- Default experience is 0  
-    email        VARCHAR2(100) CHECK (REGEXP_LIKE(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$')),   
+    email        VARCHAR2(100) CHECK (email LIKE '%@%.%'),  
     CONSTRAINT fk_dept FOREIGN KEY (dept_no) REFERENCES DEPARTMENT(dept_no) ON DELETE CASCADE  
 );  
 ```  
@@ -436,7 +436,7 @@ CREATE TABLE STUDENT (
     rollno    NUMBER PRIMARY KEY,       -- Unique Roll Number  
     name      VARCHAR2(50) NOT NULL,    -- Student Name (Cannot be NULL)  
     class     VARCHAR2(20),               
-    birthdate DATE CHECK (birthdate <= ADD_MONTHS(SYSDATE, -216)) -- Ensures age is at least 18  
+    birthdate DATE CHECK (birthdate <= TO_DATE('2007-01-01', 'YYYY-MM-DD')) -- Ensures age is at least 18  
 );  
 ```  
   
@@ -454,7 +454,7 @@ CREATE TABLE COURSE (
     courseno   NUMBER PRIMARY KEY,           -- Unique Course Number  
     coursename VARCHAR2(100) NOT NULL,       -- Course Name (Mandatory)  
     max_marks  NUMBER CHECK (max_marks > 0), -- Maximum marks should be greater than 0  
-    pass_marks NUMBER CHECK (pass_marks > 0 AND pass_marks <= max_marks) -- Pass marks must be valid  
+    pass_marks NUMBER CHECK (pass_marks > 0) -- Pass marks must be valid  
 );  
 ```  
   
@@ -615,14 +615,31 @@ WHERE pass_marks > (0.3 * (SELECT AVG(max_marks) FROM COURSE));
   
 ## 🏗 **Step 1: Create the Database & Tables**    
   
-### **1️⃣ Creating the `EMPLOYEE` Table**    
+### **1️⃣ Creating the `DEPART` Table**    
+```sql  
+DROP TABLE DEPART;  
+  
+CREATE TABLE DEPART (  
+    dept_no         NUMBER PRIMARY KEY,    
+    dept_name       VARCHAR2(50) UNIQUE NOT NULL,    
+    total_employees NUMBER CHECK (total_employees >= 0),  
+    location        VARCHAR2(100)  
+);  
+```  
+**Explanation:**    
+- `dept_no` is the **Primary Key**.    
+- `dept_name` is **Unique** and **Not Null**.    
+- `total_employees` cannot be **negative**.    
+  
+---  
+### **2️⃣ Creating the `EMPLOYEE` Table**    
 ```sql  
 DROP TABLE EMPLOYEE;  
   
 CREATE TABLE EMPLOYEE (  
     emp_id      NUMBER PRIMARY KEY,   
     emp_name    VARCHAR2(50) NOT NULL,  
-    birth_date  DATE CHECK (birth_date <= ADD_MONTHS(SYSDATE, -216)), -- Age must be at least 18  
+    birth_date  DATE CHECK (birth_date <= TO_DATE('2007-01-01','YYYY-MM-DD')), -- Age must be at least 18  
     gender      VARCHAR2(10) CHECK (gender IN ('Male', 'Female')),  
     dept_no     NUMBER,  
     address     VARCHAR2(100),  
@@ -642,24 +659,6 @@ CREATE TABLE EMPLOYEE (
 - `experience` cannot be **negative**.    
 - `email` must contain **‘@’ and ‘.’**.    
 - `dept_no` is a **Foreign Key** linked to `DEPART`.    
-  
----  
-  
-### **2️⃣ Creating the `DEPART` Table**    
-```sql  
-DROP TABLE DEPART;  
-  
-CREATE TABLE DEPART (  
-    dept_no         NUMBER PRIMARY KEY,    
-    dept_name       VARCHAR2(50) UNIQUE NOT NULL,    
-    total_employees NUMBER CHECK (total_employees >= 0),  
-    location        VARCHAR2(100)  
-);  
-```  
-**Explanation:**    
-- `dept_no` is the **Primary Key**.    
-- `dept_name` is **Unique** and **Not Null**.    
-- `total_employees` cannot be **negative**.    
   
 ---  
   
