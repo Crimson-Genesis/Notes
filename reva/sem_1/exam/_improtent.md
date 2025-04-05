@@ -1,161 +1,361 @@
 
 ---
 
-## **Final Exam Preparation Guide (MCA - Reva University)**
-**Subjects Covered:**
-- **Mathematics (Unit 3 & 4)**
-- **Data Structures (Unit 3 & 4)**
-- **RDBMS (Unit 2 & 4)**
-- **Software Engineering (Unit 3 & 4)**
-- **Operating Systems & Linux (Unit 3 & 4)**
-- **Python (Unit 3 & 4)**  
+## 📘 Subject: **Mathematics for Computer Applications**
+
+### ✅ Unit I – Sets, Relations, Functions
+- Set identities using Venn diagrams  
+- Cartesian product of sets  
+- Relation matrix and properties: reflexive, symmetric, transitive  
+- Equivalence relation and partition  
+- Types of functions: one-one, onto, bijective  
+- Composition and inverse of functions  
+- Posets and Hasse diagrams  
+- Lattices (basic concepts)
 
 ---
 
-### **Mathematics (Unit 3 & 4)**
-✅ **Unit 3: Random Variables and Probability Distribution**
-- Probability and its properties  
-- Random variables (Discrete & Continuous)  
-- Expectation and Variance of Distributions  
-- Moments and Moment Generating Functions  
-- Joint probability function, marginal density function  
-- Special probability distributions:  
-  - **Binomial Distribution**  
-  - **Poisson Distribution**  
-  - **Uniform Distribution**  
-  - **Exponential Distribution**  
-  - **Normal Distribution**  
-- Bayes’ Theorem  
-
-✅ **Unit 4: Hypothesis Testing & Design of Experiments**
-- Sampling and Sampling Distribution  
-- Confidence Intervals (1% & 5% significance levels)  
-- One-tailed and Two-tailed Tests  
-- Test of Significance (Mean, Difference of Means)  
-- Chi-Square Test and F-Test  
-- Central Limit Theorem  
-- Design of Experiments (One-Way & Two-Way Classification, ANOVA)  
+### ✅ Unit II – Curve Fitting, Correlation, Regression
+- Least squares method: straight line and parabola fitting  
+- Pearson’s correlation coefficient  
+- Spearman’s rank correlation  
+- Lines of regression: x on y and y on x  
 
 ---
 
-### **Data Structures (Unit 3 & 4)**
-✅ **Unit 3: Searching, Sorting, and Graphs**
-- Searching: **Linear & Binary Search**  
-- Sorting:  
-  - **Bubble Sort, Selection Sort, Insertion Sort**  
-  - **Quick Sort & Merge Sort**  
-  - **Heap Sort & its Applications** (Priority Queues, Heapify Process)  
-- Graphs:  
-  - **Graph Representations (Adjacency Matrix vs. Adjacency List)**  
-  - **Graph Traversals (DFS & BFS)**  
-  - **Dijkstra’s Algorithm (Shortest Path)**  
-  - **Kruskal’s & Prim’s Algorithm (Minimum Spanning Tree)**  
-  - **Graph Applications (Job Scheduling, Network Flow)**  
-
-✅ **Unit 4: Trees and Heaps**
-- Binary Trees & Their Types  
-- Binary Tree Traversals (**Inorder, Preorder, Postorder**)  
-- Binary Search Trees (BST)  
-- AVL Trees (**Rotations & Balancing Conditions**)  
-- B-Trees & Order Calculation  
-- Red-Black Trees (**Properties & Rotations**)  
-- Threaded Binary Trees  
-- Heaps (**Max Heap & Min Heap**)  
+### ✅ Unit III – Probability Distributions
+- Binomial distribution  
+- Poisson distribution  
+- Normal distribution and Z-score  
+- Joint and marginal probability distributions  
 
 ---
 
-### **RDBMS (Unit 2 & 4)**
-✅ **Unit 2: ER Diagram and Database Design**
-- Entity-Relationship (ER) Model  
-  - **Entity Types, Attributes, Keys, Weak Entities**  
-  - **Generalization, Specialization, and Aggregation**  
-- Functional Dependencies & Multi-Valued Dependencies  
-- Normalization: **1NF, 2NF, 3NF, BCNF, 4NF**  
-- Lossless Decomposition & Dependency Preservation  
-- Indexing in Databases (**B+ Trees, Hash Indexing**)  
-
-✅ **Unit 4: SQL & PL/SQL**
-- SQL Functions: **Aggregate, Numeric, Date, String Functions**  
-- Set Operations (**UNION, INTERSECT, MINUS**)  
-- Joins: **Inner Join, Outer Join, Natural Join, Self Join**  
-- Subqueries and Nested Queries  
-- Transactions & ACID Properties (**Commit, Rollback, Savepoint**)  
-- PL/SQL:  
-  - **Block Structure, Control Structures (IF, CASE, Loops)**  
-  - **Cursors (Implicit & Explicit)**  
-  - **Exception Handling (Predefined & User-defined Exceptions)**  
-  - **Stored Procedures & Functions**  
-  - **Triggers (Row-Level & Statement-Level Triggers)**  
+### ✅ Unit IV – Hypothesis Testing & ANOVA
+- Null and alternative hypothesis  
+- Z-test and t-test  
+- Confidence intervals (95%, 99%)  
+- Chi-square test: goodness of fit and independence  
+- One-way ANOVA  
+- Two-way ANOVA (basic)
 
 ---
 
-### **Software Engineering (Unit 3 & 4)**
-✅ **Unit 3: Software Modelling and Implementation**
-- Process Planning & Effort Estimation  
-- Project Scheduling (**PERT & CPM Charts**)  
-- Risk Management (**Risk Identification, Mitigation, Contingency Plan**)  
-- Software Configuration Management & Quality Planning  
-- Agile Methodologies:  
-  - **Extreme Programming (XP)**  
-  - **Scrum Framework & Agile Project Management**  
+## 📘 Subject: **Data Structures**
 
-✅ **Unit 4: Software Quality Management**
-- Software Testing Strategies  
-  - **Black-Box vs. White-Box Testing**  
-  - **Test Coverage Criteria (Statement, Branch, Path Coverage)**  
-- Quality Standards (**ISO 9001, CMMI Levels**)  
-- Security Engineering & Software Process Improvement (SPI)  
+### ✅ Unit I – Basics, Stacks, Recursion
+- Arrays and pointer arithmetic  
+- Stack: operations (push, pop), applications  
+- Infix to postfix conversion  
+- Postfix evaluation  
+- Recursion and recursive functions  
+- Tower of Hanoi  
 
 ---
 
-### **Operating Systems & Linux (Unit 3 & 4)**
-✅ **Unit 3: Linux Basics & Shell Scripting**
-- Linux File System & Directory Structure  
-- Essential Linux Commands: **File, Directory, Disk Commands**  
-- Process Management (**Foreground & Background Processes**)  
-- Linux Permissions: **chmod, chown, chgrp, umask**  
-- Shell Basics:  
-  - **Types of Shells (Bash, Zsh, etc.)**  
-  - **Shell Variables & Positional Parameters**  
-  - **Test Command & Exit Status**  
-
-✅ **Unit 4: Advanced Shell Scripting & System Administration**
-- Control Structures: **If, Case, While, Until, For Loops**  
-- Advanced Shell Scripting (**Functions & Arguments**)  
-- Grep, Sed, and Awk Commands  
-- System Administration:  
-  - **User & Group Management**  
-  - **Process Control & Job Scheduling (Crontab, At, Batch)**  
-  - **Inter-Process Communication (Pipes, Message Queues, Shared Memory, Semaphores)**  
+### ✅ Unit II – Linked Lists and Queues  
+- Singly linked list: creation, insertion, deletion  
+- Doubly linked list and circular linked list  
+- Stack using linked list  
+- Queue types: simple, circular, double-ended (deque)  
+- Queue using array and linked list  
+- Priority queue (basic implementation)
 
 ---
 
-### **Python (Unit 3 & 4)**
-✅ **Unit 3: Functions, Exceptions, and Files**
-- Functions:  
-  - **Types of Arguments (Positional, Keyword, Default, Variable-length)**  
-  - **Lambda Functions, Map, Reduce, and Filter**  
-  - **Recursion & Higher-Order Functions**  
-- Exception Handling:  
-  - **Built-in & User-Defined Exceptions**  
-  - **Exception Hierarchy in Python**  
-  - **Logging & Debugging**  
-- File Handling:  
-  - **Text Files, Binary Files, Pickle Module**  
-  - **seek(), tell() Functions**  
+### ✅ Unit III – Searching, Sorting, Graphs  
+- Searching: linear and binary  
+- Sorting: bubble, selection, insertion, quick sort, merge sort  
+- Graphs: adjacency matrix and list  
+- Graph traversal: BFS, DFS  
 
-✅ **Unit 4: OOP & Visualization**
-- Object-Oriented Programming:  
-  - **Classes & Objects**  
-  - **Encapsulation, Inheritance, Polymorphism, Abstraction**  
-  - **Method Resolution Order (MRO)**  
-- Multithreading & Concurrency:  
-  - **Thread Synchronization (Locks, Semaphores)**  
-  - **Global Interpreter Lock (GIL)**  
-- Data Visualization using Matplotlib:  
-  - **Line Plots, Scatter Plots, Histograms**  
-  - **Subplots, Legends, Labels, Annotations**  
-  - **3D Plots using Matplotlib**  
+---
+
+### ✅ Unit IV – Trees and Advanced Structures  
+- Binary trees: traversal (inorder, preorder, postorder)  
+- Binary search trees: insertion, deletion  
+- AVL trees: rotations  
+- Heap: min-heap, max-heap  
+- B-tree and Red-Black tree: basic operations  
+
+---
+
+## 📘 Subject: **RDBMS**
+
+---
+
+### ✅ Unit I – DBMS Basics and Relational Model
+- Characteristics and advantages of DBMS  
+- Three-schema architecture and data independence  
+- Data models: relational, hierarchical, network (focus more on relational)  
+- Schema vs Instance  
+- DBMS architecture: centralized vs client-server  
+- Classification of DBMS  
+- Integrity rules (key, domain, referential)  
+- Relational model: concepts, constraints, schema
+
+---
+
+### ✅ Unit II – ER Model & Normalization
+- ER diagram: entity types, attributes, keys, relationships, weak entities  
+- Structural constraints: cardinality, participation  
+- ER design issues and naming conventions  
+- Functional Dependencies (FDs)  
+- 1NF, 2NF, 3NF (definitions + examples)  
+- BCNF  
+- Multivalued dependencies and 4NF (just basics)
+
+---
+
+### ✅ Unit III – SQL Basics & Oracle Tables
+- SQL categories: DDL, DML, DCL  
+- Table creation with constraints (PK, FK, UNIQUE, NOT NULL, CHECK)  
+- ALTER, DROP, RENAME, TRUNCATE  
+- INSERT, UPDATE, DELETE, SELECT  
+- WHERE clause, arithmetic ops  
+- ORDER BY, sorting, substitution variables  
+- Spooling, error codes (basic awareness)
+
+---
+
+### ✅ Unit IV – Advanced SQL & PL/SQL
+- SQL:
+  - Built-in functions: numeric, string, date  
+  - Aggregate functions: COUNT, SUM, AVG, MIN, MAX  
+  - GROUP BY, HAVING, ORDER BY  
+  - JOIN types: inner, outer, cross, self  
+  - Subqueries: normal and correlated  
+  - Set operators: UNION, INTERSECT, MINUS  
+  - EXIST, ANY, ALL  
+  - Views and its types  
+  - Transactions: COMMIT, ROLLBACK, SAVEPOINT  
+
+- PL/SQL:
+  - Syntax and structure of PL/SQL block  
+  - Variables, data types, assignment  
+  - Bind and substitution variables  
+  - Control structures: IF, CASE, LOOP, WHILE  
+  - SQL inside PL/SQL  
+  - Cursors: implicit, explicit, cursor attributes  
+  - Exceptions: predefined, user-defined  
+  - Named blocks: procedures, functions, triggers, packages (basic level)  
+  - Data Dictionary views (just know what they are)
+
+---
+
+## 📘 Subject: **Software Engineering **
+
+---
+
+### ✅ Unit I – Introduction to Software Engineering  
+- Characteristics of good software  
+- Software engineering myths  
+- Attributes of good software  
+- IEEE/ACM code of ethics (summary level)  
+- Software Process activities  
+- Software process models:
+  - Waterfall
+  - Incremental
+  - Spiral
+  - V-model
+  - Agile (basic awareness)
+- Case studies (just know examples)  
+
+---
+
+### ✅ Unit II – Requirement Engineering & Design  
+- Functional vs Non-functional requirements (with IEEE definition)  
+- Software Requirements Specification (SRS)  
+- Requirement Engineering Phases:
+  - Elicitation
+  - Analysis
+  - Specification
+  - Validation  
+- Requirement management  
+- Software Cost Estimation methods (COCOMO basic)  
+- Basic Requirement Modeling (DFD, use case)  
+- Function-oriented design (structure charts)  
+- Architectural design concepts  
+
+---
+
+### ✅ Unit III – Modeling, Agile, and Project Management  
+- Project effort estimation  
+- Scheduling techniques (Gantt chart, PERT chart basic)  
+- Staffing and resource allocation  
+- Risk management process  
+- Project monitoring and metrics  
+- Configuration management plan  
+- Quality plan  
+- Agile concepts:
+  - Agile Manifesto
+  - Extreme Programming (XP)
+  - Agile project management  
+  - Scaling Agile (Scrum-of-scrum etc.)
+
+---
+
+### ✅ Unit IV – Software Quality & Advanced Concepts  
+- Software Testing:
+  - Testing strategies (white box, black box)
+  - Test plans and test cases  
+- Quality assurance process  
+- Security engineering (secure design basics)  
+- Software configuration management process  
+- Software process improvement (CMM, ROI from SPI)  
+- Technology directions in SE (just brief awareness)
+
+---
+
+## 📘 Subject: **Operating System and Linux**
+
+---
+
+### ✅ Unit I – OS Basics and Process Management
+- Types of systems:  
+  - Batch, Multiprogramming, Time-Sharing  
+  - Parallel, Distributed, Real-Time  
+- OS structures and services  
+- System calls: definition and basic examples  
+- **Process Concepts**:
+  - Process states & PCB  
+  - Process Scheduling & Schedulers  
+  - Thread vs Process  
+  - Inter-process communication (IPC): shared memory, message passing  
+- **CPU Scheduling Algorithms**:
+  - FCFS, SJF, Round Robin, Priority  
+  - Preemptive vs Non-preemptive  
+- **Synchronization**:
+  - Critical Section problem  
+  - Semaphores (binary & counting)  
+  - Classical problems: Dining Philosophers, Readers-Writers  
+
+---
+
+### ✅ Unit II – Deadlocks & Memory Management
+- **Deadlocks**:
+  - Conditions for deadlock  
+  - Prevention, avoidance (Banker’s Algorithm), detection  
+  - Recovery strategies  
+- **Memory Management**:
+  - Logical vs Physical address  
+  - Swapping, Contiguous allocation  
+  - Paging, Segmentation, Segmentation with Paging  
+  - Virtual Memory & Demand Paging  
+  - Page Replacement Algorithms: FIFO, LRU, Optimal  
+  - Thrashing and Frame allocation  
+
+---
+
+### ✅ Unit III – Linux Basics & Shell Introduction
+- **Linux Basics**:
+  - History and features of Linux  
+  - Linux architecture (kernel, shell, utilities)  
+  - Internal vs External commands  
+  - Common Linux commands:
+    - File/Directory: `ls`, `pwd`, `cd`, `mkdir`, `rm`, `mv`, `cp`
+    - Disk: `df`, `du`, `mount`, `umount`  
+- **Shell & Scripting Basics**:
+  - Shell types: `sh`, `bash`, `csh`  
+  - Creating and running shell scripts  
+  - `read`, command-line args `$1`, `$2`, etc.  
+  - Exit status, system/user-defined variables  
+  - `expr`, command substitution, escape characters  
+  - File, string, numeric test commands  
+
+---
+
+### ✅ Unit IV – Scripting Control Structures & System Admin
+- **Control Structures in Scripts**:
+  - `if`, `if-else`, `case`  
+  - Loops: `for`, `while`, `until`  
+- **Text Processing Utilities**:
+  - Filters: `head`, `tail`, `cut`, `grep`, `sort`, `uniq`  
+  - Stream Editor: `sed` basics  
+  - `awk` basics  
+- **System Communication**:
+  - Commands: `write`, `read`, `wall`, `mail`  
+- **System Administration**:
+  - Basic roles: user management, file permissions, process monitoring  
+
+---
+
+## 🐍 Subject: **Python Programming**
+
+---
+
+### ✅ Unit I – Core Python Basics
+- Features of Python  
+- OOP Concepts overview (Encapsulation, Inheritance, Polymorphism)  
+- Python Keywords, Identifiers  
+- `input()`, `print()`, and basic I/O  
+- **Data Types**:
+  - Numeric types: `int`, `float`, `complex`
+  - **String slicing** and common string methods  
+  - **List operations**: append, insert, pop, slicing, nested lists  
+  - **Tuple operations**  
+  - **Dictionaries**: adding, updating, deleting keys  
+  - **Sets**: creation, union, intersection, difference  
+- **Control Structures**:
+  - `if`, `elif`, `else`  
+  - Loops: `for`, `while`, `break`, `continue`, `pass`, `else with loop`  
+- **Operators**: Arithmetic, Logical, Relational  
+
+---
+
+### ✅ Unit II – NumPy and Pandas
+- **NumPy**:
+  - Array creation and properties  
+  - **Aggregations**: `sum()`, `mean()`, `min()`, `max()`  
+  - **Indexing and slicing**  
+  - Boolean arrays, fancy indexing  
+  - Structured arrays  
+- **Pandas**:
+  - Series and DataFrame creation  
+  - Data selection using `loc`, `iloc`, slicing  
+  - **Handling Missing Data**: `isnull()`, `fillna()`  
+  - **Combining Datasets**: `concat()`, `merge()`  
+  - Hierarchical indexing basics  
+
+---
+
+### ✅ Unit III – Functions, Exceptions, and File Handling
+- **Functions**:
+  - `def`, arguments: positional, keyword, default, `*args`, `**kwargs`  
+  - `lambda` functions  
+  - `return`, local vs global variables  
+  - Decorators and Generators (basics)  
+- **Exception Handling**:
+  - `try`, `except`, `else`, `finally`  
+  - `assert`  
+  - User-defined exceptions  
+  - Logging exceptions (basic)  
+- **File Handling**:
+  - Open, read, write, append text files  
+  - Binary files  
+  - `with` statement  
+  - `seek()` and `tell()`  
+  - **Pickle module** basics  
+
+---
+
+### ✅ Unit IV – OOP & Visualization
+- **Object-Oriented Programming**:
+  - Classes and Objects  
+  - `__init__`, instance variables  
+  - Inheritance and method overriding  
+  - Encapsulation and access control  
+  - Polymorphism  
+- **Matplotlib**:
+  - Line plot, Scatter plot  
+  - Histogram, Density plot  
+  - Contour plot  
+  - Legends, Titles, Axes labels  
+  - 3D plots basics  
+- **Multithreading**:
+  - Python `thread` and `threading` module  
+  - GIL (basic theory)  
+  - Creating and running threads  
 
 ---
 

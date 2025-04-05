@@ -77,6 +77,5 @@ Here’s a detailed explanation of the `STATIC_URL`, `STATICFILES_DIRS`, and `ST
 | `STATICFILES_DIRS`  | Extra folders for global static files          | **Optional** (if needed)   |
 | `STATIC_ROOT`       | Directory for collected static files           | **Only in production**     |
 
-Let me know if you need more help setting this up! 😊
 
 

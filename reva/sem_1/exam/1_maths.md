@@ -1,1724 +1,2387 @@
-# Maths
-
+# Mathamatics  
+# Unit -I  
+### Set Theory, Relation and Functions  
+- Introduction, Basic concepts of sets, and its types, Operations on sets, Venn diagrams, Some basic set identities, Cardinal number and its problems. Cartesian products , Relations, Properties of relations, Equivalence relation, Relation matrix and the Graph of binary relation, Partition set, POSET. Hasse Diagram. Functions and its types, Composition of a functions and Inverse functions, Recursive function.  
 ---
-## **Unit 3: Random Variables and Probability Distribution**
-Alright! Let's start with **Probability and its Properties.**  
 
----
+## 📘 **Introduction to Set Theory**
 
-# **Probability and its Properties**  
+### 🔹 What is Set Theory?
 
-## **1️⃣ What is Probability?**  
-Probability is the measure of how likely an event is to occur. It is given by:  
+Set Theory is a **branch of mathematical logic** that deals with the study of sets, which are **collections of objects**. These objects can be **numbers, letters, symbols, or anything** that is clearly defined and distinct.
 
-\[
-P(E) = \frac{\text{Number of Favorable Outcomes}}{\text{Total Number of Outcomes}}
-\]
+Set theory provides a **foundation for most of mathematics**, especially for data handling, logic, computer science, and functions.
 
-where **P(E)** is the probability of event **E** occurring.  
+---
 
-- Probability values **always range from 0 to 1**.  
-- If **P(E) = 0**, the event is **impossible**.  
-- If **P(E) = 1**, the event is **certain**.  
+### 🔹 Historical Note
+- Set theory was **introduced by Georg Cantor** in the late 19th century.
+- It forms the basis for many **mathematical structures** like relations, functions, graphs, etc.
 
 ---
 
-## **2️⃣ Types of Probability**
-### **1. Classical Probability** (Theoretical Probability)  
-- Based on equally likely outcomes.  
-- Example: Tossing a fair coin → **P(Heads) = 1/2**.  
+### 🔹 Importance in Computer Applications:
+- Helps in **database theory** (like queries using union, intersection).
+- Basis for **logic circuits** and **Boolean algebra**.
+- Essential in **data structures** like sets, maps, hash tables.
+- Used in **software testing, AI, automata theory**, and more.
 
-### **2. Empirical Probability** (Experimental Probability)  
-- Based on experiments or past observations.  
-- Example: If a cricket player scores 50 runs in 5 out of 10 matches, then  
-  \[
-  P(\text{scoring 50 runs}) = \frac{5}{10} = 0.5
-  \]
+---
 
-### **3. Subjective Probability**  
-- Based on personal judgment or experience.  
-- Example: The probability of **rain tomorrow** based on a weather expert’s opinion.  
+### 🔹 Basic Terminology:
+- **Element / Member**: An object in the set.
+- **Set**: A collection of elements, written in curly brackets `{}`.
+  - Example: A = {1, 2, 3}
 
 ---
-
-## **3️⃣ Important Probability Properties**  
-### **1. Addition Rule**
-For **two mutually exclusive events** A and B:  
-\[
-P(A \cup B) = P(A) + P(B)
-\]
-✅ Example: The probability of drawing a **King** or **Queen** from a deck of 52 cards:  
-\[
-P(King) = \frac{4}{52}, \quad P(Queen) = \frac{4}{52}
-\]
-\[
-P(King \cup Queen) = \frac{4}{52} + \frac{4}{52} = \frac{8}{52}
-\]
 
-If events **are not mutually exclusive**, we subtract the common part:  
-\[
-P(A \cup B) = P(A) + P(B) - P(A \cap B)
-\]
+### 🔹 Summary:
+| Term        | Meaning                     |
+|-------------|-----------------------------|
+| Set         | Collection of distinct items |
+| Element     | An item in the set           |
+| Set Theory  | Study of sets and operations |
 
-### **2. Multiplication Rule**
-For **independent events** A and B:  
-\[
-P(A \cap B) = P(A) \times P(B)
-\]
-✅ Example: The probability of getting **two heads** when flipping two fair coins:  
-\[
-P(H \cap H) = P(H) \times P(H) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}
-\]
+---
 
-### **3. Complement Rule**
-The probability of an event **not happening** is:  
-\[
-P(A^c) = 1 - P(A)
-\]
-✅ Example: The probability of **not rolling a 6** on a fair die:  
-\[
-P(6) = \frac{1}{6}, \quad P(\text{Not 6}) = 1 - \frac{1}{6} = \frac{5}{6}
-\]
+## 📘 **Basic Concepts of Sets and Its Types**
 
 ---
 
-### **4️⃣ Conditional Probability**  
-- The probability of an event occurring **given that another event has already occurred**.  
-- Formula:  
-\[
-P(A | B) = \frac{P(A \cap B)}{P(B)}
-\]
-✅ Example: In a class of **10 students**, 4 like **Math**, 5 like **Science**, and **3 like both Math and Science**. If a randomly selected student **likes Science**, what is the probability they also like Math?  
+### 🔹 What is a Set?
 
-\[
-P(\text{Math} | \text{Science}) = \frac{P(\text{Math} \cap \text{Science})}{P(\text{Science})} = \frac{3}{5} = 0.6
-\]
+A **set** is a collection of **well-defined, distinct objects**, considered as a single entity.
 
----
+Examples:
+- A = {2, 4, 6, 8}
+- B = {x | x is a vowel in the English alphabet}
 
-## **5️⃣ Real-Life Applications of Probability**
-- **Weather Forecasting** (Rain prediction using past data)  
-- **Stock Market Analysis** (Risk assessment for investments)  
-- **Machine Learning** (Spam detection in emails)  
-- **Sports Analytics** (Winning probability calculations)  
+> The objects inside a set are called **elements** or **members** of the set.
 
 ---
-### **Practice Problems on Probability and Its Properties**  
+
+### 🔹 Notation and Representation of Sets
 
-#### **1️⃣ Basic Probability Problems**  
-✅ **Q1**: A bag contains **5 red**, **3 blue**, and **2 green** balls. A ball is drawn at random. What is the probability that it is:  
-a) Red?  
-b) Not blue?  
-c) Either red or green?  
+1. **Roster/Tabular Form**  
+   All elements are listed inside curly brackets:  
+   A = {1, 2, 3, 4}
 
-🔹 **Answer**:  
-- **Total balls** = 5 + 3 + 2 = **10**  
-- **P(Red)** = \( \frac{5}{10} = 0.5 \)  
-- **P(Not Blue)** = \( 1 - P(Blue) = 1 - \frac{3}{10} = \frac{7}{10} \)  
-- **P(Red or Green)** = \( P(Red) + P(Green) = \frac{5}{10} + \frac{2}{10} = \frac{7}{10} \)  
+2. **Set Builder Form**  
+   Describes elements with a property:  
+   B = {x | x is a natural number less than 5}  
+   ⇒ B = {1, 2, 3, 4}
 
 ---
 
-✅ **Q2**: A fair die is rolled once. What is the probability of getting:  
-a) A number greater than 4?  
-b) An even number?  
-c) Not a 3?  
+### 🔹 Membership
 
-🔹 **Answer**:  
-- **Total outcomes** = {1, 2, 3, 4, 5, 6}  
-- **P(>4)** = P(5 or 6) = \( \frac{2}{6} = \frac{1}{3} \)  
-- **P(Even)** = P(2, 4, 6) = \( \frac{3}{6} = \frac{1}{2} \)  
-- **P(Not 3)** = \( 1 - P(3) = 1 - \frac{1}{6} = \frac{5}{6} \)  
+- If `a` is an element of set A: `a ∈ A`
+- If `b` is not an element of A: `b ∉ A`
 
 ---
 
-#### **2️⃣ Conditional Probability**  
-✅ **Q3**: In a school, 60% of students study **Math**, and 40% study **Physics**. If 25% of students study **both subjects**, what is the probability that a student who studies Math also studies Physics?  
+### 🔹 Types of Sets
 
-🔹 **Answer**:  
-- Given: \( P(Math) = 0.6 \), \( P(Physics) = 0.4 \), \( P(Math \cap Physics) = 0.25 \)  
-- **Conditional Probability Formula**:  
-  \[
-  P(Physics | Math) = \frac{P(Math \cap Physics)}{P(Math)}
-  \]
-  \[
-  = \frac{0.25}{0.6} = \frac{5}{12} \approx 0.4167
-  \]
-So, the probability is **41.67%**.  
+| Type of Set        | Definition                                                                 | Example                              |
+|--------------------|---------------------------------------------------------------------------|--------------------------------------|
+| **Finite Set**      | Set with a **countable** number of elements                               | A = {1, 2, 3}                         |
+| **Infinite Set**    | Set with **uncountable** elements                                          | N = {1, 2, 3, …}                      |
+| **Empty/Null Set**  | Set with **no elements**, denoted as **Ø** or `{}`                        | B = {x | x < 0, x ∈ Natural numbers} |
+| **Singleton Set**   | A set with **exactly one element**                                        | A = {0}                              |
+| **Equal Sets**      | Two sets with **exactly the same elements**                              | A = {1, 2}, B = {2, 1} ⇒ A = B        |
+| **Subset**          | If all elements of A are in B: `A ⊆ B`                                    | A = {1, 2}, B = {1, 2, 3}             |
+| **Proper Subset**   | A subset that is **not equal** to the original set: `A ⊂ B`               | {1, 2} ⊂ {1, 2, 3}                    |
+| **Universal Set**   | A set containing **all elements under consideration**, denoted `U`        | U = {1, 2, 3, 4, 5}                   |
+| **Disjoint Sets**   | Two sets with **no common elements** ⇒ A ∩ B = Ø                          | A = {1, 2}, B = {3, 4}                |
+| **Power Set**       | Set of **all subsets** of a set A, denoted as **P(A)**                    | A = {a, b} ⇒ P(A) = {Ø, {a}, {b}, {a, b}} |
+| **Complement Set**  | Elements in U but **not** in A, denoted A′ or Aᶜ                          | U = {1,2,3,4}, A = {1,2} ⇒ Aᶜ = {3,4} |
 
 ---
 
-#### **3️⃣ Addition and Multiplication Rules**  
-✅ **Q4**: A deck of 52 cards is shuffled, and one card is drawn. What is the probability that it is:  
-a) A heart or a king?  
-b) A red card and a face card?  
+🧠 **Quick Facts**:
+- If set A has **n elements**, then Power set P(A) has **2ⁿ elements**
+- Every set is a **subset** of itself
+- Ø is a subset of **every set**
 
-🔹 **Answer**:  
-- **P(Heart or King)** = P(Heart) + P(King) - P(Heart & King)  
-  \[
-  = \frac{13}{52} + \frac{4}{52} - \frac{1}{52} = \frac{16}{52} = \frac{4}{13}
-  \]  
-
-- **P(Red & Face Card)** = \( \frac{6}{52} = \frac{3}{26} \)  
-  (Since there are **6 red face cards**: **3 in hearts + 3 in diamonds**)  
-
 ---
+## Operations on Sets
 
-#### **4️⃣ Complement Rule**  
-✅ **Q5**: In a lottery, a person wins a prize with a probability of **0.2**. What is the probability that the person **does not win**?  
+---
 
-🔹 **Answer**:  
-\[
-P(\text{Not Winning}) = 1 - P(\text{Winning}) = 1 - 0.2 = 0.8
-\]
+### 🔹 Union (A ∪ B)
 
----
-### **Random Variables (Discrete & Continuous)**  
+All elements that are in A or in B or in both.
 
-#### **1️⃣ What is a Random Variable?**  
-A **random variable** is a function that assigns a numerical value to each outcome in a sample space.  
+**Formula**:  
+A ∪ B = {x | x ∈ A or x ∈ B}
 
-- **Discrete Random Variable**: Takes a **countable** number of values. Example: Number of heads in 5 coin flips.  
-- **Continuous Random Variable**: Takes an **uncountable** number of values over an interval. Example: The weight of a randomly chosen person.  
+**Example**:  
+A = {1, 2, 3}, B = {3, 4, 5}  
+A ∪ B = {1, 2, 3, 4, 5}
 
 ---
 
-### **2️⃣ Discrete Random Variables**  
-A discrete random variable takes specific values with a certain probability.  
+### 🔹 Intersection (A ∩ B)
 
-✅ **Example 1**: Let X be the number of heads in two coin tosses.  
-- Sample Space: \( S = \{HH, HT, TH, TT\} \)  
-- Possible values of \( X \) (Number of heads): **0, 1, 2**  
-- Probability Distribution:  
+All elements common to both sets.
 
-| X  | 0   | 1   | 2   |
-|----|-----|-----|-----|
-| P(X) | \( \frac{1}{4} \) | \( \frac{2}{4} \) | \( \frac{1}{4} \) |
+**Formula**:  
+A ∩ B = {x | x ∈ A and x ∈ B}
 
-🔹 **Expectation (Mean)**:  
-\[
-E(X) = \sum X_i P(X_i) = 0 \times \frac{1}{4} + 1 \times \frac{2}{4} + 2 \times \frac{1}{4} = 1
-\]
-🔹 **Variance**:  
-\[
-Var(X) = E(X^2) - [E(X)]^2
-\]
+**Example**:  
+A = {1, 2, 3}, B = {3, 4, 5}  
+A ∩ B = {3}
 
 ---
 
-✅ **Example 2**: A die is rolled. Let \( X \) be the number shown on the die. Find the expected value of \( X \).  
-- \( X \) takes values **1, 2, 3, 4, 5, 6**  
-- \( P(X) = \frac{1}{6} \) for each value  
-\[
-E(X) = 1 \times \frac{1}{6} + 2 \times \frac{1}{6} + ... + 6 \times \frac{1}{6} = 3.5
-\]
+### 🔹 Difference (A – B)
 
----
+Elements in A but not in B.
 
-### **3️⃣ Continuous Random Variables**  
-A continuous random variable takes an infinite number of values in a given range.  
+**Formula**:  
+A – B = {x | x ∈ A and x ∉ B}
 
-✅ **Example 3**: Let \( X \) be the height of a randomly chosen student. It follows a **normal distribution** with mean \( \mu = 170 \) cm and variance \( \sigma^2 = 25 \).  
-- The **probability** of \( X \) being exactly 170 cm is **zero**.  
-- We calculate probabilities over **intervals**, e.g., \( P(165 < X < 175) \).  
+**Example**:  
+A = {1, 2, 3}, B = {3, 4}  
+A – B = {1, 2}
 
-\[
-P(a \leq X \leq b) = \int_{a}^{b} f(x) dx
-\]
+---
 
-where \( f(x) \) is the probability density function (PDF).  
+### 🔹 Symmetric Difference (A Δ B)
 
----
-### **Expectation and Variance of Distributions**  
+Elements in either A or B but not both.
 
-#### **1️⃣ Expectation (Mean) of a Random Variable**  
-The **expectation (or mean)** of a random variable \(X\) is the weighted average of all possible values, where the weights are the probabilities of those values occurring.  
+**Formula**:  
+A Δ B = (A – B) ∪ (B – A)
 
-✅ **Formula for Discrete Random Variables:**  
-\[
-E(X) = \sum X_i P(X_i)
-\]
-where:  
-- \(X_i\) are the possible values of \(X\)  
-- \(P(X_i)\) is the probability of \(X_i\)  
-
-✅ **Formula for Continuous Random Variables:**  
-\[
-E(X) = \int_{-\infty}^{\infty} x f(x) dx
-\]
-where \( f(x) \) is the probability density function (PDF).  
+**Example**:  
+A = {1, 2, 3}, B = {3, 4, 5}  
+A Δ B = {1, 2, 4, 5}
 
 ---
 
-### **2️⃣ Example - Expectation of a Discrete Random Variable**  
-A fair six-sided die is rolled. Let \(X\) be the number that appears on the die. Find \(E(X)\).  
+### 🔹 Complement (Aᶜ)
 
-✅ **Solution:**  
-- Possible values: \(X = 1, 2, 3, 4, 5, 6\)  
-- Probability of each value: \( P(X = i) = \frac{1}{6} \) for \( i = 1, 2, 3, 4, 5, 6 \)  
+Elements in the universal set U that are not in A.
 
-Using the formula:  
-\[
-E(X) = 1 \times \frac{1}{6} + 2 \times \frac{1}{6} + 3 \times \frac{1}{6} + 4 \times \frac{1}{6} + 5 \times \frac{1}{6} + 6 \times \frac{1}{6}
-\]
-\[
-E(X) = \frac{1+2+3+4+5+6}{6} = \frac{21}{6} = 3.5
-\]
-📌 **Interpretation:** The average number expected from rolling a die is **3.5**.  
+**Formula**:  
+Aᶜ = U – A
 
+**Example**:  
+U = {1, 2, 3, 4, 5}, A = {2, 3}  
+Aᶜ = {1, 4, 5}
+
 ---
 
-### **3️⃣ Variance of a Random Variable**  
-The **variance** of a random variable \(X\) measures the spread or dispersion of its values.  
+### 🔹 Cartesian Product (A × B)
 
-✅ **Formula for Variance (Discrete):**  
-\[
-Var(X) = E(X^2) - [E(X)]^2
-\]
-where:  
-- \( E(X^2) = \sum X_i^2 P(X_i) \)  
+Set of all **ordered pairs (a, b)** where `a ∈ A` and `b ∈ B`.
 
-✅ **Formula for Variance (Continuous):**  
-\[
-Var(X) = \int_{-\infty}^{\infty} x^2 f(x) dx - (E(X))^2
-\]
+**Formula**:  
+A × B = {(a, b) | a ∈ A, b ∈ B}
 
----
+**Example**:  
+A = {1, 2}, B = {x, y}  
+A × B = {(1, x), (1, y), (2, x), (2, y)}
 
-### **4️⃣ Example - Variance of a Discrete Random Variable**  
-Using the same die roll example, let's find \( Var(X) \).  
+---
 
-✅ **Step 1: Compute \( E(X^2) \)**  
-\[
-E(X^2) = 1^2 \times \frac{1}{6} + 2^2 \times \frac{1}{6} + 3^2 \times \frac{1}{6} + 4^2 \times \frac{1}{6} + 5^2 \times \frac{1}{6} + 6^2 \times \frac{1}{6}
-\]
-\[
-E(X^2) = \frac{1 + 4 + 9 + 16 + 25 + 36}{6} = \frac{91}{6} = 15.17
-\]
+### Properties
 
-✅ **Step 2: Compute Variance**  
-\[
-Var(X) = E(X^2) - [E(X)]^2
-\]
-\[
-Var(X) = 15.17 - (3.5)^2 = 15.17 - 12.25 = 2.92
-\]
+| Property                | Formula                          |
+|-------------------------|----------------------------------|
+| Commutative Law (Union) | A ∪ B = B ∪ A                    |
+| Commutative Law (Int.)  | A ∩ B = B ∩ A                    |
+| Associative (Union)     | A ∪ (B ∪ C) = (A ∪ B) ∪ C        |
+| Associative (Int.)      | A ∩ (B ∩ C) = (A ∩ B) ∩ C        |
+| Distributive            | A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)  |
+|                         | A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)  |
 
-📌 **Interpretation:** The variance measures how much the dice rolls deviate from the mean **3.5**.  
+---
+## Venn Diagrams
 
 ---
 
-### **5️⃣ Standard Deviation**  
-The **standard deviation** is simply the square root of the variance:  
-\[
-\sigma = \sqrt{Var(X)}
-\]
+### 🔹 What is a Venn Diagram?
 
-✅ **For the die roll example:**  
-\[
-\sigma = \sqrt{2.92} \approx 1.71
-\]
-📌 **Interpretation:** On average, the roll outcome deviates by **1.71** from the mean value **3.5**.  
+A **Venn Diagram** is a pictorial representation of sets using circles to show the relationships between different sets.
 
 ---
-### **Moments and Moment Generating Functions (MGF)**  
+
+### 🔹 Notations in Venn Diagram
 
-Moments are statistical measures that describe the shape of a probability distribution. They help in understanding the distribution’s **center, spread, skewness, and kurtosis**.  
+| Notation     | Meaning                             |
+|--------------|-------------------------------------|
+| A ∪ B        | Union of sets A and B               |
+| A ∩ B        | Intersection of sets A and B        |
+| A - B        | Elements in A but not in B          |
+| Aᶜ           | Complement of set A                 |
+| U            | Universal set (everything in the context) |
 
 ---
 
-## **1️⃣ Moments of a Random Variable**  
-The \( r \)-th moment of a random variable \( X \) about the origin is defined as:  
-\[
-E(X^r) = \sum X_i^r P(X_i) \quad \text{(for discrete variables)}
-\]
-\[
-E(X^r) = \int_{-\infty}^{\infty} x^r f(x) dx \quad \text{(for continuous variables)}
-\]
+### 🔹 Venn Diagram of Two Sets
 
-The **first four moments** are particularly important:  
+Let A = Students who play Cricket  
+Let B = Students who play Football
 
-✅ **First Moment (\(E(X)\)): Mean** – Measures the central tendency.  
-✅ **Second Moment (\(E(X^2)\)): Variance** – Measures the spread.  
-✅ **Third Moment (\(E(X^3)\)): Skewness** – Measures symmetry of the distribution.  
-✅ **Fourth Moment (\(E(X^4)\)): Kurtosis** – Measures whether data has heavy/light tails.  
+- **A ∪ B**: All students who play either Cricket or Football or both  
+- **A ∩ B**: Students who play both Cricket and Football  
+- **A - B**: Students who play only Cricket  
+- **B - A**: Students who play only Football  
+- **(A ∪ B)ᶜ**: Students who play neither Cricket nor Football
 
 ---
-
-## **2️⃣ Moment Generating Function (MGF)**  
-The **Moment Generating Function (MGF)**, \( M_X(t) \), is a function that helps compute all moments of a random variable. It is defined as:  
-
-\[
-M_X(t) = E(e^{tX}) = \sum e^{tX_i} P(X_i) \quad \text{(for discrete variables)}
-\]
 
-\[
-M_X(t) = \int_{-\infty}^{\infty} e^{tX} f(x) dx \quad \text{(for continuous variables)}
-\]
+### 🔹 Example
 
-📌 **Key Property:**  
-If \( M_X(t) \) exists, then the \( r \)-th moment can be obtained by differentiating \( M_X(t) \) \( r \) times and evaluating at \( t=0 \):  
+Let  
+- U = {1, 2, 3, 4, 5, 6, 7, 8}  
+- A = {1, 2, 3, 4}  
+- B = {3, 4, 5, 6}
 
-\[
-E(X^r) = \frac{d^r M_X(t)}{dt^r} \Big|_{t=0}
-\]
+Then:  
+- A ∪ B = {1, 2, 3, 4, 5, 6}  
+- A ∩ B = {3, 4}  
+- A - B = {1, 2}  
+- B - A = {5, 6}  
+- Aᶜ = {5, 6, 7, 8}  
+- Bᶜ = {1, 2, 7, 8}
 
 ---
-
-## **3️⃣ Example - Finding MGF for a Discrete Random Variable**  
-Let \( X \) be a random variable with values **1, 2, 3** and corresponding probabilities **0.2, 0.5, 0.3**. Find its **moment generating function (MGF)**.  
-
-✅ **Step 1: Apply MGF Formula**  
-\[
-M_X(t) = E(e^{tX}) = \sum e^{tX_i} P(X_i)
-\]
-\[
-M_X(t) = e^{t(1)} \cdot 0.2 + e^{t(2)} \cdot 0.5 + e^{t(3)} \cdot 0.3
-\]
-\[
-M_X(t) = 0.2 e^t + 0.5 e^{2t} + 0.3 e^{3t}
-\]
 
-✅ **Step 2: Compute Moments**  
-- **First Moment (Mean):**  
-  \[
-  E(X) = \frac{dM_X(t)}{dt} \Big|_{t=0}
-  \]
-  \[
-  M'_X(t) = 0.2 e^t + 1.0 e^{2t} + 0.9 e^{3t}
-  \]
-  \[
-  E(X) = (0.2 + 1.0 + 0.9) \Big|_{t=0} = 2.1
-  \]
-  
-- **Second Moment:**  
-  \[
-  E(X^2) = \frac{d^2M_X(t)}{dt^2} \Big|_{t=0}
-  \]
+### 🔹 Uses of Venn Diagrams
 
-This can be computed by differentiating again.  
+- To verify set identities visually  
+- To solve problems in probability, logic, and algebra  
+- Useful in competitive exams for reasoning and aptitude  
 
 ---
+## Some Basic Set Identities (with Examples)
 
-## **4️⃣ Why is MGF Important?**
-- It provides a compact way to find **all moments**.  
-- It is useful for **proving limit theorems** (like the Central Limit Theorem).  
-- It helps in **finding distributions** by matching MGFs.  
-
 ---
-### **Joint Probability Function & Marginal Density Function**  
 
-When dealing with multiple random variables, we need ways to describe their relationship. **Joint probability functions** define how two or more variables interact, while **marginal density functions** help us understand individual distributions.
+### 🔹 Identity Laws
+- **A ∪ ∅ = A**  
+- **A ∩ U = A**
 
+**Example:**
+Let A = {1, 2, 3}, U = {1, 2, 3, 4, 5}, ∅ = {}  
+Then:  
+A ∪ ∅ = {1, 2, 3}  
+A ∩ U = {1, 2, 3}
+
 ---
 
-## **1️⃣ Joint Probability Mass Function (Joint PMF)**
-For two discrete random variables \(X\) and \(Y\), the **joint probability mass function (PMF)** gives the probability that \(X\) takes a specific value \(x\) and \(Y\) takes a specific value \(y\):
+### 🔹 Domination Laws
+- **A ∪ U = U**  
+- **A ∩ ∅ = ∅**
 
-\[
-P(X = x, Y = y) = P(X, Y)
-\]
+**Example:**
+A = {2, 4}, U = {1, 2, 3, 4, 5}  
+A ∪ U = {1, 2, 3, 4, 5} = U  
+A ∩ ∅ = ∅
 
-📌 **Example:**  
-Consider a probability distribution where \(X\) represents the number of heads and \(Y\) represents the number of tails in **two coin flips**.
+---
 
-| \(X\) | \(Y\) | Probability \(P(X, Y)\) |
-|------|------|----------------|
-| 0    | 2    | \(1/4\)        |
-| 1    | 1    | \(1/2\)        |
-| 2    | 0    | \(1/4\)        |
+### 🔹 Idempotent Laws
+- **A ∪ A = A**  
+- **A ∩ A = A**
 
-Each probability represents the likelihood of a specific outcome in the two flips.
+**Example:**
+A = {5, 6, 7}  
+A ∪ A = {5, 6, 7}  
+A ∩ A = {5, 6, 7}
 
 ---
 
-## **2️⃣ Joint Probability Density Function (Joint PDF)**
-For continuous random variables \(X\) and \(Y\), the **joint probability density function (PDF)** is defined as:
+### 🔹 Complement Laws
+- **A ∪ Aᶜ = U**  
+- **A ∩ Aᶜ = ∅**
 
-\[
-f_{X,Y}(x, y) = \frac{\partial^2}{\partial x \partial y} P(X \leq x, Y \leq y)
-\]
+**Example:**
+A = {1, 2}, U = {1, 2, 3, 4} ⇒ Aᶜ = {3, 4}  
+A ∪ Aᶜ = {1, 2, 3, 4} = U  
+A ∩ Aᶜ = ∅
 
-The probability of \(X\) and \(Y\) occurring in a given range is:
+---
 
-\[
-P(a \leq X \leq b, c \leq Y \leq d) = \int_{a}^{b} \int_{c}^{d} f_{X,Y}(x, y) \, dy \, dx
-\]
+### 🔹 Commutative Laws
+- **A ∪ B = B ∪ A**  
+- **A ∩ B = B ∩ A**
 
-📌 **Example:**  
-Let \(X, Y\) have the joint PDF:
+**Example:**
+A = {1, 2}, B = {2, 3}  
+A ∪ B = {1, 2, 3} = B ∪ A  
+A ∩ B = {2} = B ∩ A
 
-\[
-f_{X,Y}(x, y) =
-\begin{cases}
-6(1-x-y), & 0 \leq x \leq 1, 0 \leq y \leq 1, x + y \leq 1 \\
-0, & \text{otherwise}
-\end{cases}
-\]
+---
 
-To find \(P(0 \leq X \leq 0.5, 0 \leq Y \leq 0.5)\), integrate:
+### 🔹 Associative Laws
+- **A ∪ (B ∪ C) = (A ∪ B) ∪ C**  
+- **A ∩ (B ∩ C) = (A ∩ B) ∩ C**
 
-\[
-P = \int_0^{0.5} \int_0^{0.5} 6(1-x-y) dy dx
-\]
+**Example:**
+A = {1}, B = {1, 2}, C = {1, 3}  
+Left side: A ∪ (B ∪ C) = {1} ∪ {1, 2, 3} = {1, 2, 3}  
+Right side: (A ∪ B) ∪ C = {1, 2} ∪ {1, 3} = {1, 2, 3}
 
 ---
 
-## **3️⃣ Marginal Probability Function**
-The **marginal probability function** describes the probability of one variable **alone** by summing (discrete case) or integrating (continuous case) over the other variable.
+### 🔹 Distributive Laws
+- **A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)**  
+- **A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)**
 
-### **For Discrete Random Variables:**
-\[
-P(X = x) = \sum_{y} P(X = x, Y = y)
-\]
+**Example:**
+A = {1, 2}, B = {2, 3}, C = {2, 4}  
+B ∩ C = {2}, A ∪ {2} = {1, 2}  
+A ∪ B = {1, 2, 3}, A ∪ C = {1, 2, 4}  
+(A ∪ B) ∩ (A ∪ C) = {1, 2}
 
-\[
-P(Y = y) = \sum_{x} P(X = x, Y = y)
-\]
+So:  
+A ∪ (B ∩ C) = {1, 2}  
+(A ∪ B) ∩ (A ∪ C) = {1, 2}
 
-📌 **Example:**
-Using our earlier joint PMF table,
+---
 
-\[
-P(X = 1) = P(1,1) + P(1,0) = \frac{1}{2}
-\]
+### 🔹 De Morgan’s Laws
+- **(A ∪ B)ᶜ = Aᶜ ∩ Bᶜ**  
+- **(A ∩ B)ᶜ = Aᶜ ∪ Bᶜ**
 
-### **For Continuous Random Variables:**
-\[
-f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) dy
-\]
+**Example:**
+U = {1, 2, 3, 4}, A = {1, 2}, B = {2, 3}  
+A ∪ B = {1, 2, 3}, ⇒ (A ∪ B)ᶜ = {4}  
+Aᶜ = {3, 4}, Bᶜ = {1, 4} ⇒ Aᶜ ∩ Bᶜ = {4} ✅
 
-\[
-f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) dx
-\]
+---
+## Cardinal Number and Its Problems (with Examples)
 
-📌 **Example:**
-For the joint PDF:
+---
 
-\[
-f_{X,Y}(x,y) = 6(1-x-y)
-\]
+### 🔹 Cardinal Number
 
-\[
-f_X(x) = \int_{0}^{1-x} 6(1-x-y) dy
-\]
+The **cardinal number** (or cardinality) of a set is the number of distinct elements in the set.
 
-\[
-f_Y(y) = \int_{0}^{1-y} 6(1-x-y) dx
-\]
+- **Notation:** If A is a set, then its cardinal number is denoted by **n(A)**.
+- For a finite set, cardinality is simply the count of elements.
 
-These integrals give us the marginal distributions.
+**Example 1:**
+Let A = {2, 4, 6, 8}, then  
+n(A) = 4 ✅
 
 ---
 
-### **Key Takeaways**
-✔ **Joint PMF/PDF** tells us the probability of two variables occurring together.  
-✔ **Marginal PMF/PDF** helps find individual distributions.  
-✔ Used in **conditional probabilities, correlation, and independence tests**.
+### 🔹 Inclusion-Exclusion Principle
 
----
-### **Special Probability Distributions**  
+For **two finite sets A and B**, the total number of elements in their union is:  
+**n(A ∪ B) = n(A) + n(B) – n(A ∩ B)**
 
-Probability distributions describe how values of a random variable are spread. Here, we cover the most important **discrete** and **continuous** distributions.  
+#### ✅ Example 2:
+Let:  
+- A = students who like Python → n(A) = 25  
+- B = students who like Java → n(B) = 20  
+- Students who like both → n(A ∩ B) = 5
 
+Then:  
+**n(A ∪ B) = 25 + 20 – 5 = 40**  
+✅ So, 40 students like either Python or Java or both.
+
 ---
 
-## **1️⃣ Binomial Distribution** (Discrete)  
-The **binomial distribution** models the number of **successes** in a **fixed number of independent Bernoulli trials** (where each trial has two outcomes: success or failure).  
+### 🔹 For Three Sets
 
-### **Formula:**  
-\[
-P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
-\]  
-where:  
-- \( n \) = number of trials  
-- \( k \) = number of successes  
-- \( p \) = probability of success  
-- \( \binom{n}{k} \) = \( \frac{n!}{k!(n-k)!} \) (combinations)  
-
-📌 **Example:** A fair coin is flipped **10 times**. Find the probability of getting exactly **6 heads**.  
-\[
-P(X = 6) = \binom{10}{6} (0.5)^6 (0.5)^4 = \frac{10!}{6!4!} (0.5)^{10} = 0.205
-\]  
+**n(A ∪ B ∪ C) = n(A) + n(B) + n(C) – n(A ∩ B) – n(B ∩ C) – n(C ∩ A) + n(A ∩ B ∩ C)**
+
+#### ✅ Example 3:
+Let:  
+- A = Students who know C, n(A) = 15  
+- B = Students who know C++, n(B) = 10  
+- C = Students who know Java, n(C) = 12  
+- n(A ∩ B) = 5, n(B ∩ C) = 4, n(C ∩ A) = 3, n(A ∩ B ∩ C) = 2
 
-📌 **Mean & Variance:**  
-- Mean: \( E(X) = np \)  
-- Variance: \( Var(X) = np(1-p) \)  
+Then:  
+n(A ∪ B ∪ C) = 15 + 10 + 12 – 5 – 4 – 3 + 2  
+= 37 – 12 + 2 = **27**
 
+✅ So, 27 students know at least one of the three languages.
+
 ---
 
-## **2️⃣ Poisson Distribution** (Discrete)  
-The **Poisson distribution** is used for counting the **number of events in a fixed interval of time or space**, given that events happen at a **constant average rate** independently.  
+### 🔹 Venn Diagram Use (for Visualization)
 
-### **Formula:**  
-\[
-P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}
-\]  
-where:  
-- \( \lambda \) = expected number of occurrences in a given interval  
-- \( k \) = actual number of occurrences  
-
-📌 **Example:** A website receives **5 hits per minute** on average. Find the probability of exactly **3 hits in a minute**.  
-\[
-P(X = 3) = \frac{e^{-5} 5^3}{3!} = \frac{e^{-5} 125}{6} \approx 0.1404
-\]  
+In competitive or final exams, these types of problems are best solved using **Venn diagrams** to avoid over-counting.
 
-📌 **Mean & Variance:**  
-- Mean: \( E(X) = \lambda \)  
-- Variance: \( Var(X) = \lambda \)  
+---
+## Cartesian Products, Relations, and Properties of Relations (with Examples)
 
 ---
 
-## **3️⃣ Uniform Distribution** (Continuous)  
-The **uniform distribution** represents a situation where every outcome in a range is equally likely.  
+### 🔹 Cartesian Product
 
-### **Formula:**  
-\[
-f(x) =
-\begin{cases}
-\frac{1}{b-a}, & a \leq x \leq b \\
-0, & \text{otherwise}
-\end{cases}
-\]  
-where:  
-- \( a, b \) = lower and upper bounds of the range  
-
-📌 **Example:** If a random number is picked between **2 and 10**, the probability density is:  
-\[
-f(x) = \frac{1}{10-2} = \frac{1}{8}
-\]  
+Given two sets A and B, their **Cartesian product** is the set of all ordered pairs (a, b) such that a ∈ A and b ∈ B.  
+- **Notation:** A × B = {(a, b) | a ∈ A, b ∈ B}
 
-📌 **Mean & Variance:**  
-- Mean: \( E(X) = \frac{a+b}{2} \)  
-- Variance: \( Var(X) = \frac{(b-a)^2}{12} \)  
+#### ✅ Example 1:  
+Let A = {1, 2}, B = {x, y}  
+Then A × B = {(1, x), (1, y), (2, x), (2, y)}  
+⇒ n(A × B) = 2 × 2 = 4 elements ✅
 
 ---
 
-## **4️⃣ Exponential Distribution** (Continuous)  
-The **exponential distribution** models the **time between events** in a Poisson process (i.e., waiting times).  
+### 🔹 Relation
 
-### **Formula:**  
-\[
-f(x) = \lambda e^{-\lambda x}, \quad x \geq 0
-\]  
-where:  
-- \( \lambda \) = rate parameter (events per unit time)  
-
-📌 **Example:** If a lightbulb lasts on average **1000 hours**, find the probability it lasts more than **1500 hours**.  
-\[
-P(X > 1500) = e^{-1500/1000} = e^{-1.5} \approx 0.223
-\]  
+A **relation** R from set A to set B is a **subset of the Cartesian product** A × B.
 
-📌 **Mean & Variance:**  
-- Mean: \( E(X) = \frac{1}{\lambda} \)  
-- Variance: \( Var(X) = \frac{1}{\lambda^2} \)  
+- A relation **on a set A** is a subset of A × A.
 
+#### ✅ Example 2:  
+Let A = {1, 2, 3}, and define R = {(1, 2), (2, 3)}  
+Then R is a relation from A to A.
+
 ---
 
-## **5️⃣ Normal Distribution** (Continuous)  
-The **normal (Gaussian) distribution** is the most important distribution in statistics. Many natural phenomena (height, test scores, etc.) follow this **bell-shaped** curve.  
+### 🔹 Properties of Relations
 
-### **Formula:**  
-\[
-f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
-\]  
-where:  
-- \( \mu \) = mean  
-- \( \sigma^2 \) = variance  
-
-📌 **Example:** Suppose test scores follow **\( \mu = 70 \), \( \sigma = 10 \)**. What is the probability a student scores **between 60 and 80**?  
-Use the **Z-score transformation**:  
-\[
-Z = \frac{X - \mu}{\sigma}
-\]  
-Find values for \( Z(60) \) and \( Z(80) \) from standard normal tables.  
+Let R be a relation on set A. R may have these properties:
 
-📌 **Properties:**  
-- **68-95-99.7 Rule**:  
-  - **68%** of data falls within \( \mu \pm \sigma \)  
-  - **95%** falls within \( \mu \pm 2\sigma \)  
-  - **99.7%** falls within \( \mu \pm 3\sigma \)  
+1. **Reflexive:** (a, a) ∈ R for all a ∈ A  
+2. **Symmetric:** If (a, b) ∈ R, then (b, a) ∈ R  
+3. **Transitive:** If (a, b) ∈ R and (b, c) ∈ R ⇒ (a, c) ∈ R  
+4. **Antisymmetric:** If (a, b) ∈ R and (b, a) ∈ R ⇒ a = b
 
 ---
+
+#### ✅ Example 3:  
+Let A = {1, 2, 3}, and R = {(1, 1), (2, 2), (3, 3)}  
+Check properties:  
+- Reflexive ✅ (all (a, a) are present)  
+- Symmetric ✅ (since no (a, b) with a ≠ b)  
+- Transitive ✅ (no chain to break transitivity)
 
-## **Key Takeaways**
-✔ **Binomial** = Fixed trials, success/failure (e.g., coin flips)  
-✔ **Poisson** = Counting events in time/space (e.g., website hits)  
-✔ **Uniform** = Equal probability over an interval (e.g., random number)  
-✔ **Exponential** = Time between events (e.g., lightbulb life)  
-✔ **Normal** = Bell curve, natural distributions (e.g., test scores)  
+So, R is **Reflexive, Symmetric, and Transitive** ⇒ it's an **Equivalence Relation**.
 
 ---
-## **Bayes’ Theorem**  
 
-Bayes’ Theorem is a fundamental rule in probability that allows us to update our beliefs when new evidence is introduced. It is widely used in machine learning, medical diagnosis, spam filtering, and more.
+#### ✅ Example 4:  
+Let A = {1, 2, 3}, and R = {(1, 2), (2, 3), (1, 3)}  
+- Not reflexive ❌  
+- Not symmetric ❌ (since (2, 1) not present)  
+- Transitive ✅ because (1, 2), (2, 3) ⇒ (1, 3) present
 
 ---
-
-### **Formula:**  
-\[
-P(A|B) = \frac{P(B|A) P(A)}{P(B)}
-\]  
-where:  
-- \( P(A|B) \) = Probability of event A occurring given that event B has occurred (**posterior probability**)  
-- \( P(B|A) \) = Probability of event B occurring given that event A has occurred (**likelihood**)  
-- \( P(A) \) = Probability of event A occurring (**prior probability**)  
-- \( P(B) \) = Total probability of event B occurring (**marginal probability**)  
+## Equivalence Relation, Relation Matrix, and Graph of a Binary Relation (with Examples)
 
 ---
 
-### **Example 1: Medical Diagnosis**
-A test for a disease is **99% accurate** (i.e., if a person has the disease, the test detects it with 99% probability). However, **0.1%** of the population actually has the disease. The test also gives a **false positive rate of 5%** (i.e., 5% of healthy people test positive).  
+### 🔹 Equivalence Relation
 
-If a person tests positive, what is the probability that they actually have the disease?  
+A **relation R on set A** is called an **equivalence relation** if it satisfies:
 
-#### **Step 1: Define the Given Data**
-- \( P(D) = 0.001 \) (Probability of having the disease)  
-- \( P(\neg D) = 0.999 \) (Probability of not having the disease)  
-- \( P(T|D) = 0.99 \) (Probability of testing positive if diseased)  
-- \( P(T|\neg D) = 0.05 \) (Probability of testing positive if healthy)  
+1. **Reflexive:** ∀a ∈ A, (a, a) ∈ R  
+2. **Symmetric:** ∀a, b ∈ A, (a, b) ∈ R ⇒ (b, a) ∈ R  
+3. **Transitive:** ∀a, b, c ∈ A, (a, b) ∈ R ∧ (b, c) ∈ R ⇒ (a, c) ∈ R
 
-#### **Step 2: Compute \( P(T) \) (Total Probability of Testing Positive)**
-\[
-P(T) = P(T|D) P(D) + P(T|\neg D) P(\neg D)
-\]
-\[
-P(T) = (0.99 \times 0.001) + (0.05 \times 0.999) = 0.00099 + 0.04995 = 0.05094
-\]
+Such a relation groups the set into **equivalence classes**.
 
-#### **Step 3: Apply Bayes’ Theorem**
-\[
-P(D|T) = \frac{P(T|D) P(D)}{P(T)}
-\]
-\[
-P(D|T) = \frac{(0.99 \times 0.001)}{0.05094} = \frac{0.00099}{0.05094} \approx 0.0194
-\]
+---
 
-#### **Result:**
-Even though the test is **99% accurate**, the probability that a person actually has the disease **given that they tested positive** is only **1.94%**! This happens because the disease is very rare, so false positives dominate the results.
+#### ✅ Example 1:  
+Let A = {1, 2, 3} and define R = {(1, 1), (2, 2), (3, 3)}  
+- Reflexive: Yes  
+- Symmetric: Yes  
+- Transitive: Yes  
+⇒ R is an equivalence relation.
 
 ---
 
-### **Example 2: Spam Filtering**
-An email classifier marks certain words as likely to appear in spam. Suppose:  
-- 20% of emails are spam: \( P(S) = 0.2 \)  
-- The word "FREE" appears in **60% of spam** emails: \( P(W|S) = 0.6 \)  
-- The word "FREE" appears in **10% of non-spam** emails: \( P(W|\neg S) = 0.1 \)  
+#### ✅ Example 2:  
+Let A = ℤ (integers), and R = {(a, b) | a ≡ b mod 3}  
+This means a and b leave same remainder when divided by 3.
 
-If an email contains the word "FREE," what is the probability that it is spam?
+Let’s check:
+- Reflexive: a ≡ a mod 3 ⇒ true  
+- Symmetric: If a ≡ b ⇒ b ≡ a  
+- Transitive: If a ≡ b and b ≡ c ⇒ a ≡ c
 
-#### **Step 1: Compute \( P(W) \) (Total Probability of "FREE" appearing)**
-\[
-P(W) = P(W|S) P(S) + P(W|\neg S) P(\neg S)
-\]
-\[
-P(W) = (0.6 \times 0.2) + (0.1 \times 0.8) = 0.12 + 0.08 = 0.20
-\]
+✅ So, it’s an **equivalence relation**, and the equivalence classes are:  
+…{-6, -3, 0, 3, 6}, {-5, -2, 1, 4, 7}, {-4, -1, 2, 5, 8}…
 
-#### **Step 2: Apply Bayes’ Theorem**
-\[
-P(S|W) = \frac{P(W|S) P(S)}{P(W)}
-\]
-\[
-P(S|W) = \frac{(0.6 \times 0.2)}{0.20} = \frac{0.12}{0.20} = 0.6
-\]
+---
+
+### 🔹 Relation Matrix (Adjacency Matrix)
 
-#### **Result:**
-If an email contains "FREE," there is a **60% probability** that it is spam.
+Let A = {a₁, a₂, ..., aₙ}, and R be a relation on A. Then the **relation matrix** M(R) is an n×n matrix where:  
+- M[i][j] = 1 if (aᵢ, aⱼ) ∈ R  
+- M[i][j] = 0 otherwise
 
 ---
+
+#### ✅ Example 3:  
+Let A = {1, 2, 3}, and R = {(1, 2), (2, 3), (3, 1)}
+
+Then matrix:
 
-### **Key Takeaways**
-✅ Bayes' Theorem allows **updating probabilities** when new evidence appears.  
-✅ It is useful for **medical tests, spam filters, machine learning, and AI**.  
-✅ **False positives** can be misleading when dealing with rare events.  
-✅ Helps in **decision-making** when probability updates are required.  
+```
+     1 2 3
+   --------
+1 | 0 1 0
+2 | 0 0 1
+3 | 1 0 0
+```
 
 ---
 
-## **Unit 4: Hypothesis Testing & Design of Experiments**
-## **Sampling and Sampling Distribution**  
+### 🔹 Graph of a Binary Relation
 
-Sampling is the process of selecting a subset of data from a larger population to make inferences about the population. Since collecting data from an entire population is often impractical, sampling helps in making predictions with limited data.
+Each element of the set becomes a **node**, and for every (a, b) ∈ R, draw a **directed edge** from a → b.
 
 ---
 
-## **Types of Sampling Methods**
-There are two major types of sampling techniques:
+#### ✅ Example 4:  
+Same set A = {1, 2, 3}, R = {(1, 2), (2, 3), (3, 1)}
 
-### **1. Probability Sampling (Random Sampling)**
-Every element in the population has an equal chance of being selected. This ensures **unbiased** results.
+Graph:
+```
+1 → 2  
+2 → 3  
+3 → 1  
+```
 
-- **Simple Random Sampling**: Each member is chosen randomly (e.g., lottery method).
-- **Stratified Sampling**: The population is divided into subgroups (strata) and samples are taken from each.
-- **Systematic Sampling**: Selecting every \( k^{th} \) member from a list.
-- **Cluster Sampling**: Dividing the population into clusters and randomly selecting entire clusters.
+This forms a **cycle**. Binary relation graphs are often used to visualize relation properties like **reflexivity (self-loops), symmetry (bidirectional edges), and transitivity (path existence)**.
 
-### **2. Non-Probability Sampling (Non-Random Sampling)**
-Not all members have an equal chance of being selected. This is **biased** but useful when randomness is difficult.
-
-- **Convenience Sampling**: Selecting samples that are easiest to reach (e.g., first 100 survey responses).
-- **Judgment Sampling**: Selection based on an expert’s opinion.
-- **Quota Sampling**: Ensuring specific groups are represented in a certain proportion.
+---
+## Partition Set, POSET, and Hasse Diagram (with Examples)
 
 ---
 
-## **Sampling Distribution**
-A **sampling distribution** is the probability distribution of a statistic (like the mean) obtained from multiple random samples.
+### 🔹 Partition of a Set
 
-### **Example: Sampling Distribution of the Mean**
-If we take multiple samples from a population and compute their means, the distribution of those sample means is called the **sampling distribution of the mean**.
+A **partition** of a set A is a collection of **non-empty, disjoint subsets** {A₁, A₂, ..., Aₙ} such that:
 
-- The mean of the sampling distribution is **equal** to the population mean (\(\mu\)).
-- The standard deviation of the sampling distribution is called the **standard error (SE)**:
+- Every element of A belongs to **exactly one** of the subsets
+- A = A₁ ∪ A₂ ∪ ... ∪ Aₙ  
+- Aᵢ ∩ Aⱼ = ∅ for i ≠ j
 
-\[
-SE = \frac{\sigma}{\sqrt{n}}
-\]
+---
+
+#### ✅ Example:
 
-where:
-- \( \sigma \) = Population standard deviation
-- \( n \) = Sample size  
+Let A = {1, 2, 3, 4, 5, 6}  
+Partition P = {{1, 4}, {2, 5}, {3, 6}}  
 
-As \( n \) **increases**, the **sampling distribution becomes narrower**.
+- Each subset is non-empty  
+- Subsets are disjoint  
+- Union of subsets = A  
+✅ Valid partition
 
+**Note:** Equivalence relations naturally define partitions (equivalence classes).
+
 ---
 
-## **Central Limit Theorem (CLT)**
-The **Central Limit Theorem** states that if we take sufficiently large random samples from any population, the sampling distribution of the mean will be **approximately normal**, regardless of the shape of the population distribution.
+### 🔹 POSET (Partially Ordered Set)
 
-### **Key Points of CLT:**
-✅ Works for **large samples** (\( n > 30 \) is preferred).  
-✅ Even if the original population is **not normal**, the sample mean distribution will be **normal**.  
-✅ The larger the sample size, the **closer** the sampling distribution is to normality.  
+A **partially ordered set** (POSET) is a set A with a binary relation ≤ satisfying:
 
-### **Example**
-Suppose we measure the height of 10,000 students. The population distribution might be **skewed** (not symmetric). However, if we take **many samples of size 50** and calculate their means, the distribution of these means will be **approximately normal**.
+1. **Reflexive:** a ≤ a  
+2. **Antisymmetric:** if a ≤ b and b ≤ a, then a = b  
+3. **Transitive:** if a ≤ b and b ≤ c, then a ≤ c  
 
 ---
 
-## **Practical Applications of Sampling and CLT**
-📊 **Opinion Polls:** Predicting election results using a small group of voters.  
-🏥 **Medical Studies:** Testing new drugs on a sample before approving them for public use.  
-📈 **Quality Control:** Checking a few products from a factory instead of testing every item.  
+#### ✅ Example:
 
----
-## **Confidence Intervals (1% & 5% Significance Levels)**  
+Set A = {1, 2, 3, 4, 6}, Relation ≤ (divides)
 
-A **Confidence Interval (CI)** is a range of values that estimates an unknown population parameter (like the mean or proportion) with a certain level of confidence.
+So:
 
-For example, if we estimate the average height of students in a university to be **\( 165 \pm 2 \) cm** with a **95% confidence level**, it means we are **95% confident** that the true mean height lies between **163 cm and 167 cm**.
+- 1 divides 2, 3, 4, 6  
+- 2 divides 4 and 6  
+- 3 divides 6  
 
+Valid POSET because:
+- Reflexive: Each number divides itself  
+- Antisymmetric: If a divides b and b divides a ⇒ a = b  
+- Transitive: If a divides b and b divides c ⇒ a divides c
+
 ---
 
-## **Formula for Confidence Interval**
-For a population mean (\(\mu\)) with **known standard deviation (\(\sigma\))**, the confidence interval is:
+### 🔹 Hasse Diagram
 
-\[
-CI = \bar{X} \pm Z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}}
-\]
+A **Hasse diagram** is a graphical representation of a POSET that:
 
-where:
-- \( \bar{X} \) = Sample mean  
-- \( Z_{\alpha/2} \) = **Critical value from the Z-table** for a given confidence level  
-- \( \sigma \) = Population standard deviation  
-- \( n \) = Sample size  
+- Omits self-loops (reflexivity)  
+- Omits transitive edges  
+- Draws elements with lower ones below higher ones  
 
-If the **population standard deviation (\(\sigma\)) is unknown**, we use the **t-distribution** instead:
+---
 
-\[
-CI = \bar{X} \pm t_{\alpha/2} \times \frac{s}{\sqrt{n}}
-\]
+#### ✅ Example:
 
-where \( s \) is the **sample standard deviation**.
+POSET: Set A = {1, 2, 4, 8}, with relation “divides” (|)
 
----
+Hasse Diagram:
 
-## **Common Confidence Levels & Z-values**
-| Confidence Level | \( Z_{\alpha/2} \) (Z-score) | Significance Level \( \alpha \) |
-|-----------------|-----------------|------------------|
-| 90% | 1.645 | 0.10 |
-| 95% | 1.960 | 0.05 |
-| 99% | 2.576 | 0.01 |
+```
+    8
+    |
+    4
+    |
+    2
+    |
+    1
+```
 
-- **95% Confidence Interval** → \( \alpha = 0.05 \) → **Z = 1.96**  
-- **99% Confidence Interval** → \( \alpha = 0.01 \) → **Z = 2.576**  
+Each edge shows an **immediate relation** (covering relation). The diagram **visualizes hierarchy** and helps with **least upper bound / greatest lower bound** concepts.
 
-💡 **Lower significance level (\(\alpha\)) means more confidence but a wider interval!**
+---
+## Functions and Its Types, Composition and Inverse, Recursive Function (with Examples)
 
 ---
 
-## **Example 1: 95% Confidence Interval for Mean**
-A survey finds that the average weight of students is **65 kg**, with a **standard deviation of 8 kg** from a sample of **100 students**. Find the **95% confidence interval** for the population mean.
+### 🔹 Functions and Its Types
 
-🔹 Given:
-- \( \bar{X} = 65 \)
-- \( \sigma = 8 \)
-- \( n = 100 \)
-- \( Z_{\alpha/2} = 1.96 \) (for 95% confidence)
+A **function** f from A to B (written as f: A → B) is a rule that assigns **each element** in A **exactly one** element in B.
 
-\[
-CI = 65 \pm 1.96 \times \frac{8}{\sqrt{100}}
-\]
+Let A = domain, B = codomain.
 
-\[
-CI = 65 \pm 1.96 \times 0.8
-\]
+---
 
-\[
-CI = 65 \pm 1.568
-\]
+#### ✅ Example:
 
-\[
-CI = (63.432, 66.568)
-\]
+Let A = {1, 2, 3}, B = {4, 5, 6}  
+f: A → B, defined by  
+f(1) = 4, f(2) = 5, f(3) = 6
 
-**Interpretation**: We are **95% confident** that the true average weight of all students lies between **63.43 kg and 66.57 kg**.
+This is a valid function.
 
 ---
 
-## **Example 2: 99% Confidence Interval for Mean**
-Using the same data, calculate the **99% confidence interval**.
+### Types of Functions:
 
-🔹 Given:
-- \( Z_{\alpha/2} = 2.576 \) (for 99% confidence)
+1. **One-to-One (Injective):**  
+   No two inputs map to the same output  
+   - f(x) = 2x, domain: ℝ → ℝ is injective  
+   - f(1) = 2, f(2) = 4 ✅ (distinct inputs → distinct outputs)
 
-\[
-CI = 65 \pm 2.576 \times \frac{8}{\sqrt{100}}
-\]
+2. **Onto (Surjective):**  
+   Every element in codomain is mapped by some input  
+   - f(x) = x² from ℝ → ℝ⁺ is not onto (negative values not covered)
 
-\[
-CI = 65 \pm 2.576 \times 0.8
-\]
+3. **Bijective:**  
+   Both injective and surjective  
+   - f(x) = x + 1 from ℝ → ℝ is bijective  
 
-\[
-CI = 65 \pm 2.0608
-\]
+---
 
-\[
-CI = (62.9392, 67.0608)
-\]
+### 🔹 Composition of Functions
 
-**Interpretation**: We are **99% confident** that the true average weight is between **62.94 kg and 67.06 kg**.
+Given:
+- f: A → B  
+- g: B → C  
+Then **composition g∘f**: A → C is defined as  
+(g∘f)(x) = g(f(x))
 
 ---
 
-## **Key Observations**
-- **Higher confidence level (99%)** → Wider interval (more uncertainty).  
-- **Lower confidence level (95%)** → Narrower interval (less uncertainty).  
-- **Larger sample size (\(n\))** → Smaller confidence interval (more precise estimate).  
+#### ✅ Example:
 
----
-## **One-Tailed and Two-Tailed Tests**  
+Let f(x) = x + 2, g(x) = x²  
+Then:
 
-### **1. Introduction to Hypothesis Testing**  
-Hypothesis testing is a statistical method used to decide whether there is enough evidence in a sample to infer a conclusion about a population.
+(g∘f)(x) = g(f(x)) = g(x + 2) = (x + 2)²
 
-- **Null Hypothesis (\(H_0\))**: The statement that there is no effect or no difference.  
-- **Alternative Hypothesis (\(H_a\))**: The statement that there is an effect or difference.  
+So, (g∘f)(3) = (3 + 2)² = 25
 
 ---
 
-### **2. One-Tailed Test**  
-A **one-tailed (one-sided) test** is used when we are only interested in **one direction** of change.  
+### 🔹 Inverse of a Function
 
-🔹 **Used when we want to test if:**
-- The sample mean is **greater than** a certain value (**right-tailed test**).
-- The sample mean is **less than** a certain value (**left-tailed test**).
-
-#### **Right-Tailed Test**
-\[
-H_0: \mu \leq \mu_0
-\]
-\[
-H_a: \mu > \mu_0
-\]
-We reject \(H_0\) if the sample mean is significantly greater than \(\mu_0\).
+The inverse of a function f: A → B is f⁻¹: B → A such that  
+f(f⁻¹(y)) = y and f⁻¹(f(x)) = x
 
-#### **Left-Tailed Test**
-\[
-H_0: \mu \geq \mu_0
-\]
-\[
-H_a: \mu < \mu_0
-\]
-We reject \(H_0\) if the sample mean is significantly smaller than \(\mu_0\).
+**Exists only if f is bijective.**
 
-#### **Example: Right-Tailed Test**
-A manufacturer claims that the average lifetime of its bulbs is **at least 800 hours**. A random sample of 50 bulbs has a mean lifetime of 780 hours with a standard deviation of 30 hours. Test at **5% significance level** if the claim is false.
+---
 
-✅ **Given Data:**
-- \(H_0: \mu \geq 800\) (Manufacturer’s claim)  
-- \(H_a: \mu < 800\) (We suspect it’s less)  
-- \( \bar{X} = 780 \), \( s = 30 \), \( n = 50 \), \( \alpha = 0.05 \)  
-- \( Z_{\alpha} = -1.645 \) (from Z-table for left-tailed test)  
+#### ✅ Example:
 
-\[
-Z = \frac{\bar{X} - \mu_0}{s/\sqrt{n}}
-\]
+f(x) = 2x + 3  
+To find f⁻¹(x):
 
-\[
-Z = \frac{780 - 800}{30/\sqrt{50}}
-\]
+Let y = 2x + 3 → Solve for x:  
+x = (y - 3)/2
 
-\[
-Z = \frac{-20}{4.24} = -4.72
-\]
+∴ f⁻¹(x) = (x - 3)/2
 
-Since **-4.72 is much smaller than -1.645**, we **reject \(H_0\)** and conclude that the manufacturer’s claim is likely **false**.
+Check:  
+f(f⁻¹(x)) = 2((x - 3)/2) + 3 = x ✅
 
 ---
 
-### **3. Two-Tailed Test**  
-A **two-tailed (two-sided) test** is used when we check for **differences in both directions** (greater or smaller).  
-
-#### **Hypotheses for Two-Tailed Test**
-\[
-H_0: \mu = \mu_0
-\]
-\[
-H_a: \mu \neq \mu_0
-\]
-We reject \(H_0\) if the sample mean is **significantly different** from \(\mu_0\) (either too high or too low).
+### 🔹 Recursive Function
 
-#### **Example: Two-Tailed Test**
-A company claims the average salary of its employees is **₹50,000**. A sample of 40 employees has an average salary of ₹47,500 with a standard deviation of ₹8,000. Test at **5% significance level**.
+A function is **recursive** if it's defined in terms of itself.
 
-✅ **Given Data:**
-- \(H_0: \mu = 50,000\)  
-- \(H_a: \mu \neq 50,000\)  
-- \( \bar{X} = 47,500 \), \( s = 8,000 \), \( n = 40 \), \( \alpha = 0.05 \)  
-- **For two-tailed test:** \( Z_{\alpha/2} = \pm 1.96 \)  
+---
 
-\[
-Z = \frac{\bar{X} - \mu_0}{s/\sqrt{n}}
-\]
+#### ✅ Example:
 
-\[
-Z = \frac{47,500 - 50,000}{8,000/\sqrt{40}}
-\]
+**Factorial** using recursion:
 
-\[
-Z = \frac{-2,500}{1,264} = -1.98
-\]
+- Base case: 0! = 1  
+- Recursive: n! = n × (n−1)!
 
-Since **-1.98 is less than -1.96**, we **reject \(H_0\)** and conclude that the average salary is significantly different from ₹50,000.
+**Code:**
 
----
+```python
+def fact(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fact(n-1)
+```
 
-### **4. Summary of One-Tailed vs. Two-Tailed Tests**
-| Type | Hypothesis | Critical Region | Z-Value at 5% Significance |
-|------|-----------|----------------|---------------------------|
-| **Left-Tailed** | \( H_a: \mu < \mu_0 \) | Left side (lower values) | \( Z < -1.645 \) |
-| **Right-Tailed** | \( H_a: \mu > \mu_0 \) | Right side (higher values) | \( Z > 1.645 \) |
-| **Two-Tailed** | \( H_a: \mu \neq \mu_0 \) | Both sides | \( |Z| > 1.96 \) |
+fact(4) → 4 × 3 × 2 × 1 = **24**
 
+---
+# Unit -II  
+- Predictive modelling and Analysis - Regression Analysis, Correlation analysis, Rank correlation coefficient, multiple correlation, least square, Curve fitting and goodness of fit.  
+---
 ---
-## **Test of Significance (Mean, Difference of Means)**  
 
-### **1. Introduction to Significance Testing**  
-Significance tests help determine whether the **sample mean** or **difference of two sample means** is statistically different from a given value.  
+## 🔹 Predictive Modelling and Analysis
 
-🔹 **Key Concepts:**  
-- **Null Hypothesis (\(H_0\))**: No significant difference exists.  
-- **Alternative Hypothesis (\(H_a\))**: A significant difference exists.  
-- **Significance Level (\(\alpha\))**: Probability of rejecting \(H_0\) when it is true (typically 5% or 1%).  
-- **Test Statistic**: A value used to compare with critical values from statistical tables.  
-- **Critical Region**: The region where \(H_0\) is rejected.  
+**Predictive Modelling** is the process of using data and statistical algorithms to predict future outcomes based on historical data.
 
 ---
-
-## **2. Test of Significance for a Single Mean**  
-Used when we want to check whether a sample mean **significantly differs** from a given population mean.
-
-🔹 **Test Statistic (Z-test for Large Samples, n ≥ 30):**  
-\[
-Z = \frac{\bar{X} - \mu}{s / \sqrt{n}}
-\]
-Where:
-- \( \bar{X} \) = Sample Mean  
-- \( \mu \) = Population Mean  
-- \( s \) = Sample Standard Deviation  
-- \( n \) = Sample Size  
-
-🔹 **Test Statistic (t-test for Small Samples, n < 30):**  
-\[
-t = \frac{\bar{X} - \mu}{s / \sqrt{n}}
-\]
-\( t \)-values are taken from the t-table for \( n-1 \) degrees of freedom.
 
-#### **Example (Single Mean Test - Z-test)**
-A company claims that its employees work **on average 50 hours per week**. A random sample of 40 employees shows a mean of **48.5 hours** with a standard deviation of **4 hours**. Test the claim at **5% significance level**.
+## 1. **Regression Analysis**
 
-✅ **Given Data:**
-- \( H_0: \mu = 50 \)  
-- \( H_a: \mu \neq 50 \)  
-- \( \bar{X} = 48.5 \), \( s = 4 \), \( n = 40 \)  
-- **Two-tailed test**: Critical value at \( 5\% \) significance \( Z_{\alpha/2} = \pm 1.96 \)
+**Definition:**  
+Regression analysis estimates the relationship between a dependent variable (Y) and one or more independent variables (X).
 
-\[
-Z = \frac{48.5 - 50}{4 / \sqrt{40}}
-\]
+### 🔸 Types:
+- **Simple Linear Regression**: One independent variable  
+  Equation: **Y = a + bX**
+- **Multiple Linear Regression**: More than one independent variable  
+  Equation: **Y = a + b₁X₁ + b₂X₂ + ... + bₙXₙ**
 
-\[
-Z = \frac{-1.5}{0.632} = -2.37
-\]
+---
 
-Since **-2.37 < -1.96**, we **reject \( H_0 \)** and conclude that employees **work significantly less than 50 hours** per week.
+### ✅ Example Problem:
 
----
+**Given:**
+X = [1, 2, 3, 4, 5]  
+Y = [2, 4, 5, 4, 5]
 
-## **3. Test of Significance for the Difference of Means**  
-Used when we compare **two different sample means** from two populations.
+Find the regression line **Y = a + bX**
 
-🔹 **Z-test for Large Samples (\( n_1, n_2 \geq 30 \))**
+#### Step 1: Compute the means
 \[
-Z = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sqrt{(s_1^2 / n_1) + (s_2^2 / n_2)}}
+\bar{X} = \frac{1+2+3+4+5}{5} = 3,\quad \bar{Y} = \frac{2+4+5+4+5}{5} = 4
 \]
 
-🔹 **t-test for Small Samples (\( n_1, n_2 < 30 \))** (Assuming Equal Variance)
+#### Step 2: Compute b (slope)
 \[
-t = \frac{(\bar{X}_1 - \bar{X}_2)}{\sqrt{s_p^2 (1/n_1 + 1/n_2)}}
+b = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2}
+= \frac{(1-3)(2-4)+(2-3)(4-4)+(3-3)(5-4)+(4-3)(4-4)+(5-3)(5-4)}{(1-3)^2+(2-3)^2+(3-3)^2+(4-3)^2+(5-3)^2}
+= \frac{4}{10} = 0.4
 \]
-where:
+
+#### Step 3: Compute a (intercept)
 \[
-s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}
+a = \bar{Y} - b\bar{X} = 4 - 0.4×3 = 2.8
 \]
 
-#### **Example (Difference of Means Test - Z-test)**
-A university wants to check if **men and women spend different amounts of time studying per week**. A sample of **35 male students** shows an average study time of **10 hours/week** (SD = 2). A sample of **40 female students** shows an average study time of **11 hours/week** (SD = 2.5). Test at **5% significance level**.
+#### ✅ Regression Line:  
+**Y = 2.8 + 0.4X**
 
-✅ **Given Data:**
-- \( H_0: \mu_1 = \mu_2 \) (No difference in study time)  
-- \( H_a: \mu_1 \neq \mu_2 \) (There is a difference)  
-- \( \bar{X}_1 = 10 \), \( s_1 = 2 \), \( n_1 = 35 \)  
-- \( \bar{X}_2 = 11 \), \( s_2 = 2.5 \), \( n_2 = 40 \)  
-- **Two-tailed test**: \( Z_{\alpha/2} = \pm 1.96 \)
+---
+---
 
-\[
-Z = \frac{(10 - 11) - 0}{\sqrt{(2^2 / 35) + (2.5^2 / 40)}}
-\]
+## 2. **Correlation Analysis**
 
-\[
-Z = \frac{-1}{\sqrt{0.114 + 0.156}}
-\]
+**Definition:**  
+Correlation measures the strength and direction of a linear relationship between two variables.
+
+---
 
+### 🔸 Pearson’s Correlation Coefficient (r)
+
 \[
-Z = \frac{-1}{0.513} = -1.95
+r = \frac{n \sum XY - \sum X \sum Y}{\sqrt{(n \sum X^2 - (\sum X)^2)(n \sum Y^2 - (\sum Y)^2)}}
 \]
 
-Since **-1.95 is very close to -1.96**, we are **on the borderline** of rejecting \( H_0 \). A slightly lower significance level (e.g., 4%) might reject \( H_0 \).
+- **r = 1**: Perfect positive correlation  
+- **r = -1**: Perfect negative correlation  
+- **r = 0**: No correlation  
 
 ---
 
-## **4. Summary of Tests of Significance**  
+### ✅ Example Problem:
 
-| Test Type | Sample Size | Formula | When to Use |
-|-----------|------------|---------|-------------|
-| **Z-test for Mean** | \( n \geq 30 \) | \( Z = \frac{\bar{X} - \mu}{s/\sqrt{n}} \) | When testing the mean of a large sample |
-| **t-test for Mean** | \( n < 30 \) | \( t = \frac{\bar{X} - \mu}{s/\sqrt{n}} \) | When testing the mean of a small sample |
-| **Z-test for Difference of Means** | \( n_1, n_2 \geq 30 \) | \( Z = \frac{(\bar{X}_1 - \bar{X}_2)}{\sqrt{(s_1^2 / n_1) + (s_2^2 / n_2)}} \) | When comparing means of two large samples |
-| **t-test for Difference of Means** | \( n_1, n_2 < 30 \) | \( t = \frac{(\bar{X}_1 - \bar{X}_2)}{\sqrt{s_p^2 (1/n_1 + 1/n_2)}} \) | When comparing means of two small samples |
+**Given:**
 
----
-## **Chi-Square Test and F-Test**  
+| X | Y |
+|---|---|
+| 1 | 2 |
+| 2 | 4 |
+| 3 | 5 |
+| 4 | 4 |
+| 5 | 5 |
 
-### **1. Chi-Square (\(\chi^2\)) Test**  
-The **Chi-Square test** is used to determine whether there is a **significant association** between two categorical variables. It is also used to test the **goodness of fit** of observed data to an expected distribution.
+#### Step 1: Calculate necessary sums
 
----
+\[
+\sum X = 15,\quad \sum Y = 20,\quad \sum XY = 66,\quad \sum X^2 = 55,\quad \sum Y^2 = 86,\quad n = 5
+\]
 
-### **Types of Chi-Square Tests**  
+#### Step 2: Apply formula
 
-1️⃣ **Chi-Square Goodness of Fit Test**  
-   - Used to check if a sample distribution fits a given theoretical distribution.  
-   - Example: Are the observed sales of a product consistent with expected sales?  
+\[
+r = \frac{5(66) - (15)(20)}{\sqrt{(5)(55) - (15)^2)(5)(86) - (20)^2}}
+= \frac{330 - 300}{\sqrt{(275 - 225)(430 - 400)}}
+= \frac{30}{\sqrt{50×30}} = \frac{30}{\sqrt{1500}} ≈ \frac{30}{38.73} ≈ 0.775
+\]
 
-2️⃣ **Chi-Square Test for Independence**  
-   - Used to check if two categorical variables are **independent** or **related**.  
-   - Example: Is there a relationship between gender and preference for a product?  
+#### ✅ Interpretation:
+There is a **strong positive correlation** between X and Y.
 
 ---
+---
+
+## 3. **Rank Correlation Coefficient (Spearman’s rho)**
 
-### **Chi-Square Formula**  
+### 🔸 Definition:
+Used to measure the correlation between **ranks** of two variables (especially when data is not normally distributed or not linear).
 
 \[
-\chi^2 = \sum \frac{(O - E)^2}{E}
+\rho = 1 - \frac{6 \sum d^2}{n(n^2 - 1)}
 \]
 
 Where:  
-- \( O \) = Observed frequency  
-- \( E \) = Expected frequency  
-- \( \chi^2 \) follows the **Chi-Square distribution** with **(rows - 1) × (columns - 1)** degrees of freedom.  
+- $d$ = difference between ranks  
+- $n$ = number of data pairs  
 
 ---
 
-### **Example 1: Chi-Square Goodness of Fit Test**  
-A company claims that customer preferences for its three products (**A, B, C**) follow a **40:35:25 ratio**. A survey of 200 customers found that **Product A = 90**, **Product B = 70**, **Product C = 40**. Test the claim at **5% significance**.
+### ✅ Example Problem:
 
-✅ **Step 1: Hypothesis**  
-- \( H_0 \): The preferences follow the expected 40:35:25 ratio.  
-- \( H_a \): The preferences do not follow this ratio.  
+**Given:**
 
-✅ **Step 2: Calculate Expected Frequencies**  
-- Total customers = 200  
-- Expected for A = \( 200 \times \frac{40}{100} = 80 \)  
-- Expected for B = \( 200 \times \frac{35}{100} = 70 \)  
-- Expected for C = \( 200 \times \frac{25}{100} = 50 \)  
+| X | Y |
+|---|---|
+| 80 | 100 |
+| 60 | 90  |
+| 70 | 80  |
+| 90 | 70  |
+| 50 | 60  |
 
-✅ **Step 3: Compute \( \chi^2 \)**  
+#### Step 1: Assign ranks to X and Y (highest value = rank 1)
 
-\[
-\chi^2 = \frac{(90-80)^2}{80} + \frac{(70-70)^2}{70} + \frac{(40-50)^2}{50}
-\]
-
-\[
-\chi^2 = \frac{10^2}{80} + \frac{0^2}{70} + \frac{10^2}{50}
-\]
-
-\[
-\chi^2 = \frac{100}{80} + 0 + \frac{100}{50}
-\]
+| X | Rank(X) | Y   | Rank(Y) | d  | d² |
+|---|---------|-----|---------|----|----|
+| 80 | 2       | 100 | 1       | 1  | 1  |
+| 60 | 4       | 90  | 2       | 2  | 4  |
+| 70 | 3       | 80  | 3       | 0  | 0  |
+| 90 | 1       | 70  | 4       | -3 | 9  |
+| 50 | 5       | 60  | 5       | 0  | 0  |
 
 \[
-\chi^2 = 1.25 + 0 + 2 = 3.25
+\sum d^2 = 14,\quad n = 5
 \]
 
-✅ **Step 4: Decision**  
-- Degrees of Freedom = \( (3 - 1) = 2 \)  
-- From the Chi-Square table, **critical value at 5% significance = 5.99**  
-- Since \( \chi^2 = 3.25 < 5.99 \), **we do not reject \( H_0 \)**.  
-- **Conclusion:** The customer preferences match the expected ratio.
+#### Step 2: Apply formula
+
+\[
+\rho = 1 - \frac{6 \times 14}{5(5^2 - 1)} = 1 - \frac{84}{120} = 1 - 0.7 = 0.3
+\]
+
+#### ✅ Interpretation:
+There is a **low positive correlation** between X and Y ranks.
+
+---
+---
+
+## 4. **Multiple Correlation**
+
+### 🔸 Definition:
+Multiple correlation measures the strength of the relationship between **one dependent variable** and **two or more independent variables**.
+
+- It is denoted by **R** (uppercase), unlike simple correlation which is **r**.
+- The square of multiple correlation coefficient $R^2$ indicates how well the independent variables explain the variance in the dependent variable.
 
 ---
 
-### **Example 2: Chi-Square Test for Independence**  
-A company surveyed **100 people** to see if gender influences **preference for a new product**. The results are:  
-
-|  | Like | Dislike | Total |
-|---|---|---|---|
-| Male | 30 | 20 | 50 |
-| Female | 25 | 25 | 50 |
-| Total | 55 | 45 | 100 |
-
-✅ **Step 1: Hypothesis**  
-- \( H_0 \): Gender and preference are independent.  
-- \( H_a \): Gender and preference are related.  
-
-✅ **Step 2: Compute Expected Frequencies**  
+### 🔹 Formula (for three variables):
+If we have variables $X_1$, $X_2$, and $Y$, then:
 
 \[
-E = \frac{\text{Row Total} \times \text{Column Total}}{\text{Grand Total}}
+R_{Y.X_1X_2} = \sqrt{ \frac{r_{Y,X_1}^2 + r_{Y,X_2}^2 - 2r_{Y,X_1}r_{Y,X_2}r_{X_1,X_2}}{1 - r_{X_1,X_2}^2} }
 \]
 
-For **Males who like the product**:  
-\[
-E = \frac{50 \times 55}{100} = 27.5
-\]
-
-For **Males who dislike the product**:  
-\[
-E = \frac{50 \times 45}{100} = 22.5
-\]
-
-For **Females who like the product**:  
-\[
-E = \frac{50 \times 55}{100} = 27.5
-\]
-
-For **Females who dislike the product**:  
-\[
-E = \frac{50 \times 45}{100} = 22.5
-\]
-
-✅ **Step 3: Compute \( \chi^2 \)**  
-
-\[
-\chi^2 = \sum \frac{(O - E)^2}{E}
-\]
-
-\[
-\chi^2 = \frac{(30 - 27.5)^2}{27.5} + \frac{(20 - 22.5)^2}{22.5} + \frac{(25 - 27.5)^2}{27.5} + \frac{(25 - 22.5)^2}{22.5}
-\]
-
-\[
-\chi^2 = \frac{2.5^2}{27.5} + \frac{2.5^2}{22.5} + \frac{2.5^2}{27.5} + \frac{2.5^2}{22.5}
-\]
-
-\[
-\chi^2 = 0.227 + 0.278 + 0.227 + 0.278 = 1.01
-\]
-
-✅ **Step 4: Decision**  
-- Degrees of Freedom = \( (2-1) \times (2-1) = 1 \)  
-- Critical value at 5% significance = **3.841**  
-- Since \( \chi^2 = 1.01 < 3.841 \), we **do not reject \( H_0 \)**.  
-- **Conclusion:** Gender does not significantly influence preference.
+Where:  
+- $r_{Y,X_1}$ = correlation between $Y$ and $X_1$  
+- $r_{Y,X_2}$ = correlation between $Y$ and $X_2$  
+- $r_{X_1,X_2}$ = correlation between $X_1$ and $X_2$
 
 ---
 
-## **2. F-Test**  
-The **F-test** is used to compare the **variances of two populations**.  
+### ✅ Example Problem:
 
-### **Formula**  
+Let’s say we are given the following correlation coefficients:  
+- $r_{Y,X_1} = 0.8$  
+- $r_{Y,X_2} = 0.6$  
+- $r_{X_1,X_2} = 0.5$
+
+Substitute into the formula:
 
 \[
-F = \frac{S_1^2}{S_2^2}, \quad S_1^2 > S_2^2
+R_{Y.X_1X_2} = \sqrt{ \frac{(0.8)^2 + (0.6)^2 - 2(0.8)(0.6)(0.5)}{1 - (0.5)^2} }
+\]
+
+\[
+= \sqrt{ \frac{0.64 + 0.36 - 0.48}{1 - 0.25} } = \sqrt{ \frac{0.52}{0.75} } = \sqrt{0.6933} ≈ 0.8326
+\]
+
+---
+
+### ✅ Interpretation:
+The **multiple correlation coefficient R ≈ 0.83** indicates a **strong relationship** between the dependent variable $Y$ and the independent variables $X_1$ and $X_2$.
+
+---
+---
+
+## 5. **Least Squares Method**
+
+### 🔸 Definition:
+The **least squares method** is a standard approach in regression analysis to **find the line of best fit** by minimizing the sum of the squares of the vertical deviations (errors) of the points from the line.
+
+---
+
+### 🔹 Line of Best Fit (for Simple Linear Regression):
+
+\[
+y = a + bx
+\]
+
+Where:  
+- \( y \): dependent variable  
+- \( x \): independent variable  
+- \( a \): y-intercept  
+- \( b \): slope of the line
+
+---
+
+### 🔹 Formulas to Find \( a \) and \( b \):
+
+\[
+b = \frac{n \sum xy - \sum x \sum y}{n \sum x^2 - (\sum x)^2}
+\]
+
+\[
+a = \frac{\sum y - b \sum x}{n}
+\]
+
+---
+
+### ✅ Example Problem:
+
+Fit a line using the least square method for the data:
+
+| x | y |
+|---|---|
+| 1 | 2 |
+| 2 | 3 |
+| 3 | 5 |
+| 4 | 4 |
+| 5 | 6 |
+
+#### Step 1: Calculate required sums
+
+\[
+n = 5, \quad \sum x = 15, \quad \sum y = 20
+\]
+
+\[
+\sum x^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55
+\]
+
+\[
+\sum xy = (1)(2) + (2)(3) + (3)(5) + (4)(4) + (5)(6) = 2 + 6 + 15 + 16 + 30 = 69
+\]
+
+#### Step 2: Calculate slope (b)
+
+\[
+b = \frac{5(69) - 15(20)}{5(55) - (15)^2} = \frac{345 - 300}{275 - 225} = \frac{45}{50} = 0.9
+\]
+
+#### Step 3: Calculate intercept (a)
+
+\[
+a = \frac{20 - 0.9(15)}{5} = \frac{20 - 13.5}{5} = \frac{6.5}{5} = 1.3
+\]
+
+#### Final equation of best fit line:
+
+\[
+y = 1.3 + 0.9x
+\]
+
+---
+
+### ✅ Interpretation:
+The line \( y = 1.3 + 0.9x \) best fits the data, minimizing the total squared error between predicted and actual values.
+
+---
+---
+
+## 6. **Curve Fitting and Goodness of Fit**
+
+---
+
+### 🔸 Curve Fitting:
+
+Curve fitting is the process of constructing a curve (or mathematical function) that best fits a series of data points.
+
+- **Linear fit**: \( y = a + bx \)
+- **Polynomial fit**: \( y = a + bx + cx^2 + \ldots \)
+- **Exponential fit**: \( y = ab^x \) or \( \ln y = \ln a + x \ln b \)
+- **Power fit**: \( y = ax^b \)
+
+---
+
+### 🔹 Method: Least Squares
+
+We use the **least squares method** to find the parameters of the function (constants like \( a \), \( b \), etc.) that minimize the sum of squares of errors between actual and predicted values.
+
+---
+
+### ✅ Example: Exponential Curve Fitting
+
+Fit an exponential curve of the form \( y = ab^x \) to the following data:
+
+| x | y   |
+|---|-----|
+| 1 | 2.7 |
+| 2 | 7.4 |
+| 3 | 20.1|
+
+---
+
+### 🔹 Step 1: Take logarithm on both sides:
+
+\[
+\log y = \log a + x \log b
+\]
+
+Let \( Y = \log y, A = \log a, B = \log b \)
+
+Now we have:  
+\[
+Y = A + Bx \quad \text{(a linear equation)}
+\]
+
+So now fit a straight line to the transformed data:
+
+| x | y   | \( \log y \) |
+|---|-----|--------------|
+| 1 | 2.7 | 0.431        |
+| 2 | 7.4 | 0.869        |
+| 3 | 20.1| 1.303        |
+
+Compute:
+- \( \sum x = 6 \)
+- \( \sum Y = 2.603 \)
+- \( \sum xY = 1(0.431) + 2(0.869) + 3(1.303) = 0.431 + 1.738 + 3.909 = 6.078 \)
+- \( \sum x^2 = 14 \)
+
+Now apply least square formula:
+
+\[
+B = \frac{n\sum xY - \sum x \sum Y}{n\sum x^2 - (\sum x)^2} = \frac{3(6.078) - 6(2.603)}{3(14) - 36} = \frac{18.234 - 15.618}{42 - 36} = \frac{2.616}{6} = 0.436
+\]
+
+\[
+A = \frac{\sum Y - B\sum x}{n} = \frac{2.603 - 0.436 \cdot 6}{3} = \frac{2.603 - 2.616}{3} = -0.0043
+\]
+
+So:
+- \( \log a = A = -0.0043 \Rightarrow a = 10^{-0.0043} \approx 0.990 \)
+- \( \log b = B = 0.436 \Rightarrow b = 10^{0.436} \approx 2.73 \)
+
+Final curve:
+\[
+y = 0.990 \cdot (2.73)^x
+\]
+
+---
+
+### 🔸 Goodness of Fit:
+
+Measures how well the fitted curve matches the actual data.
+
+#### Common metrics:
+- **R² (coefficient of determination)**: Closer to 1 means better fit.
+- **Sum of Squares Error (SSE)**: Lower is better.
+- **Mean Absolute Error (MAE)** or **Root Mean Square Error (RMSE)**.
+
+---
+
+# Unit -III  
+### Random Variable and Probability Distribution:  
+- Introduction probability and its property, Random variable, its types DRV, CRV and its distributions, two dimensional R V, joint probability function, marginal density function.  Some special probability distribution- Binomial, Poison, Uniform, Exponential and Normal Distribution.  
+
+---
+
+## 1. **Introduction to Probability and Its Properties**
+
+---
+
+### 🔸 What is Probability?
+
+Probability is the measure of the likelihood of an event occurring. It lies between 0 and 1.
+
+\[
+P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}}
+\]
+
+---
+
+### 🔹 Properties of Probability:
+
+1. **Non-negativity**:  
+   \[
+   0 \leq P(E) \leq 1
+   \]
+2. **Normalization**:  
+   \[
+   P(S) = 1 \quad \text{(S is the sample space)}
+   \]
+3. **Additivity**: For mutually exclusive events \( A \) and \( B \),  
+   \[
+   P(A \cup B) = P(A) + P(B)
+   \]
+4. **Complementary Rule**:  
+   \[
+   P(\bar{A}) = 1 - P(A)
+   \]
+
+---
+
+### ✅ Example Problem:
+
+**Question:**  
+A card is drawn from a well-shuffled deck of 52 cards. What is the probability that the card is:
+1. A heart?
+2. A queen?
+
+---
+
+**Solution:**
+
+1. Total outcomes = 52  
+   - Favourable outcomes for a heart = 13  
+   \[
+   P(\text{Heart}) = \frac{13}{52} = \frac{1}{4}
+   \]
+
+2. Favourable outcomes for a queen = 4  
+   \[
+   P(\text{Queen}) = \frac{4}{52} = \frac{1}{13}
+   \]
+
+---
+
+## 2. **Random Variable and Its Types**
+
+---
+
+### 🔸 What is a Random Variable?
+
+A **random variable (RV)** is a function that assigns a real number to each outcome in a sample space.
+
+---
+
+### 🔹 Types of Random Variables:
+
+1. **Discrete Random Variable (DRV)**:
+   - Takes only **finite/countable** values.
+   - Example: Number of heads in 3 coin tosses.
+
+2. **Continuous Random Variable (CRV)**:
+   - Takes **infinite and uncountable** values within a range.
+   - Example: Height of students, time taken to run 100m.
+
+---
+
+### ✅ Example Problem:
+
+**Question:**  
+A coin is tossed 3 times. Let \( X \) be the number of heads. Is \( X \) a random variable? If so, list its possible values.
+
+---
+
+**Solution:**
+
+Possible outcomes:  
+- HHH → 3 heads  
+- HHT, HTH, THH → 2 heads  
+- HTT, THT, TTH → 1 head  
+- TTT → 0 heads  
+
+So, possible values of \( X \) = {0, 1, 2, 3}  
+→ This is a **Discrete Random Variable**
+
+---
+
+## 3. **Two-Dimensional Random Variables (Joint Distribution)**
+
+---
+
+### 🔸 What is a Two-Dimensional Random Variable?
+
+A **two-dimensional random variable** is a pair \( (X, Y) \) of random variables defined on the same sample space.
+
+---
+
+### 🔹 Joint Probability Function (Discrete Case)
+
+Let \( X \) and \( Y \) be discrete random variables. The **joint probability function** is:
+
+\[
+P(X = x_i, Y = y_j) = p_{ij}
 \]
 
 Where:
-- \( S_1^2, S_2^2 \) = Sample variances of two groups  
-- \( F \) follows the **F-distribution** with degrees of freedom \( (n_1 - 1, n_2 - 1) \).  
+
+- \( \sum_i \sum_j p_{ij} = 1 \)
+- \( p_{ij} \geq 0 \)
 
 ---
 
-### **Example: F-Test for Variance**  
-Two teaching methods were tested on **two different classes**. The variances in test scores were:  
+### 🔹 Marginal Probability Function
 
-- **Class A:** \( s_1^2 = 25 \), \( n_1 = 16 \)  
-- **Class B:** \( s_2^2 = 16 \), \( n_2 = 21 \)  
-
-✅ **Step 1: Compute \( F \)-value**  
-
-\[
-F = \frac{25}{16} = 1.56
-\]
-
-✅ **Step 2: Compare with Critical Value**  
-- Degrees of freedom = \( (16-1, 21-1) = (15, 20) \)  
-- From the F-table at **5% significance**, critical value **F(15,20) = 2.35**.  
-- Since \( F = 1.56 < 2.35 \), we **do not reject \( H_0 \)**.  
-- **Conclusion:** The variances of the two classes are not significantly different.
-
----
-
-## **✅ Summary**  
-
-| Test | Purpose | Formula |
-|------|---------|---------|
-| **Chi-Square Goodness of Fit** | Tests if sample follows expected distribution | \( \chi^2 = \sum \frac{(O - E)^2}{E} \) |
-| **Chi-Square Test for Independence** | Checks if two categorical variables are related | \( \chi^2 = \sum \frac{(O - E)^2}{E} \) |
-| **F-Test** | Compares variances of two populations | \( F = \frac{S_1^2}{S_2^2} \) |
-
----
-## **Central Limit Theorem (CLT)**  
-
-### **Definition**  
-The **Central Limit Theorem (CLT)** states that, **regardless of the original population distribution, the sampling distribution of the sample mean will be approximately normal if the sample size is sufficiently large**.
-
-### **Key Points:**  
-- The original population **can be any distribution** (normal, uniform, skewed, etc.).  
-- As the **sample size increases**, the **distribution of sample means** approaches a normal distribution.  
-- The **mean** of the sample means is equal to the population mean.  
-- The **variance** of the sample means is **reduced by the sample size**.
-
-### **Mathematical Representation**  
-
-If we take random samples of size \( n \) from a population with:  
-- Mean \( \mu \)  
-- Standard deviation \( \sigma \)  
-
-Then, the sample mean \( \bar{X} \) follows:
-
-\[
-\bar{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)
-\]
-
-This means:  
-- The **mean** of the sample means = **population mean** \( \mu \)  
-- The **standard deviation** of the sample means = **population standard deviation divided by \( \sqrt{n} \)**  
-
-\[
-\text{Standard Error} = \frac{\sigma}{\sqrt{n}}
-\]
-
----
-
-## **Why is CLT Important?**  
-- **Allows us to use normal probability methods even for non-normal populations.**  
-- **Justifies many statistical tests** (e.g., hypothesis testing, confidence intervals).  
-- **Explains why sample means tend to follow a normal distribution** in large samples.
-
----
-
-## **Example 1: Understanding CLT with Dice Rolls 🎲**  
-Imagine rolling a **fair 6-sided die** (values 1, 2, 3, 4, 5, 6).  
-
-### **Step 1: Population Distribution**
-- The population is **uniformly distributed** (each number has equal probability).  
-- Mean \( \mu = \frac{1+2+3+4+5+6}{6} = 3.5 \)  
-- Standard deviation \( \sigma = 1.71 \)  
-
-### **Step 2: Take Small Sample Sizes**
-- If we roll the die **once** (\( n = 1 \)), the distribution is still **uniform**.  
-- If we roll **2 dice** and take the mean, the distribution **starts looking more normal**.  
-- If we roll **30 dice** and take the mean, the sample means form a **nearly perfect normal curve**.
-
-✅ **Conclusion:** Even though rolling a single die gives a uniform distribution, rolling multiple dice and taking the mean results in a normal distribution (by CLT).
-
----
-
-## **Example 2: Exam Scores**  
-A class has **exam scores** with:  
-- **Population Mean** \( \mu = 70 \)  
-- **Standard Deviation** \( \sigma = 15 \)  
-
-We take a **random sample** of **n = 36** students.  
-
-✅ **Step 1: Find the Standard Error**  
-
-\[
-SE = \frac{\sigma}{\sqrt{n}} = \frac{15}{\sqrt{36}} = \frac{15}{6} = 2.5
-\]
-
-✅ **Step 2: Approximate Probabilities Using Normal Distribution**  
-- The sample mean distribution follows \( N(70, 2.5) \).  
-- If we want to find the probability that the sample mean is greater than 73:
-
-\[
-Z = \frac{X - \mu}{SE} = \frac{73 - 70}{2.5} = \frac{3}{2.5} = 1.2
-\]
-
-Using the **Z-table**, \( P(Z > 1.2) = 0.1151 \).  
-**So, there is an 11.51% chance that the sample mean is greater than 73.**
-
----
-
-## **Key Takeaways**  
-✅ The **larger the sample size, the closer the sample mean distribution is to normal.**  
-✅ If \( n \geq 30 \), the CLT holds, and we assume normality for most practical cases.  
-✅ This helps in **statistical inference** (e.g., hypothesis testing & confidence intervals).  
-
----
-## **Design of Experiments (DOE)**
-Design of Experiments (DOE) is a structured method used to determine the relationship between different factors affecting a process and the output of that process. It helps in optimizing performance and improving quality in various fields like engineering, manufacturing, and scientific research.
-
----
-
-## **1. One-Way Classification (One-Factor ANOVA)**  
-### **Definition**  
-One-way classification is used when there is only **one independent variable (factor)** affecting the dependent variable. It helps compare **multiple groups** to check if there is a significant difference between their means.
-
-### **Example Scenario:**  
-A teacher wants to test whether three different teaching methods affect student performance differently.  
-- Factor: **Teaching method (A, B, C)**
-- Dependent variable: **Student scores**
-
-### **Hypothesis Setup**  
-- **Null Hypothesis \( H_0 \):** All groups have the same mean.  
-- **Alternative Hypothesis \( H_1 \):** At least one group mean is different.
-
-### **ANOVA (Analysis of Variance) Formula**  
-The F-statistic for one-way ANOVA is:
-
-\[
-F = \frac{\text{Between-group variability}}{\text{Within-group variability}}
-\]
-
-where:  
-- **Between-group variability** measures how much the group means differ from the overall mean.  
-- **Within-group variability** measures how much data points within each group vary.  
-
-### **Decision Rule**  
-- If **F-statistic > Critical F-value** (from F-table), **reject \( H_0 \)** → At least one group is significantly different.  
-- Otherwise, **fail to reject \( H_0 \)** → No significant difference between groups.
-
-### **Example Calculation**  
-Consider three teaching methods (A, B, and C) applied to students, and their average scores are recorded.
-
-| Group | Mean Score | Variance |
-|--------|-----------|-----------|
-| A | 80 | 4 |
-| B | 85 | 5 |
-| C | 78 | 6 |
-
-By applying ANOVA formulas, we can compute the F-value and compare it with a critical value from the **F-distribution table** at a given significance level (e.g., 5%).
-
----
-
-## **2. Two-Way Classification (Two-Factor ANOVA)**
-### **Definition**  
-Two-way classification is used when **two independent variables (factors)** influence the dependent variable. It helps analyze:  
-1. The effect of **each factor separately** (main effects).  
-2. The **interaction effect** between the two factors.
-
-### **Example Scenario:**  
-A company tests **two fertilizers (Factor A: Fertilizer Type)** and **three irrigation levels (Factor B: Water Amount)** on crop yield.
-
-| Fertilizer | Low Water | Medium Water | High Water |
-|------------|------------|---------------|------------|
-| A | 10kg | 15kg | 20kg |
-| B | 12kg | 18kg | 22kg |
-
-### **Hypothesis Setup**  
-- **Null Hypotheses:**  
-  - \( H_{0A} \): No significant difference between fertilizers.  
-  - \( H_{0B} \): No significant difference between irrigation levels.  
-  - \( H_{0AB} \): No interaction effect between fertilizers and irrigation levels.  
-
-### **ANOVA Calculation**
-For two-way ANOVA, we compute three F-values:  
-1. **F-factor A** (fertilizer effect)  
-2. **F-factor B** (water effect)  
-3. **F-interaction (AB)**  
-
-If any \( F \)-value is **greater than critical F**, we reject \( H_0 \) and conclude a significant effect.
-
----
-
-## **Key Differences: One-Way vs. Two-Way ANOVA**
-| Feature | One-Way ANOVA | Two-Way ANOVA |
-|----------|--------------|--------------|
-| Number of Factors | One | Two |
-| Measures | Effect of one factor | Effect of two factors & interaction |
-| Example | Teaching method on scores | Fertilizer & Water on Crop Yield |
-
----
-
-## **Practical Applications of DOE**
-✅ **Manufacturing:** Optimize machine settings for maximum efficiency.  
-✅ **Medicine:** Test different drugs and dosages for effectiveness.  
-✅ **Agriculture:** Study the impact of fertilizers and weather conditions.  
-✅ **Marketing:** Analyze how pricing and advertising methods affect sales.  
-
----
-## **Hypothesis Testing (One-Tailed & Two-Tailed Tests)**  
-
-### **What is Hypothesis Testing?**  
-Hypothesis testing is a statistical method used to make inferences about a population based on sample data. It helps determine whether there is enough evidence to reject a null hypothesis ( \(H_0\) ) in favor of an alternative hypothesis ( \(H_1\) ).
-
----
-
-## **1. Components of Hypothesis Testing**
-1. **Null Hypothesis (\(H_0\))**: The assumption that there is no significant effect or difference.  
-2. **Alternative Hypothesis (\(H_1\))**: The statement we want to test, suggesting a significant effect or difference.  
-3. **Significance Level (\(\alpha\))**: The probability of rejecting \(H_0\) when it is actually true. Common values: **0.05 (5%)** or **0.01 (1%)**.  
-4. **Test Statistic**: A calculated value used to decide whether to reject \(H_0\). Examples: **Z-test, t-test, Chi-square test**.  
-5. **P-value**: The probability of obtaining the observed results under \(H_0\). If **p-value < α**, reject \(H_0\).  
-
----
-
-## **2. One-Tailed vs. Two-Tailed Tests**
-### **a) One-Tailed Test**
-A **one-tailed test** checks for an effect in **one specific direction** (either greater than or less than).  
-
-✅ **Right-Tailed Test (\(H_1: \mu > \mu_0\))**  
-Used when we suspect the sample mean **is greater than** the population mean.  
-✅ **Left-Tailed Test (\(H_1: \mu < \mu_0\))**  
-Used when we suspect the sample mean **is less than** the population mean.  
-
-#### **Example (Right-Tailed Test):**
-A company claims its **new battery lasts more than 10 hours** on average.  
-- **\(H_0\):** The battery lasts **10 hours** or less (\(\mu \leq 10\)).  
-- **\(H_1\):** The battery lasts **more than 10 hours** (\(\mu > 10\)).  
-
-If test results show **p-value < α**, we reject \(H_0\) and conclude the battery lasts longer.  
-
-📈 **Right-tailed test:** The rejection region is on the **right side** of the normal distribution curve.
-
-#### **Example (Left-Tailed Test):**
-A dietitian claims a new diet **reduces cholesterol below 200 mg/dL**.  
-- **\(H_0\):** The average cholesterol level **is 200 mg/dL or more** (\(\mu \geq 200\)).  
-- **\(H_1\):** The diet reduces cholesterol **below 200 mg/dL** (\(\mu < 200\)).  
-
-📉 **Left-tailed test:** The rejection region is on the **left side** of the normal distribution curve.
-
----
-
-### **b) Two-Tailed Test**
-A **two-tailed test** checks for an effect in **both directions** (whether it is greater OR less than a given value).  
-
-#### **Example:**
-A university wants to check if a **new teaching method changes student performance** (either higher or lower).  
-- **\(H_0\):** No change in scores (\(\mu = \mu_0\)).  
-- **\(H_1\):** Scores are **different** (\(\mu \neq \mu_0\)).  
-
-📊 **Two-tailed test:** The rejection regions are **both in the left and right tails** of the normal distribution curve.
-
----
-
-## **3. Decision Making Using P-Value**
-| P-Value | Decision |
-|----------|------------|
-| \( p < \alpha \) | Reject \( H_0 \), accept \( H_1 \) (Significant effect) |
-| \( p > \alpha \) | Fail to reject \( H_0 \) (No significant effect) |
-
----
-
-## **4. Example Calculation (Z-Test)**
-A soft drink company claims its bottles contain **500 ml of soda**. A sample of 30 bottles shows an **average of 495 ml**, with a **standard deviation of 10 ml**. Is the company’s claim correct at **5% significance**?
-
-### **Step 1: Define Hypotheses**
-- **\(H_0\):** The average volume is **500 ml** (\(\mu = 500\)).  
-- **\(H_1\):** The average volume is **not 500 ml** (\(\mu \neq 500\)) → **Two-tailed test**.
-
-### **Step 2: Compute Test Statistic (Z-score)**
-\[
-Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}}
-\]
-
-where:  
-- \( \bar{X} = 495 \) (sample mean)  
-- \( \mu = 500 \) (population mean)  
-- \( \sigma = 10 \) (standard deviation)  
-- \( n = 30 \) (sample size)  
-
-\[
-Z = \frac{495 - 500}{10 / \sqrt{30}} = \frac{-5}{1.83} = -2.73
-\]
-
-### **Step 3: Compare with Critical Value**
-At **5% significance level**, the critical **Z-value for a two-tailed test** is **±1.96**.  
-Since **-2.73 < -1.96**, we **reject \(H_0\)** → The bottles contain significantly **less** than 500 ml.
-
----
-
-## **5. Key Differences: One-Tailed vs. Two-Tailed Tests**
-| Feature | One-Tailed Test | Two-Tailed Test |
-|---------|----------------|----------------|
-| Checks for | Increase or decrease | Any difference |
-| Rejection Region | One side of curve | Both sides of curve |
-| Example | Does drug increase BP? | Does drug change BP? |
-
----
-
-## **Practical Applications**
-✅ **Medicine:** Checking if a new drug increases or decreases effectiveness.  
-✅ **Manufacturing:** Testing if a machine produces items **below or above tolerance limits**.  
-✅ **Finance:** Analyzing if stock returns are **higher or lower than expected**.  
-
----
-## **Test of Significance (Mean, Difference of Means)**  
-
-### **1. What is a Test of Significance?**  
-A **test of significance** is a statistical method used to determine whether the observed difference between sample data and a population parameter (or between two samples) is **due to chance or a real effect**.  
-
----
-
-## **2. Testing for the Mean of a Population**  
-
-### **Case 1: Population Standard Deviation (\(\sigma\)) is Known** – **Z-Test**  
-Used when the **sample size is large** (\(n \geq 30\)) and the **population standard deviation (\(\sigma\)) is known**.  
-
-#### **Formula for Z-Test:**
-\[
-Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}}
-\]
-where:  
-- \( \bar{X} \) = Sample mean  
-- \( \mu \) = Population mean  
-- \( \sigma \) = Population standard deviation  
-- \( n \) = Sample size  
-
-📌 **Example:**  
-A soft drink company claims that the average soda bottle contains **500 ml** of liquid. A random sample of **40 bottles** has a **mean of 495 ml** and a **known standard deviation of 10 ml**. Is the company’s claim correct at a **5% significance level**?  
-
-**Solution:**  
-- **\( H_0: \mu = 500 \)** (Claim is correct)  
-- **\( H_1: \mu \neq 500 \)** (Claim is incorrect)  
-- **Significance level, \(\alpha = 0.05\)**  
-- **Critical Z-value for two-tailed test = ±1.96**  
-- **Compute Z-score:**
+- For \( X \):  
   \[
-  Z = \frac{495 - 500}{10 / \sqrt{40}} = \frac{-5}{1.58} = -3.16
+  P(X = x_i) = \sum_j P(X = x_i, Y = y_j)
   \]
-- Since **\( Z = -3.16 \) is less than -1.96**, we **reject \(H_0\)**.  
-
-🔎 **Conclusion:** There is significant evidence that the soda bottles contain less than 500 ml.
-
----
-
-### **Case 2: Population Standard Deviation (\(\sigma\)) is Unknown** – **t-Test**  
-Used when the **sample size is small** (\(n < 30\)) and the **population standard deviation is unknown**.  
-
-#### **Formula for t-Test:**
-\[
-t = \frac{\bar{X} - \mu}{s / \sqrt{n}}
-\]
-where:  
-- \( s \) = Sample standard deviation  
-- \( \bar{X} \), \( \mu \), and \( n \) are the same as in the Z-test.  
-
-📌 **Example:**  
-A researcher believes that students in a certain university sleep for less than **7 hours per night** on average. A sample of **10 students** had the following sleep times (in hours):  
-**6.2, 6.5, 7.1, 5.9, 6.3, 6.8, 5.7, 7.2, 6.0, 6.4**  
-
-Test the hypothesis at a **5% significance level**.  
-
-**Solution:**  
-- **\( H_0: \mu = 7 \)** (Students sleep 7 hours on average)  
-- **\( H_1: \mu < 7 \)** (Students sleep less than 7 hours)  
-- **Use a t-test since \(\sigma\) is unknown and \(n < 30\).**  
-
-Compute sample mean (\(\bar{X}\)) and standard deviation (\(s\)) and then apply the t-test formula.  
-The critical t-value for **\( df = n-1 = 9 \)** at **\( \alpha = 0.05 \)** is **-1.833**.  
-
-If **\( t < -1.833 \)**, reject \(H_0\).  
-(We can calculate this step-by-step if needed.)  
-
----
-
-## **3. Testing the Difference of Two Means**
-### **Case 1: Independent Samples (Two-Sample Z-Test)**
-Used when we compare two different groups and **population standard deviations are known**.
-
-#### **Formula:**
-\[
-Z = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{ \frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2} }}
-\]
-
-where:  
-- \( \bar{X_1}, \bar{X_2} \) = Sample means  
-- \( \sigma_1, \sigma_2 \) = Population standard deviations  
-- \( n_1, n_2 \) = Sample sizes  
-
-📌 **Example:**  
-A company wants to compare the productivity of **two different teams**.  
-- **Team A:** \( n_1 = 50 \), mean **80 tasks/day**, \( \sigma_1 = 10 \)  
-- **Team B:** \( n_2 = 40 \), mean **75 tasks/day**, \( \sigma_2 = 12 \)  
-- **Is there a significant difference at \(\alpha = 0.05\)?**  
-
-We compute \( Z \) and compare it to the critical value **\( \pm1.96 \)**.
-
----
-
-### **Case 2: Independent Samples (Two-Sample t-Test)**
-Used when **population standard deviations are unknown**.
-
-#### **Formula:**
-\[
-t = \frac{(\bar{X_1} - \bar{X_2})}{\sqrt{ S_p^2 (\frac{1}{n_1} + \frac{1}{n_2})}}
-\]
-
-where:  
-- \( S_p \) = **Pooled standard deviation**  
+- For \( Y \):  
   \[
-  S_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}
+  P(Y = y_j) = \sum_i P(X = x_i, Y = y_j)
   \]
 
-📌 **Example:**  
-A scientist compares the reaction times of **two groups of drivers**.  
-- **Group 1:** \( n_1 = 12 \), mean **0.75 sec**, \( s_1 = 0.10 \)  
-- **Group 2:** \( n_2 = 10 \), mean **0.80 sec**, \( s_2 = 0.12 \)  
-- **Use a t-test to compare means at \( \alpha = 0.05 \).**  
+---
 
-Compute the pooled variance and apply the t-test formula.
+### ✅ Example Problem:
+
+**Given**: The joint distribution of \( X \) and \( Y \) is:
+
+| Y \ X | 0   | 1   |
+|------|-----|-----|
+| 0    | 0.2 | 0.3 |
+| 1    | 0.1 | 0.4 |
 
 ---
 
-## **4. Summary of Tests**
-| Test | When to Use | Sample Size | Population Std Dev |
-|------|------------|-------------|--------------------|
-| Z-test | Testing one mean | \( n \geq 30 \) | Known |
-| t-test | Testing one mean | \( n < 30 \) | Unknown |
-| Two-sample Z-test | Comparing two means | Large \( n_1, n_2 \) | Known |
-| Two-sample t-test | Comparing two means | Any \( n_1, n_2 \) | Unknown |
+**Find**:  
+(a) \( P(X = 1) \)  
+(b) \( P(Y = 0) \)
 
 ---
 
-## **5. Applications of Test of Significance**
-✅ **Medicine:** Checking if a new drug improves patient recovery time.  
-✅ **Education:** Comparing test scores of students from two different teaching methods.  
-✅ **Business:** Evaluating whether a new marketing strategy increases sales.  
+**Solution**:
+
+(a) \( P(X = 1) = P(X=1, Y=0) + P(X=1, Y=1) = 0.3 + 0.4 = 0.7 \)  
+(b) \( P(Y = 0) = P(X=0, Y=0) + P(X=1, Y=0) = 0.2 + 0.3 = 0.5 \)
 
 ---
+
+## 4. **Special Probability Distributions – Binomial Distribution**
+
+---
+
+### 🔸 What is a Binomial Distribution?
+
+A **binomial distribution** models the number of **successes** in a fixed number of **independent Bernoulli trials**, each with the same probability of success.
+
+---
+
+### 🔹 Formula:
+
+If \( X \sim B(n, p) \), then:
+
+\[
+P(X = r) = \binom{n}{r} p^r (1-p)^{n-r}
+\]
+
+Where:  
+- \( n \) = number of trials  
+- \( p \) = probability of success in each trial  
+- \( r \) = number of successes (r = 0, 1, ..., n)
+
+---
+
+### 🔹 Mean and Variance:
+
+- \( \mu = np \)  
+- \( \sigma^2 = np(1-p) \)
+
+---
+
+### ✅ Example Problem:
+
+A fair coin is tossed 5 times. What is the probability of getting exactly 3 heads?
+
+**Solution**:  
+Here,  
+- \( n = 5 \)  
+- \( p = 0.5 \) (since the coin is fair)  
+- \( r = 3 \)
+
+\[
+P(X = 3) = \binom{5}{3} (0.5)^3 (0.5)^2 = 10 \times 0.125 \times 0.25 = 0.3125
+\]
+
+📌 **Answer**: \( P(X = 3) = 0.3125 \)
+
+---
+
+## 5. **Special Probability Distributions – Poisson Distribution**
+
+---
+
+### 🔸 What is a Poisson Distribution?
+
+The **Poisson distribution** models the number of times an event occurs in a **fixed interval** of time or space, provided the events occur with a known constant mean rate and independently of the time since the last event.
+
+---
+
+### 🔹 Formula:
+
+If \( X \sim \text{Poisson}(\lambda) \), then:
+
+\[
+P(X = r) = \frac{e^{-\lambda} \lambda^r}{r!}
+\]
+
+Where:  
+- \( \lambda \) = average number of occurrences (rate)  
+- \( r \) = number of occurrences (r = 0, 1, 2, ...)
+
+---
+
+### 🔹 Mean and Variance:
+
+- \( \mu = \lambda \)  
+- \( \sigma^2 = \lambda \)
+
+---
+
+### ✅ Example Problem:
+
+A call center receives an average of 6 calls per hour. What is the probability that they receive exactly 4 calls in an hour?
+
+**Solution**:  
+Here,  
+- \( \lambda = 6 \),  
+- \( r = 4 \)
+
+\[
+P(X = 4) = \frac{e^{-6} \cdot 6^4}{4!} = \frac{e^{-6} \cdot 1296}{24}
+\]
+
+Using \( e^{-6} \approx 0.00247875 \):
+
+\[
+P(X = 4) \approx \frac{0.00247875 \cdot 1296}{24} \approx \frac{3.211}{24} \approx 0.1338
+\]
+
+📌 **Answer**: \( P(X = 4) \approx 0.1338 \)
+
+---
+
+## 6. **Special Probability Distributions – Uniform Distribution**
+
+---
+
+### 🔸 What is a Uniform Distribution?
+
+A **Uniform distribution** is one in which **all outcomes are equally likely** within a certain interval.
+
+There are two types:
+
+- **Discrete Uniform Distribution**: Finite number of equally likely outcomes.
+- **Continuous Uniform Distribution**: Any value within an interval is equally likely.
+
+---
+
+### 🔹 Continuous Uniform Distribution
+
+If a random variable \( X \sim U(a, b) \), then:
+
+\[
+f(x) = 
+\begin{cases}
+\frac{1}{b-a} & \text{for } a \le x \le b \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+---
+
+### 🔹 Mean and Variance
+
+- Mean: \( \mu = \frac{a + b}{2} \)  
+- Variance: \( \sigma^2 = \frac{(b - a)^2}{12} \)
+
+---
+
+### ✅ Example Problem
+
+A bus arrives every 20 minutes. A person arrives at a random time. What is the probability that they wait less than 5 minutes?
+
+**Solution**:  
+Let \( X \sim U(0, 20) \), and we want \( P(X < 5) \):
+
+\[
+P(X < 5) = \int_0^5 \frac{1}{20} dx = \frac{5}{20} = 0.25
+\]
+
+📌 **Answer**: \( P(X < 5) = 0.25 \)
+
+---
+
+## 7. **Special Probability Distributions – Exponential Distribution**
+
+---
+
+### 🔸 What is the Exponential Distribution?
+
+The **Exponential Distribution** models the **time between events** in a Poisson process (i.e., events occurring independently at a constant average rate).
+
+It is **memoryless**, meaning the probability of an event occurring in the future is independent of the past.
+
+---
+
+### 🔹 Probability Density Function (PDF)
+
+\[
+f(x; \lambda) = 
+\begin{cases}
+\lambda e^{-\lambda x} & x \ge 0 \\
+0 & x < 0
+\end{cases}
+\]
+
+Where:
+- \( \lambda > 0 \): rate parameter (events per unit time)
+- \( x \): time between events
+
+---
+
+### 🔹 Mean and Variance
+
+- Mean: \( \mu = \frac{1}{\lambda} \)
+- Variance: \( \sigma^2 = \frac{1}{\lambda^2} \)
+
+---
+
+### ✅ Example Problem
+
+If the average number of phone calls at a call center is **5 per hour**, what is the probability that the **next call comes within 10 minutes**?
+
+---
+
+### 🔹 Solution:
+
+- Convert 10 minutes to hours: \( x = \frac{10}{60} = \frac{1}{6} \)
+- Rate: \( \lambda = 5 \)
+- Use cumulative probability:
+
+\[
+P(X \le \frac{1}{6}) = 1 - e^{-\lambda x} = 1 - e^{-5 \cdot \frac{1}{6}} = 1 - e^{-\frac{5}{6}} \approx 1 - 0.434 = 0.566
+\]
+
+📌 **Answer**: ~56.6% chance the next call comes within 10 minutes.
+
+---
+
+## 8. **Special Probability Distributions – Normal Distribution**
+
+---
+
+### 🔸 What is the Normal Distribution?
+
+The **Normal distribution** (or Gaussian distribution) is a continuous probability distribution that is **symmetrical** around the mean, representing real-valued random variables with a bell-shaped curve.
+
+---
+
+### 🔹 Probability Density Function (PDF)
+
+\[
+f(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \cdot e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+\]
+
+Where:
+- \( \mu \) = Mean
+- \( \sigma^2 \) = Variance
+- \( \sigma \) = Standard deviation
+
+---
+
+### 🔹 Properties of Normal Distribution
+
+- Bell-shaped and symmetric about the mean
+- Mean = Median = Mode
+- Total area under the curve = 1
+- 68% of values lie within 1σ, 95% within 2σ, and 99.7% within 3σ
+
+---
+
+### 🔹 Standard Normal Distribution
+
+If \( \mu = 0 \) and \( \sigma = 1 \), then it's called the **Standard Normal Distribution**.
+
+Any normal distribution can be **standardized** using:
+
+\[
+Z = \frac{X - \mu}{\sigma}
+\]
+
+---
+
+### ✅ Example Problem
+
+**Q:** Heights of students are normally distributed with a mean of 170 cm and standard deviation of 10 cm. What is the probability that a randomly selected student is taller than 185 cm?
+
+---
+
+### 🔹 Solution:
+
+Given:
+- \( \mu = 170 \)
+- \( \sigma = 10 \)
+- \( X = 185 \)
+
+Step 1: Convert to Z-score  
+\[
+Z = \frac{185 - 170}{10} = \frac{15}{10} = 1.5
+\]
+
+Step 2: Find \( P(Z > 1.5) \)
+
+Using Z-table:  
+\[
+P(Z < 1.5) = 0.9332 \Rightarrow P(Z > 1.5) = 1 - 0.9332 = 0.0668
+\]
+
+📌 **Answer**: There's a **6.68%** chance that a student is taller than 185 cm.
+
+---
+# Unit -IV  
+### Hypothesis Testing :  
+- Introduction Sampling, Sampling distribution, one and two tailed test, Test of significance, (mean, difference of means), confidence interval  1% and 5% level of significance - Design of Experiments, one way classification, two way classification, ANOVA.  
+---
+
+## 1. **Introduction to Sampling**
+
+---
+
+### 🔸 What is Sampling?
+
+**Sampling** is the process of selecting a subset (sample) from a larger population to estimate characteristics of the whole population.
+
+---
+
+### 🔹 Key Terms
+
+- **Population**: The entire group under study.
+- **Sample**: A subset drawn from the population.
+- **Sampling Distribution**: The probability distribution of a statistic (like mean or proportion) over all possible samples of a given size.
+
+---
+
+### 🔹 Importance of Sampling
+
+- Reduces time and cost
+- Makes analysis feasible
+- Helps in estimating population parameters
+
+---
+
+### 🔹 Types of Sampling Methods
+
+1. **Random Sampling** – Every element has equal chance (e.g., lottery)
+2. **Stratified Sampling** – Population divided into subgroups (strata)
+3. **Systematic Sampling** – Every kth element is selected
+4. **Cluster Sampling** – Groups (clusters) are selected randomly
+5. **Convenience Sampling** – Non-random; based on availability
+
+---
+
+### ✅ Example Problem
+
+**Q:** A company wants to estimate the average salary of its 1,000 employees. They randomly select 50 employees. What is this process called?
+
+**A:** This is **Random Sampling**, and the average salary of the 50 employees will be a sample mean used to estimate the population mean.
+
+---
+
+### 🔹 Central Limit Theorem (CLT)
+
+If sample size is large (n ≥ 30), the **sampling distribution** of the sample mean approaches a **normal distribution**, regardless of the population's distribution.
+
+---
+
+Ready for the next topic: **One-tailed and Two-tailed Tests**?---
+
+## 1. **Introduction to Sampling**
+
+---
+
+### 🔸 What is Sampling?
+
+**Sampling** is the process of selecting a subset (sample) from a larger population to estimate characteristics of the whole population.
+
+---
+
+### 🔹 Key Terms
+
+- **Population**: The entire group under study.
+- **Sample**: A subset drawn from the population.
+- **Sampling Distribution**: The probability distribution of a statistic (like mean or proportion) over all possible samples of a given size.
+
+---
+
+### 🔹 Importance of Sampling
+
+- Reduces time and cost
+- Makes analysis feasible
+- Helps in estimating population parameters
+
+---
+
+### 🔹 Types of Sampling Methods
+
+1. **Random Sampling** – Every element has equal chance (e.g., lottery)
+2. **Stratified Sampling** – Population divided into subgroups (strata)
+3. **Systematic Sampling** – Every kth element is selected
+4. **Cluster Sampling** – Groups (clusters) are selected randomly
+5. **Convenience Sampling** – Non-random; based on availability
+
+---
+
+### ✅ Example Problem
+
+**Q:** A company wants to estimate the average salary of its 1,000 employees. They randomly select 50 employees. What is this process called?
+
+**A:** This is **Random Sampling**, and the average salary of the 50 employees will be a sample mean used to estimate the population mean.
+
+---
+
+### 🔹 Central Limit Theorem (CLT)
+
+If sample size is large (n ≥ 30), the **sampling distribution** of the sample mean approaches a **normal distribution**, regardless of the population's distribution.
+
+---
+
+## 2. **One-tailed and Two-tailed Tests**
+
+---
+
+### 🔸 What is Hypothesis Testing?
+
+Hypothesis testing is a **statistical method** used to make decisions about population parameters based on sample data.
+
+- **Null Hypothesis (H₀)**: No effect or no difference.
+- **Alternative Hypothesis (H₁ or Hₐ)**: There is an effect or difference.
+
+---
+
+### 🔹 One-tailed Test
+
+- **Used when the direction of the effect is specified.**
+- Tests for either greater than or less than.
+
+#### 🧠 Example:
+> H₀: μ = 50  
+> H₁: μ > 50 (right-tailed test)  
+> or  
+> H₁: μ < 50 (left-tailed test)
+
+---
+
+### 🔹 Two-tailed Test
+
+- **Used when direction is NOT specified.**
+- Tests whether a value is **significantly different** (either higher or lower).
+
+#### 🧠 Example:
+> H₀: μ = 50  
+> H₁: μ ≠ 50
+
+---
+
+### 🔸 Test Statistic (Z or t)
+
+\[
+Z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}} \quad \text{(for known population std. dev.)}
+\]  
+\[
+t = \frac{\bar{x} - \mu}{s / \sqrt{n}} \quad \text{(when population std. dev. is unknown)}
+\]
+
+---
+
+### ✅ Example Problem (Two-tailed Z-test)
+
+A machine fills juice bottles. The company claims it fills **500 ml** on average. A sample of **36 bottles** has a mean of **492 ml** with standard deviation **15 ml**. Test the claim at **5% significance level**.
+
+#### ➤ Given:
+- μ = 500 (claimed mean)
+- x̄ = 492  
+- σ = 15  
+- n = 36  
+- α = 0.05 (two-tailed) ⇒ critical Z = ±1.96
+
+\[
+Z = \frac{492 - 500}{15/\sqrt{36}} = \frac{-8}{2.5} = -3.2
+\]
+
+#### ➤ Since -3.2 < -1.96 ⇒ **Reject H₀**
+
+📌 **Conclusion**: The average fill is significantly different from 500 ml.
+
+---
+
+## 3. **Test of Significance (Mean, Difference of Means)**
+
+---
+
+### 🔹 A. **Test of Significance for a Single Mean**
+
+Used to determine if the **sample mean** significantly differs from the **population mean**.
+
+#### ✅ Formula:
+
+\[
+Z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}} \quad \text{(if } \sigma \text{ is known)}
+\]
+or  
+\[
+t = \frac{\bar{x} - \mu}{s / \sqrt{n}} \quad \text{(if } \sigma \text{ is unknown)}
+\]
+
+---
+
+#### 🧠 Example (Z-test for Mean):
+
+A sample of 64 students has a mean score of 72. The population mean is 75 with σ = 8. Test if the sample differs at 5% significance.
+
+\[
+Z = \frac{72 - 75}{8/\sqrt{64}} = \frac{-3}{1} = -3
+\]
+
+Critical Z (two-tailed at α = 0.05) = ±1.96
+
+👉 Since -3 < -1.96 → **Reject H₀**
+
+📌 **Conclusion**: There is significant difference from population mean.
+
+---
+
+### 🔹 B. **Test for Difference of Two Means (Independent Samples)**
+
+Checks if the means of **two different populations** are significantly different.
+
+---
+
+#### ✅ Formula (Z-test):
+
+\[
+Z = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}
+\]
+
+---
+
+#### 🧠 Example:
+
+- Sample 1: n₁ = 50, x̄₁ = 70, σ₁ = 8  
+- Sample 2: n₂ = 60, x̄₂ = 65, σ₂ = 6  
+
+\[
+Z = \frac{70 - 65}{\sqrt{\frac{8^2}{50} + \frac{6^2}{60}}} = \frac{5}{\sqrt{1.28 + 0.6}} = \frac{5}{\sqrt{1.88}} ≈ \frac{5}{1.372} ≈ 3.64
+\]
+
+Critical Z = ±1.96 ⇒ **Reject H₀**
+
+📌 **Conclusion**: The two sample means are significantly different.
+
+---
+
+## 4. **Confidence Interval (1% and 5% Level of Significance)**
+
+---
+
+### 🔹 What is a Confidence Interval?
+
+A **confidence interval (CI)** estimates a range within which the **true population parameter** (like mean or proportion) lies, with a certain level of confidence.
+
+Common confidence levels:
+- **95% CI → α = 0.05**
+- **99% CI → α = 0.01**
+
+---
+
+### ✅ Formula for Confidence Interval of Mean:
+
+If population standard deviation **σ is known**:
+\[
+\text{CI} = \bar{x} \pm Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}
+\]
+
+If **σ is unknown**, and sample size is small → use **t-distribution**:
+\[
+\text{CI} = \bar{x} \pm t_{\alpha/2, \, df} \cdot \frac{s}{\sqrt{n}}
+\]
+
+Where:
+- $\bar{x}$ = sample mean  
+- $n$ = sample size  
+- $s$ = sample standard deviation  
+- $Z_{\alpha/2}$ = Z-critical value  
+- $t_{\alpha/2, \, df}$ = t-critical value with degrees of freedom  
+
+---
+
+### 📘 Z-critical values:
+- **95% CI → Z = 1.96**
+- **99% CI → Z = 2.576**
+
+---
+
+### 🧠 Example 1: (95% CI with known σ)
+
+A sample of 100 items has mean 60, and population σ = 10. Find 95% CI for the mean.
+
+\[
+CI = 60 \pm 1.96 \cdot \frac{10}{\sqrt{100}} = 60 \pm 1.96 \cdot 1 = 60 \pm 1.96
+\]
+
+📌 **Answer**: (58.04, 61.96)
+
+---
+
+### 🧠 Example 2: (99% CI with unknown σ, use t-test)
+
+A sample of 10 values has mean 20, and standard deviation 4. Find 99% CI.
+
+Degrees of freedom = 9, from t-table: $t_{0.005, 9} ≈ 3.25$
+
+\[
+CI = 20 \pm 3.25 \cdot \frac{4}{\sqrt{10}} ≈ 20 \pm 3.25 \cdot 1.264 = 20 \pm 4.113
+\]
+
+📌 **Answer**: (15.887, 24.113)
+
+---
+
+## 5. **Design of Experiments (DOE)**
+
+---
+
+### 🔹 What is DOE?
+
+**Design of Experiments** is a branch of applied statistics used to **plan, conduct, analyze, and interpret** controlled tests to evaluate factors that control the value of a parameter or group of parameters.
+
+It helps in:
+- Reducing variability
+- Improving product/process quality
+- Identifying cause-effect relationships
+
+---
+
+### 🔹 Key Concepts
+
+| Term                  | Description |
+|-----------------------|-------------|
+| **Factors**            | Variables that are changed in an experiment |
+| **Levels**             | Settings of each factor (e.g., low/high) |
+| **Treatment**          | Combination of factor levels |
+| **Response Variable**  | Output that is measured |
+| **Replication**        | Repeating the experiment to reduce error |
+| **Randomization**      | Randomly assigning treatments to avoid bias |
+| **Blocking**           | Grouping similar experimental units to reduce variability |
+
+---
+
+### 🧪 Types of Designs
+
+1. **Completely Randomized Design (CRD)**  
+2. **Randomized Block Design (RBD)**  
+3. **Latin Square Design**  
+4. **Factorial Design** (2-level factorials, full factorial, fractional)
+
+---
+
+### 📘 Example:
+
+Suppose we want to test the effect of **2 fertilizers (F1, F2)** on crop yield.  
+We randomly assign 5 plots to F1 and 5 plots to F2 (CRD).  
+We then measure the yield (response variable) and use statistical tests like **ANOVA** to check if the difference is significant.
+
+---
+
+### 🧠 Mini Problem:
+
+**Q**: You are testing 3 teaching methods on student performance. Each method is used on 4 students. What design is this?
+
+**A**: Completely Randomized Design (CRD)  
+Each method is a **treatment**, and students are randomly assigned.
+
+---
+
+## 6. **One-Way Classification (ANOVA - Single Factor)**
+
+---
+
+### 🔹 What is One-Way Classification?
+
+One-way classification is a **type of ANOVA (Analysis of Variance)** used to test whether **means of several groups** are equal, based on **one independent variable (factor)**.
+
+---
+
+### 🔹 Use Case
+
+You want to compare **k group means** to see if at least one is significantly different.
+
+For example:
+- Comparing test scores of students from **3 different teaching methods**.
+- Comparing crop yields using **3 different fertilizers**.
+
+---
+
+### 🔹 Hypotheses
+
+- **Null Hypothesis (H₀):** All group means are equal.  
+  $H_0: \mu_1 = \mu_2 = \cdots = \mu_k$
+  
+- **Alternate Hypothesis (H₁):** At least one group mean is different.
+
+---
+
+### 🔹 ANOVA Table Format
+
+| Source of Variation | Sum of Squares (SS) | Degrees of Freedom (df) | Mean Squares (MS) | F-Ratio |
+|---------------------|---------------------|--------------------------|--------------------|---------|
+| Between Groups      | SS<sub>Between</sub> | k - 1                    | MS<sub>B</sub> = SS<sub>B</sub> / (k - 1) | F = MS<sub>B</sub> / MS<sub>W</sub> |
+| Within Groups       | SS<sub>Within</sub>  | N - k                    | MS<sub>W</sub> = SS<sub>W</sub> / (N - k) |         |
+| Total               | SS<sub>Total</sub>   | N - 1                    |                    |         |
+
+---
+
+### 🔹 Decision Rule
+
+Compare F-calculated with F-critical from F-table:
+- If **F-cal > F-table**, reject H₀.
+- Else, do not reject H₀.
+
+---
+
+### 📘 Example Problem
+
+**Problem**: Compare mean marks of students taught with 3 methods.
+
+| Method | Marks       |
+|--------|-------------|
+| A      | 82, 85, 88  |
+| B      | 75, 78, 74  |
+| C      | 90, 92, 95  |
+
+**Step 1**: Calculate group means and overall mean.  
+**Step 2**: Compute SS<sub>Between</sub>, SS<sub>Within</sub>, then MS and F.  
+**Step 3**: Check F with F-critical (from table, at 5% significance).  
+
+Let’s say:  
+- F<sub>calculated</sub> = 7.9  
+- F<sub>critical</sub> (df₁ = 2, df₂ = 6) ≈ 5.14
+
+✅ Since 7.9 > 5.14 → **Reject H₀**: There’s a significant difference in means.
+
+---
+
+## 7. **Two-Way Classification (Two-Factor ANOVA)**
+
+---
+
+### 🔹 What is Two-Way Classification?
+
+Two-way classification is an **extension of one-way ANOVA**, where **two independent variables (factors)** are studied simultaneously to observe their effects on a dependent variable.
+
+---
+
+### 🔹 Use Case
+
+To test:
+- The **individual effect** of each factor.
+- The **interaction effect** between factors.
+
+For example:  
+Studying the effect of:
+- **Teaching Method** (Factor A)  
+- **Gender** (Factor B)  
+on **Student Scores**.
+
+---
+
+### 🔹 Assumptions
+
+- The samples are random and independent.
+- Each group is normally distributed.
+- Variances are equal.
+
+---
+
+### 🔹 Hypotheses
+
+- $H_0^A$: No significant effect of Factor A  
+- $H_0^B$: No significant effect of Factor B  
+- $H_0^{AB}$: No interaction effect between A and B
+
+---
+
+### 🔹 Two-Way ANOVA Table
+
+| Source of Variation | Sum of Squares (SS) | df           | Mean Square (MS)        | F-Ratio                     |
+|---------------------|---------------------|--------------|--------------------------|-----------------------------|
+| Factor A            | SSA                 | a - 1        | MSA = SSA / (a - 1)      | F<sub>A</sub> = MSA / MSE   |
+| Factor B            | SSB                 | b - 1        | MSB = SSB / (b - 1)      | F<sub>B</sub> = MSB / MSE   |
+| Interaction AB      | SSAB                | (a - 1)(b - 1)| MSAB = SSAB / (a−1)(b−1) | F<sub>AB</sub> = MSAB / MSE |
+| Error               | SSE                 | ab(n − 1)    | MSE = SSE / ab(n − 1)    |                             |
+| Total               | SST                 | N − 1        |                          |                             |
+
+Where:  
+- **a** = number of levels in Factor A  
+- **b** = number of levels in Factor B  
+- **n** = number of observations per cell  
+- **N = abn**
+
+---
+
+### 🔹 Decision Rule
+
+Compare the F-ratios with F-critical values.  
+- If **F > F<sub>critical</sub>**, reject the corresponding null hypothesis.
+
+---
+
+### 📘 Example Problem
+
+**Problem**: A company tests productivity (scores) using 2 Machines (A1, A2) and 3 Shifts (S1, S2, S3).  
+
+|         | S1 | S2 | S3 |
+|---------|----|----|----|
+| A1      | 20 | 25 | 23 |
+| A2      | 27 | 30 | 29 |
+
+**Steps**:
+1. Calculate row (machine), column (shift) means and grand mean.
+2. Compute SS for machine, shift, interaction, and error.
+3. Construct the ANOVA table.
+4. Calculate F-values.
+5. Compare with F-table values.
+
+Let’s say:
+- $F_A = 10.2 > F_{crit} = 4.26$ → Reject $H_0^A$
+- $F_B = 5.3 > F_{crit} = 3.89$ → Reject $H_0^B$
+- $F_{AB} = 1.1 < F_{crit} = 3.2$ → Do not reject $H_0^{AB}$
+
+✅ So, both machine type and shift significantly affect productivity, but there’s **no interaction** effect.
+
+---
+
+## 📘 **Types of Errors in Hypothesis Testing**
+
+### 🔹 Type I Error (False Positive)
+- **Definition**: Rejecting the null hypothesis ($H_0$) when it is **actually true**.
+- **Symbol**: $\alpha$ (alpha)  
+- **Also Called**: Significance Level of the test
+- **Example**: Declaring a person guilty when they are innocent.
+- **Control**: Reduce $\alpha$ to lower Type I error.
+
+> If $\alpha = 0.05$, there is a **5% chance** of making a Type I error.
+
+---
+
+### 🔹 Type II Error (False Negative)
+- **Definition**: Failing to reject the null hypothesis ($H_0$) when it is **actually false**.
+- **Symbol**: $\beta$ (beta)
+- **Example**: Declaring a person innocent when they are actually guilty.
+- **Control**: Increase sample size or improve test power to reduce $\beta$.
+
+---
+
+### 🔹 Power of a Test
+- **Definition**: Probability of correctly rejecting a false null hypothesis.
+- **Formula**:  
+  $$ \text{Power} = 1 - \beta $$
+- **Interpretation**: Higher power means better ability to detect an actual effect.
+
+---
+
+### 🔹 Summary Table
+
+| Decision / Truth       | $H_0$ is True            | $H_0$ is False           |
+|------------------------|--------------------------|--------------------------|
+| **Reject $H_0$**       | **Type I Error ($\alpha$)** | **Correct Decision** (Power) |
+| **Fail to Reject $H_0$** | **Correct Decision**      | **Type II Error ($\beta$)**  |
+
+---
+
+# Formulas:-
+## 📘 **Unit I: Set Theory, Relations, and Functions**
+
+### 🔹 Set Theory  
+- $n(A \cup B) = n(A) + n(B) - n(A \cap B)$  
+- $n(A \cup B \cup C) = n(A) + n(B) + n(C) - n(A \cap B) - n(A \cap C) - n(B \cap C) + n(A \cap B \cap C)$  
+- Complement: $A' = U - A$  
+- De Morgan's Laws:  
+  - $(A \cup B)' = A' \cap B'$  
+  - $(A \cap B)' = A' \cup B'$  
+
+### 🔹 Relations  
+- **Cartesian Product**: $A \times B = \{(a, b) \mid a \in A, b \in B\}$  
+- **Equivalence Relation**: Must be Reflexive, Symmetric, and Transitive  
+
+### 🔹 Functions  
+- Composition: $(f \circ g)(x) = f(g(x))$  
+- Inverse: $f(f^{-1}(x)) = x$  
+- Recursive: $f(n) = f(n-1) + f(n-2)$ (example for Fibonacci)
+
+---
+
+## 📘 **Unit II: Predictive Modelling & Regression**
+
+### 🔹 Correlation  
+- **Karl Pearson’s r**:  
+  $$ r = \frac{n\sum xy - \sum x \sum y}{\sqrt{[n\sum x^2 - (\sum x)^2][n\sum y^2 - (\sum y)^2]}} $$  
+- **Spearman Rank Correlation**:  
+  $$ r_s = 1 - \frac{6\sum d^2}{n(n^2 - 1)} $$  
+  Where $d$ = difference in ranks  
+
+### 🔹 Regression Equations  
+- $y = a + bx$  
+- Slope:  
+  $$ b = \frac{n\sum xy - \sum x \sum y}{n\sum x^2 - (\sum x)^2} $$  
+- Intercept:  
+  $$ a = \bar{y} - b\bar{x} $$  
+
+### 🔹 Least Squares & Curve Fitting  
+- **Straight Line Fit**: $y = a + bx$  
+- **Normal Equations**:  
+  $$ \sum y = na + b\sum x $$  
+  $$ \sum xy = a\sum x + b\sum x^2 $$  
+
+---
+
+## 📘 **Unit III: Probability and Distributions**
+
+### 🔹 Basic Probability  
+- $P(E) = \frac{n(E)}{n(S)}$  
+- $P(A \cup B) = P(A) + P(B) - P(A \cap B)$  
+- Conditional: $P(A|B) = \frac{P(A \cap B)}{P(B)}$  
+- Bayes’ Theorem:  
+  $$ P(A_i|B) = \frac{P(A_i)P(B|A_i)}{\sum_{j} P(A_j)P(B|A_j)} $$  
+
+### 🔹 Expected Value and Variance  
+- $E(X) = \sum x \cdot P(x)$  
+- $Var(X) = E(X^2) - [E(X)]^2$  
+
+### 🔹 Discrete Distributions  
+- **Binomial**:  
+  $$ P(X = r) = \binom{n}{r} p^r q^{n-r} $$  
+  Mean: $np$, Variance: $npq$  
+
+- **Poisson**:  
+  $$ P(X = r) = \frac{e^{-m}m^r}{r!} $$  
+  Mean = Variance = $m$
+
+### 🔹 Continuous Distributions  
+- **Uniform**:  
+  $$ f(x) = \frac{1}{b - a}, \quad a \le x \le b $$  
+  Mean = $\frac{a + b}{2}$, Variance = $\frac{(b - a)^2}{12}$  
+
+- **Exponential**:  
+  $$ f(x) = \lambda e^{-\lambda x}, \quad x \ge 0 $$  
+  Mean = $\frac{1}{\lambda}$, Variance = $\frac{1}{\lambda^2}$  
+
+- **Normal**:  
+  $$ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x - \mu)^2}{2\sigma^2}} $$  
+  Z-score:  
+  $$ Z = \frac{X - \mu}{\sigma} $$  
+
+---
+
+## 📘 **Unit IV: Hypothesis Testing and ANOVA**
+
+### 🔹 Sampling and Testing  
+- **Z-test (Large Samples)**:  
+  $$ Z = \frac{\bar{x} - \mu}{\sigma/\sqrt{n}} $$  
+- **t-test (Small Samples)**:  
+  $$ t = \frac{\bar{x} - \mu}{s/\sqrt{n}} $$  
+- **Two Sample t-test**:  
+  $$ t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} $$  
+
+### 🔹 Confidence Interval  
+- 95% CI: $\bar{x} \pm 1.96 \cdot \frac{\sigma}{\sqrt{n}}$  
+- 99% CI: $\bar{x} \pm 2.58 \cdot \frac{\sigma}{\sqrt{n}}$  
+
+### 🔹 ANOVA (One-Way)  
+- SST = Total Sum of Squares  
+- SSB = Sum of Squares Between Groups  
+- SSW = Sum of Squares Within Groups  
+-  
+  $$ F = \frac{\text{MSB}}{\text{MSW}} = \frac{\text{SSB}/(k-1)}{\text{SSW}/(N-k)} $$  
+
+### 🔹 Two-Way ANOVA  
+Similar to One-Way but includes interaction:
+
+$$
+F_A = \frac{MS_A}{MS_E}, \quad
+F_B = \frac{MS_B}{MS_E}, \quad
+F_{AB} = \frac{MS_{AB}}{MS_E}
+$$
+
+---
+
+# Difference:- 
+## 📘 **Unit I: Set Theory, Relations & Functions**
+
+### 🔹 Difference between Set and Subset  
+| Set | Subset |
+|------|--------|
+| A collection of well-defined elements | A set contained within another set |
+| Denoted as $A = \{1,2,3\}$ | $B = \{1,2\} \subset A$ |
+
+---
+
+### 🔹 Difference between Relation and Function  
+| Relation | Function |
+|----------|----------|
+| Any subset of Cartesian product | Special type of relation where each input has exactly one output |
+| Can have multiple outputs for an input | Only one output per input |
+
+---
+
+### 🔹 One-One vs Onto vs Bijective  
+| Type | Definition |
+|------|------------|
+| One-One (Injective) | Every element of domain maps to a unique element in codomain |
+| Onto (Surjective) | Every element of codomain is mapped by at least one domain element |
+| Bijective | Both One-One and Onto |
+
+---
+
+### 🔹 POSET vs Equivalence Relation  
+| POSET (Partially Ordered Set) | Equivalence Relation |
+|-------------------------------|----------------------|
+| Reflexive, Antisymmetric, Transitive | Reflexive, Symmetric, Transitive |
+
+---
+
+## 📘 **Unit II: Regression, Correlation, Curve Fitting**
+
+### 🔹 Difference between Correlation and Regression  
+| Correlation | Regression |
+|-------------|------------|
+| Measures strength & direction of relationship | Predicts value of dependent variable based on independent variable |
+| Symmetrical | Asymmetrical |
+| $r$ (correlation coefficient) | Equation like $y = a + bx$ |
+
+---
+
+### 🔹 Pearson vs Spearman Correlation  
+| Pearson | Spearman |
+|---------|----------|
+| Measures linear correlation | Measures rank-based correlation |
+| Requires normal distribution | Can be used for ordinal data |
+
+---
+
+### 🔹 Curve Fitting vs Least Squares  
+| Curve Fitting | Least Squares |
+|---------------|----------------|
+| General process of finding curve for data | Specific method minimizing squared error |
+
+---
+
+## 📘 **Unit III: Probability & Distributions**
+
+### 🔹 Discrete vs Continuous Random Variable  
+| Discrete RV | Continuous RV |
+|-------------|---------------|
+| Countable outcomes | Infinite outcomes in a range |
+| Example: Number of heads | Example: Temperature |
+
+---
+
+### 🔹 PDF vs PMF  
+| PDF (Probability Density Function) | PMF (Probability Mass Function) |
+|-----------------------------------|---------------------------------|
+| Used for continuous RVs | Used for discrete RVs |
+| Area under curve gives probability | Direct values are probabilities |
+
+---
+
+### 🔹 Binomial vs Poisson Distribution  
+| Binomial | Poisson |
+|----------|---------|
+| Fixed number of trials | No fixed number of trials |
+| Probability of success remains same | Rare events in a fixed interval |
+
+---
+
+### 🔹 Poisson vs Exponential  
+| Poisson | Exponential |
+|---------|-------------|
+| Discrete distribution | Continuous distribution |
+| Measures number of events | Measures time between events |
+
+---
+
+## 📘 **Unit IV: Hypothesis Testing & ANOVA**
+
+### 🔹 One-tailed vs Two-tailed Test  
+| One-tailed | Two-tailed |
+|------------|------------|
+| Checks deviation in one direction | Checks deviation in both directions |
+| Critical region on one side | Critical regions on both sides |
+
+---
+
+### 🔹 Z-test vs t-test  
+| Z-test | t-test |
+|--------|--------|
+| Known population SD, large sample ($n > 30$) | Unknown SD, small sample ($n < 30$) |
+| Uses normal distribution | Uses t-distribution |
+
+---
+
+### 🔹 Parametric vs Non-parametric Test  
+| Parametric | Non-parametric |
+|------------|----------------|
+| Assumes underlying distribution | No assumption of distribution |
+| Example: Z-test, t-test | Example: Chi-square, Mann-Whitney |
+
+---
+
+### 🔹 One-way ANOVA vs Two-way ANOVA  
+| One-way ANOVA | Two-way ANOVA |
+|---------------|----------------|
+| One factor/independent variable | Two factors |
+| Tests difference between group means | Tests individual and interaction effects |
+
+---
+
