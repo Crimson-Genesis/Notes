@@ -1,4 +1,6 @@
 # Mathamatics  
+
+---
 # Unit -I  
 ### Set Theory, Relation and Functions  
 - Introduction, Basic concepts of sets, and its types, Operations on sets, Venn diagrams, Some basic set identities, Cardinal number and its problems. Cartesian products , Relations, Properties of relations, Equivalence relation, Relation matrix and the Graph of binary relation, Partition set, POSET. Hasse Diagram. Functions and its types, Composition of a functions and Inverse functions, Recursive function.  
