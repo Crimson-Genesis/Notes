@@ -1,4 +1,3 @@
-Here’s a detailed explanation of the `STATIC_URL`, `STATICFILES_DIRS`, and `STATIC_ROOT` settings in Django:
 
 ---
 

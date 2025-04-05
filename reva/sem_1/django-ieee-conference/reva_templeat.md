@@ -199,4 +199,3 @@ The homepage is the primary landing page and should provide an overview of the I
 
 ---
 
-Would you like a detailed structure for any other page?
