@@ -779,21 +779,21 @@ Y = [2, 4, 5, 4, 5]
 Find the regression line **Y = a + bX**
 
 #### Step 1: Compute the means
-\[
+$$
 \bar{X} = \frac{1+2+3+4+5}{5} = 3,\quad \bar{Y} = \frac{2+4+5+4+5}{5} = 4
-\]
+$$
 
 #### Step 2: Compute b (slope)
-\[
+$$
 b = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2}
 = \frac{(1-3)(2-4)+(2-3)(4-4)+(3-3)(5-4)+(4-3)(4-4)+(5-3)(5-4)}{(1-3)^2+(2-3)^2+(3-3)^2+(4-3)^2+(5-3)^2}
 = \frac{4}{10} = 0.4
-\]
+$$
 
 #### Step 3: Compute a (intercept)
-\[
+$$
 a = \bar{Y} - b\bar{X} = 4 - 0.4×3 = 2.8
-\]
+$$
 
 #### ✅ Regression Line:  
 **Y = 2.8 + 0.4X**
@@ -810,9 +810,9 @@ Correlation measures the strength and direction of a linear relationship between
 
 ### 🔸 Pearson’s Correlation Coefficient (r)
 
-\[
+$$
 r = \frac{n \sum XY - \sum X \sum Y}{\sqrt{(n \sum X^2 - (\sum X)^2)(n \sum Y^2 - (\sum Y)^2)}}
-\]
+$$
 
 - **r = 1**: Perfect positive correlation  
 - **r = -1**: Perfect negative correlation  
@@ -834,17 +834,17 @@ r = \frac{n \sum XY - \sum X \sum Y}{\sqrt{(n \sum X^2 - (\sum X)^2)(n \sum Y^2 
 
 #### Step 1: Calculate necessary sums
 
-\[
+$$
 \sum X = 15,\quad \sum Y = 20,\quad \sum XY = 66,\quad \sum X^2 = 55,\quad \sum Y^2 = 86,\quad n = 5
-\]
+$$
 
 #### Step 2: Apply formula
 
-\[
+$$
 r = \frac{5(66) - (15)(20)}{\sqrt{(5)(55) - (15)^2)(5)(86) - (20)^2}}
 = \frac{330 - 300}{\sqrt{(275 - 225)(430 - 400)}}
 = \frac{30}{\sqrt{50×30}} = \frac{30}{\sqrt{1500}} ≈ \frac{30}{38.73} ≈ 0.775
-\]
+$$
 
 #### ✅ Interpretation:
 There is a **strong positive correlation** between X and Y.
@@ -857,9 +857,9 @@ There is a **strong positive correlation** between X and Y.
 ### 🔸 Definition:
 Used to measure the correlation between **ranks** of two variables (especially when data is not normally distributed or not linear).
 
-\[
+$$
 \rho = 1 - \frac{6 \sum d^2}{n(n^2 - 1)}
-\]
+$$
 
 Where:  
 - $d$ = difference between ranks  
@@ -889,15 +889,15 @@ Where:
 | 90  | 1       | 70  | 4       | -3  | 9   |
 | 50  | 5       | 60  | 5       | 0   | 0   |
 
-\[
+$$
 \sum d^2 = 14,\quad n = 5
-\]
+$$
 
 #### Step 2: Apply formula
 
-\[
+$$
 \rho = 1 - \frac{6 \times 14}{5(5^2 - 1)} = 1 - \frac{84}{120} = 1 - 0.7 = 0.3
-\]
+$$
 
 #### ✅ Interpretation:
 There is a **low positive correlation** between X and Y ranks.
@@ -918,9 +918,9 @@ Multiple correlation measures the strength of the relationship between **one dep
 ### 🔹 Formula (for three variables):
 If we have variables $X_1$, $X_2$, and $Y$, then:
 
-\[
+$$
 R_{Y.X_1X_2} = \sqrt{ \frac{r_{Y,X_1}^2 + r_{Y,X_2}^2 - 2r_{Y,X_1}r_{Y,X_2}r_{X_1,X_2}}{1 - r_{X_1,X_2}^2} }
-\]
+$$
 
 Where:  
 - $r_{Y,X_1}$ = correlation between $Y$ and $X_1$  
@@ -938,13 +938,13 @@ Let’s say we are given the following correlation coefficients:
 
 Substitute into the formula:
 
-\[
+$$
 R_{Y.X_1X_2} = \sqrt{ \frac{(0.8)^2 + (0.6)^2 - 2(0.8)(0.6)(0.5)}{1 - (0.5)^2} }
-\]
+$$
 
-\[
+$$
 = \sqrt{ \frac{0.64 + 0.36 - 0.48}{1 - 0.25} } = \sqrt{ \frac{0.52}{0.75} } = \sqrt{0.6933} ≈ 0.8326
-\]
+$$
 
 ---
 
@@ -963,9 +963,9 @@ The **least squares method** is a standard approach in regression analysis to **
 
 ### 🔹 Line of Best Fit (for Simple Linear Regression):
 
-\[
+$$
 y = a + bx
-\]
+$$
 
 Where:  
 - \( y \): dependent variable  
@@ -977,13 +977,13 @@ Where:
 
 ### 🔹 Formulas to Find \( a \) and \( b \):
 
-\[
+$$
 b = \frac{n \sum xy - \sum x \sum y}{n \sum x^2 - (\sum x)^2}
-\]
+$$
 
-\[
+$$
 a = \frac{\sum y - b \sum x}{n}
-\]
+$$
 
 ---
 
@@ -1001,35 +1001,35 @@ Fit a line using the least square method for the data:
 
 #### Step 1: Calculate required sums
 
-\[
+$$
 n = 5, \quad \sum x = 15, \quad \sum y = 20
-\]
+$$
 
-\[
+$$
 \sum x^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55
-\]
+$$
 
-\[
+$$
 \sum xy = (1)(2) + (2)(3) + (3)(5) + (4)(4) + (5)(6) = 2 + 6 + 15 + 16 + 30 = 69
-\]
+$$
 
 #### Step 2: Calculate slope (b)
 
-\[
+$$
 b = \frac{5(69) - 15(20)}{5(55) - (15)^2} = \frac{345 - 300}{275 - 225} = \frac{45}{50} = 0.9
-\]
+$$
 
 #### Step 3: Calculate intercept (a)
 
-\[
+$$
 a = \frac{20 - 0.9(15)}{5} = \frac{20 - 13.5}{5} = \frac{6.5}{5} = 1.3
-\]
+$$
 
 #### Final equation of best fit line:
 
-\[
+$$
 y = 1.3 + 0.9x
-\]
+$$
 
 ---
 
@@ -1074,16 +1074,16 @@ Fit an exponential curve of the form \( y = ab^x \) to the following data:
 
 ### 🔹 Step 1: Take logarithm on both sides:
 
-\[
+$$
 \log y = \log a + x \log b
-\]
+$$
 
 Let \( Y = \log y, A = \log a, B = \log b \)
 
 Now we have:  
-\[
+$$
 Y = A + Bx \quad \text{(a linear equation)}
-\]
+$$
 
 So now fit a straight line to the transformed data:
 
@@ -1101,22 +1101,22 @@ Compute:
 
 Now apply least square formula:
 
-\[
+$$
 B = \frac{n\sum xY - \sum x \sum Y}{n\sum x^2 - (\sum x)^2} = \frac{3(6.078) - 6(2.603)}{3(14) - 36} = \frac{18.234 - 15.618}{42 - 36} = \frac{2.616}{6} = 0.436
-\]
+$$
 
-\[
+$$
 A = \frac{\sum Y - B\sum x}{n} = \frac{2.603 - 0.436 \cdot 6}{3} = \frac{2.603 - 2.616}{3} = -0.0043
-\]
+$$
 
 So:
 - \( \log a = A = -0.0043 \Rightarrow a = 10^{-0.0043} \approx 0.990 \)
 - \( \log b = B = 0.436 \Rightarrow b = 10^{0.436} \approx 2.73 \)
 
 Final curve:
-\[
+$$
 y = 0.990 \cdot (2.73)^x
-\]
+$$
 
 ---
 
@@ -1145,30 +1145,30 @@ Measures how well the fitted curve matches the actual data.
 
 Probability is the measure of the likelihood of an event occurring. It lies between 0 and 1.
 
-\[
+$$
 P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}}
-\]
+$$
 
 ---
 
 ### 🔹 Properties of Probability:
 
 1. **Non-negativity**:  
-   \[
+   $$
    0 \leq P(E) \leq 1
-   \]
+   $$
 2. **Normalization**:  
-   \[
+   $$
    P(S) = 1 \quad \text{(S is the sample space)}
-   \]
+   $$
 3. **Additivity**: For mutually exclusive events \( A \) and \( B \),  
-   \[
+   $$
    P(A \cup B) = P(A) + P(B)
-   \]
+   $$
 4. **Complementary Rule**:  
-   \[
+   $$
    P(\bar{A}) = 1 - P(A)
-   \]
+   $$
 
 ---
 
@@ -1185,14 +1185,14 @@ A card is drawn from a well-shuffled deck of 52 cards. What is the probability t
 
 1. Total outcomes = 52  
    - Favourable outcomes for a heart = 13  
-   \[
+   $$
    P(\text{Heart}) = \frac{13}{52} = \frac{1}{4}
-   \]
+   $$
 
 2. Favourable outcomes for a queen = 4  
-   \[
+   $$
    P(\text{Queen}) = \frac{4}{52} = \frac{1}{13}
-   \]
+   $$
 
 ---
 
@@ -1252,9 +1252,9 @@ A **two-dimensional random variable** is a pair \( (X, Y) \) of random variables
 
 Let \( X \) and \( Y \) be discrete random variables. The **joint probability function** is:
 
-\[
+$$
 P(X = x_i, Y = y_j) = p_{ij}
-\]
+$$
 
 Where:
 
@@ -1266,13 +1266,13 @@ Where:
 ### 🔹 Marginal Probability Function
 
 - For \( X \):  
-  \[
+  $$
   P(X = x_i) = \sum_j P(X = x_i, Y = y_j)
-  \]
+  $$
 - For \( Y \):  
-  \[
+  $$
   P(Y = y_j) = \sum_i P(X = x_i, Y = y_j)
-  \]
+  $$
 
 ---
 
@@ -1314,9 +1314,9 @@ A **binomial distribution** models the number of **successes** in a fixed number
 
 If \( X \sim B(n, p) \), then:
 
-\[
+$$
 P(X = r) = \binom{n}{r} p^r (1-p)^{n-r}
-\]
+$$
 
 Where:  
 - \( n \) = number of trials  
@@ -1342,9 +1342,9 @@ Here,
 - \( p = 0.5 \) (since the coin is fair)  
 - \( r = 3 \)
 
-\[
+$$
 P(X = 3) = \binom{5}{3} (0.5)^3 (0.5)^2 = 10 \times 0.125 \times 0.25 = 0.3125
-\]
+$$
 
 📌 **Answer**: \( P(X = 3) = 0.3125 \)
 
@@ -1364,9 +1364,9 @@ The **Poisson distribution** models the number of times an event occurs in a **f
 
 If \( X \sim \text{Poisson}(\lambda) \), then:
 
-\[
+$$
 P(X = r) = \frac{e^{-\lambda} \lambda^r}{r!}
-\]
+$$
 
 Where:  
 - \( \lambda \) = average number of occurrences (rate)  
@@ -1390,15 +1390,15 @@ Here,
 - \( \lambda = 6 \),  
 - \( r = 4 \)
 
-\[
+$$
 P(X = 4) = \frac{e^{-6} \cdot 6^4}{4!} = \frac{e^{-6} \cdot 1296}{24}
-\]
+$$
 
 Using \( e^{-6} \approx 0.00247875 \):
 
-\[
+$$
 P(X = 4) \approx \frac{0.00247875 \cdot 1296}{24} \approx \frac{3.211}{24} \approx 0.1338
-\]
+$$
 
 📌 **Answer**: \( P(X = 4) \approx 0.1338 \)
 
@@ -1423,13 +1423,13 @@ There are two types:
 
 If a random variable \( X \sim U(a, b) \), then:
 
-\[
+$$
 f(x) = 
 \begin{cases}
 \frac{1}{b-a} & \text{for } a \le x \le b \\
 0 & \text{otherwise}
 \end{cases}
-\]
+$$
 
 ---
 
@@ -1447,9 +1447,9 @@ A bus arrives every 20 minutes. A person arrives at a random time. What is the p
 **Solution**:  
 Let \( X \sim U(0, 20) \), and we want \( P(X < 5) \):
 
-\[
+$$
 P(X < 5) = \int_0^5 \frac{1}{20} dx = \frac{5}{20} = 0.25
-\]
+$$
 
 📌 **Answer**: \( P(X < 5) = 0.25 \)
 
@@ -1469,13 +1469,13 @@ It is **memoryless**, meaning the probability of an event occurring in the futur
 
 ### 🔹 Probability Density Function (PDF)
 
-\[
+$$
 f(x; \lambda) = 
 \begin{cases}
 \lambda e^{-\lambda x} & x \ge 0 \\
 0 & x < 0
 \end{cases}
-\]
+$$
 
 Where:
 - \( \lambda > 0 \): rate parameter (events per unit time)
@@ -1502,9 +1502,9 @@ If the average number of phone calls at a call center is **5 per hour**, what is
 - Rate: \( \lambda = 5 \)
 - Use cumulative probability:
 
-\[
+$$
 P(X \le \frac{1}{6}) = 1 - e^{-\lambda x} = 1 - e^{-5 \cdot \frac{1}{6}} = 1 - e^{-\frac{5}{6}} \approx 1 - 0.434 = 0.566
-\]
+$$
 
 📌 **Answer**: ~56.6% chance the next call comes within 10 minutes.
 
@@ -1522,9 +1522,9 @@ The **Normal distribution** (or Gaussian distribution) is a continuous probabili
 
 ### 🔹 Probability Density Function (PDF)
 
-\[
+$$
 f(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \cdot e^{-\frac{(x - \mu)^2}{2\sigma^2}}
-\]
+$$
 
 Where:
 - \( \mu \) = Mean
@@ -1548,9 +1548,9 @@ If \( \mu = 0 \) and \( \sigma = 1 \), then it's called the **Standard Normal Di
 
 Any normal distribution can be **standardized** using:
 
-\[
+$$
 Z = \frac{X - \mu}{\sigma}
-\]
+$$
 
 ---
 
@@ -1568,16 +1568,16 @@ Given:
 - \( X = 185 \)
 
 Step 1: Convert to Z-score  
-\[
+$$
 Z = \frac{185 - 170}{10} = \frac{15}{10} = 1.5
-\]
+$$
 
 Step 2: Find \( P(Z > 1.5) \)
 
 Using Z-table:  
-\[
+$$
 P(Z < 1.5) = 0.9332 \Rightarrow P(Z > 1.5) = 1 - 0.9332 = 0.0668
-\]
+$$
 
 📌 **Answer**: There's a **6.68%** chance that a student is taller than 185 cm.
 
@@ -1728,12 +1728,12 @@ Hypothesis testing is a **statistical method** used to make decisions about popu
 
 ### 🔸 Test Statistic (Z or t)
 
-\[
+$$
 Z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}} \quad \text{(for known population std. dev.)}
-\]  
-\[
+$$
+$$
 t = \frac{\bar{x} - \mu}{s / \sqrt{n}} \quad \text{(when population std. dev. is unknown)}
-\]
+$$
 
 ---
 
@@ -1748,9 +1748,9 @@ A machine fills juice bottles. The company claims it fills **500 ml** on average
 - n = 36  
 - α = 0.05 (two-tailed) ⇒ critical Z = ±1.96
 
-\[
+$$
 Z = \frac{492 - 500}{15/\sqrt{36}} = \frac{-8}{2.5} = -3.2
-\]
+$$
 
 #### ➤ Since -3.2 < -1.96 ⇒ **Reject H₀**
 
@@ -1768,13 +1768,13 @@ Used to determine if the **sample mean** significantly differs from the **popula
 
 #### ✅ Formula:
 
-\[
+$$
 Z = \frac{\bar{x} - \mu}{\sigma / \sqrt{n}} \quad \text{(if } \sigma \text{ is known)}
-\]
+$$
 or  
-\[
+$$
 t = \frac{\bar{x} - \mu}{s / \sqrt{n}} \quad \text{(if } \sigma \text{ is unknown)}
-\]
+$$
 
 ---
 
@@ -1782,9 +1782,9 @@ t = \frac{\bar{x} - \mu}{s / \sqrt{n}} \quad \text{(if } \sigma \text{ is unknow
 
 A sample of 64 students has a mean score of 72. The population mean is 75 with σ = 8. Test if the sample differs at 5% significance.
 
-\[
+$$
 Z = \frac{72 - 75}{8/\sqrt{64}} = \frac{-3}{1} = -3
-\]
+$$
 
 Critical Z (two-tailed at α = 0.05) = ±1.96
 
@@ -1802,9 +1802,9 @@ Checks if the means of **two different populations** are significantly different
 
 #### ✅ Formula (Z-test):
 
-\[
+$$
 Z = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}
-\]
+$$
 
 ---
 
@@ -1813,9 +1813,9 @@ Z = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2
 - Sample 1: n₁ = 50, x̄₁ = 70, σ₁ = 8  
 - Sample 2: n₂ = 60, x̄₂ = 65, σ₂ = 6  
 
-\[
+$$
 Z = \frac{70 - 65}{\sqrt{\frac{8^2}{50} + \frac{6^2}{60}}} = \frac{5}{\sqrt{1.28 + 0.6}} = \frac{5}{\sqrt{1.88}} ≈ \frac{5}{1.372} ≈ 3.64
-\]
+$$
 
 Critical Z = ±1.96 ⇒ **Reject H₀**
 
@@ -1840,14 +1840,14 @@ Common confidence levels:
 ### ✅ Formula for Confidence Interval of Mean:
 
 If population standard deviation **σ is known**:
-\[
+$$
 \text{CI} = \bar{x} \pm Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}
-\]
+$$
 
 If **σ is unknown**, and sample size is small → use **t-distribution**:
-\[
+$$
 \text{CI} = \bar{x} \pm t_{\alpha/2, \, df} \cdot \frac{s}{\sqrt{n}}
-\]
+$$
 
 Where:
 - $\bar{x}$ = sample mean  
@@ -1868,9 +1868,9 @@ Where:
 
 A sample of 100 items has mean 60, and population σ = 10. Find 95% CI for the mean.
 
-\[
+$$
 CI = 60 \pm 1.96 \cdot \frac{10}{\sqrt{100}} = 60 \pm 1.96 \cdot 1 = 60 \pm 1.96
-\]
+$$
 
 📌 **Answer**: (58.04, 61.96)
 
@@ -1882,9 +1882,9 @@ A sample of 10 values has mean 20, and standard deviation 4. Find 99% CI.
 
 Degrees of freedom = 9, from t-table: $t_{0.005, 9} ≈ 3.25$
 
-\[
+$$
 CI = 20 \pm 3.25 \cdot \frac{4}{\sqrt{10}} ≈ 20 \pm 3.25 \cdot 1.264 = 20 \pm 4.113
-\]
+$$
 
 📌 **Answer**: (15.887, 24.113)
 
