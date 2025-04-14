@@ -2168,23 +2168,35 @@ Let’s say:
 
 ### 🔹 Correlation  
 - **Karl Pearson’s r**:  
-  $$ r = \frac{n\sum xy - \sum x \sum y}{\sqrt{[n\sum x^2 - (\sum x)^2][n\sum y^2 - (\sum y)^2]}} $$  
+  $$
+  r = \frac{n\sum xy - \sum x \sum y}{\sqrt{[n\sum x^2 - (\sum x)^2][n\sum y^2 - (\sum y)^2]}}
+  $$
 - **Spearman Rank Correlation**:  
-  $$ r_s = 1 - \frac{6\sum d^2}{n(n^2 - 1)} $$  
+  $$
+  r_s = 1 - \frac{6\sum d^2}{n(n^2 - 1)}
+  $$
   Where $d$ = difference in ranks  
 
 ### 🔹 Regression Equations  
 - $y = a + bx$  
 - Slope:  
-  $$ b = \frac{n\sum xy - \sum x \sum y}{n\sum x^2 - (\sum x)^2} $$  
+  $$
+  b = \frac{n\sum xy - \sum x \sum y}{n\sum x^2 - (\sum x)^2}
+  $$
 - Intercept:  
-  $$ a = \bar{y} - b\bar{x} $$  
+  $$
+  a = \bar{y} - b\bar{x} 
+  $$  
 
 ### 🔹 Least Squares & Curve Fitting  
 - **Straight Line Fit**: $y = a + bx$  
 - **Normal Equations**:  
-  $$ \sum y = na + b\sum x $$  
-  $$ \sum xy = a\sum x + b\sum x^2 $$  
+  $$
+  \sum y = na + b\sum x 
+  $$  
+  $$
+  \sum xy = a\sum x + b\sum x^2 
+  $$  
 
 ---
 
@@ -2195,7 +2207,9 @@ Let’s say:
 - $P(A \cup B) = P(A) + P(B) - P(A \cap B)$  
 - Conditional: $P(A|B) = \frac{P(A \cap B)}{P(B)}$  
 - Bayes’ Theorem:  
-  $$ P(A_i|B) = \frac{P(A_i)P(B|A_i)}{\sum_{j} P(A_j)P(B|A_j)} $$  
+  $$
+  P(A_i|B) = \frac{P(A_i)P(B|A_i)}{\sum_{j} P(A_j)P(B|A_j)} 
+  $$  
 
 ### 🔹 Expected Value and Variance  
 - $E(X) = \sum x \cdot P(x)$  
@@ -2203,26 +2217,38 @@ Let’s say:
 
 ### 🔹 Discrete Distributions  
 - **Binomial**:  
-  $$ P(X = r) = \binom{n}{r} p^r q^{n-r} $$  
+  $$
+  P(X = r) = \binom{n}{r} p^r q^{n-r} 
+  $$  
   Mean: $np$, Variance: $npq$  
 
 - **Poisson**:  
-  $$ P(X = r) = \frac{e^{-m}m^r}{r!} $$  
+  $$
+  P(X = r) = \frac{e^{-m}m^r}{r!} 
+  $$  
   Mean = Variance = $m$
 
 ### 🔹 Continuous Distributions  
 - **Uniform**:  
-  $$ f(x) = \frac{1}{b - a}, \quad a \le x \le b $$  
+  $$
+  f(x) = \frac{1}{b - a}, \quad a \le x \le b 
+  $$  
   Mean = $\frac{a + b}{2}$, Variance = $\frac{(b - a)^2}{12}$  
 
 - **Exponential**:  
-  $$ f(x) = \lambda e^{-\lambda x}, \quad x \ge 0 $$  
+  $$
+  f(x) = \lambda e^{-\lambda x}, \quad x \ge 0 
+  $$  
   Mean = $\frac{1}{\lambda}$, Variance = $\frac{1}{\lambda^2}$  
 
 - **Normal**:  
-  $$ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x - \mu)^2}{2\sigma^2}} $$  
+  $$
+  f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x - \mu)^2}{2\sigma^2}} 
+  $$  
   Z-score:  
-  $$ Z = \frac{X - \mu}{\sigma} $$  
+  $$
+  Z = \frac{X - \mu}{\sigma} 
+  $$  
 
 ---
 
@@ -2230,11 +2256,17 @@ Let’s say:
 
 ### 🔹 Sampling and Testing  
 - **Z-test (Large Samples)**:  
-  $$ Z = \frac{\bar{x} - \mu}{\sigma/\sqrt{n}} $$  
+  $$
+  Z = \frac{\bar{x} - \mu}{\sigma/\sqrt{n}} 
+  $$  
 - **t-test (Small Samples)**:  
-  $$ t = \frac{\bar{x} - \mu}{s/\sqrt{n}} $$  
+  $$
+  t = \frac{\bar{x} - \mu}{s/\sqrt{n}} 
+  $$  
 - **Two Sample t-test**:  
-  $$ t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} $$  
+  $$
+  t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} 
+  $$  
 
 ### 🔹 Confidence Interval  
 - 95% CI: $\bar{x} \pm 1.96 \cdot \frac{\sigma}{\sqrt{n}}$  
