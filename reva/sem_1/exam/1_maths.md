@@ -824,13 +824,13 @@ r = \frac{n \sum XY - \sum X \sum Y}{\sqrt{(n \sum X^2 - (\sum X)^2)(n \sum Y^2 
 
 **Given:**
 
-| X | Y |
-|---|---|
-| 1 | 2 |
-| 2 | 4 |
-| 3 | 5 |
-| 4 | 4 |
-| 5 | 5 |
+| X   | Y   |
+| --- | --- |
+| 1   | 2   |
+| 2   | 4   |
+| 3   | 5   |
+| 4   | 4   |
+| 5   | 5   |
 
 #### Step 1: Calculate necessary sums
 
@@ -871,23 +871,23 @@ Where:
 
 **Given:**
 
-| X | Y |
-|---|---|
-| 80 | 100 |
-| 60 | 90  |
-| 70 | 80  |
-| 90 | 70  |
-| 50 | 60  |
+| X   | Y   |
+| --- | --- |
+| 80  | 100 |
+| 60  | 90  |
+| 70  | 80  |
+| 90  | 70  |
+| 50  | 60  |
 
 #### Step 1: Assign ranks to X and Y (highest value = rank 1)
 
-| X | Rank(X) | Y   | Rank(Y) | d  | d² |
-|---|---------|-----|---------|----|----|
-| 80 | 2       | 100 | 1       | 1  | 1  |
-| 60 | 4       | 90  | 2       | 2  | 4  |
-| 70 | 3       | 80  | 3       | 0  | 0  |
-| 90 | 1       | 70  | 4       | -3 | 9  |
-| 50 | 5       | 60  | 5       | 0  | 0  |
+| X   | Rank(X) | Y   | Rank(Y) | d   | d²  |
+| --- | ------- | --- | ------- | --- | --- |
+| 80  | 2       | 100 | 1       | 1   | 1   |
+| 60  | 4       | 90  | 2       | 2   | 4   |
+| 70  | 3       | 80  | 3       | 0   | 0   |
+| 90  | 1       | 70  | 4       | -3  | 9   |
+| 50  | 5       | 60  | 5       | 0   | 0   |
 
 \[
 \sum d^2 = 14,\quad n = 5
@@ -991,13 +991,13 @@ a = \frac{\sum y - b \sum x}{n}
 
 Fit a line using the least square method for the data:
 
-| x | y |
-|---|---|
-| 1 | 2 |
-| 2 | 3 |
-| 3 | 5 |
-| 4 | 4 |
-| 5 | 6 |
+| x   | y   |
+| --- | --- |
+| 1   | 2   |
+| 2   | 3   |
+| 3   | 5   |
+| 4   | 4   |
+| 5   | 6   |
 
 #### Step 1: Calculate required sums
 
@@ -2245,7 +2245,9 @@ Let’s say:
 - SSB = Sum of Squares Between Groups  
 - SSW = Sum of Squares Within Groups  
 -  
-  $$ F = \frac{\text{MSB}}{\text{MSW}} = \frac{\text{SSB}/(k-1)}{\text{SSW}/(N-k)} $$  
+  $$
+  F = \frac{\text{MSB}}{\text{MSW}} = \frac{\text{SSB}/(k-1)}{\text{SSW}/(N-k)}
+  $$
 
 ### 🔹 Two-Way ANOVA  
 Similar to One-Way but includes interaction:
