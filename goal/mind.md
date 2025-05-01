@@ -167,3 +167,4 @@ Since you forget names/syntax, use:
 - You’ll be **top 1%** in **4–5 years**
 - You could become **#1**, *or among the elite few who define the field*, if you go all in for **7–10 years**, building systems that change how others work.
 
+
