@@ -295,9 +295,7 @@ Example:
 * Each input example has a corresponding correct output (label).
 * The goal is to learn a mapping function from input $X$ to output $Y$:
 
-  $$
-  f: X \rightarrow Y
-  $$
+  $$ f: X \rightarrow Y $$
 
 ---
 
@@ -645,9 +643,7 @@ Example:
 
 * Learn an **optimal policy** $\pi^*$ that maximizes the **expected cumulative reward** over time:
 
-$$
-\pi^* = \arg\max_{\pi} \mathbb{E}[R_t]
-$$
+$$ \pi^* = \arg\max_{\pi} \mathbb{E}[R_t] $$
 
 where $R_t$ is the total reward from time step $t$ onward.
 
