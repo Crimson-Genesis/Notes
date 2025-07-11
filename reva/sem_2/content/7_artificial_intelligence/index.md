@@ -18,9 +18,9 @@ and Minimalist Reasoning.
 Planning: The Blocks World, Components of a Planning System, Goal Stack Planning, Nonlinear Planning Using Constraint Posting,
 Hierarchial Planning, Other Planning Techniques.
 
-Learning: Rote Learning, learning by Taking Advice, Learning in Problem - soving, Learning from Examples: Induction,
-Explanation-based learning, Discovery, Analogy, Formal Learning Throty.
-Learning in Neural and Belieg Networks How the Brain Workds, Neural Networks, perceptions.
+Learning: Rote Learning, learning by Taking Advice, Learning in Problem - solving, Learning from Examples: Induction,
+Explanation-based learning, Discovery, Analogy, Formal Learning theory.
+Learning in Neural and Belieg Networks, How the Brain Works, Neural Networks, perceptions.
 Robotics: Intorduction, Robot Hardware, Robotic Perception, Robotic Sogteare Architectures, Application Domains.
 
 ## Unit - 4 -> Fuzzy Logic Systems, Expert Systems, Natural Language Processing
