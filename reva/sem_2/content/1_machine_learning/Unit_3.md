@@ -2,1091 +2,1297 @@
 Introduction, tupes and challenges, preprocessing and scaling of dataset, Dimensinality reduction, feature extraction, Principal Compinet Analysis (PCA), k-means, Agglomerative and DBSCAN clustering algorithms.
 
 ## Content ->
-### **Unsupervised Learning – Introduction**
+### **Unit 3 – Unsupervised Learning: Introduction**
 
 ---
 
-#### 1. **Definition**
+#### **1. Definition of Unsupervised Learning**
 
-* **Unsupervised Learning** is a type of machine learning where:
+* A type of machine learning where:
 
-  * **No labeled data** is provided.
-  * The algorithm tries to **discover patterns**, **structures**, or **relationships** in the data on its own.
-  * Output variables (i.e., target values) are **not known**.
-
----
-
-#### 2. **Goal**
-
-* To **group, cluster, compress, or describe** data without pre-defined labels.
-* Find **hidden structures**, **density patterns**, or **data distributions** in unlabeled datasets.
+  * The model is trained on **unlabeled data** (no output variable).
+  * The goal is to **discover hidden patterns, groupings, or structures** in the data.
+  * No supervision is provided during training (i.e., no “correct answers”).
 
 ---
 
-#### 3. **Key Differences from Supervised Learning**
+#### **2. Key Objectives**
 
-| Aspect          | Supervised Learning               | Unsupervised Learning            |
-| --------------- | --------------------------------- | -------------------------------- |
-| Labeled data    | Required                          | Not required                     |
-| Output variable | Known (classification/regression) | Not known (clustering, patterns) |
-| Example task    | Spam detection                    | Customer segmentation            |
-| Objective       | Predict outcome                   | Discover structure               |
-
----
-
-#### 4. **Typical Applications**
-
-* **Clustering**:
-
-  * Grouping similar items together
-* **Dimensionality Reduction**:
-
-  * Compressing data while retaining meaningful variation
-* **Anomaly Detection**:
-
-  * Finding rare or unusual patterns
-* **Association Rule Mining**:
-
-  * Market basket analysis (e.g., “people who bought X also bought Y”)
-* **Feature Learning / Extraction**:
-
-  * Discovering new informative representations of data
+* **Cluster** similar data points together (e.g., customer segmentation).
+* **Reduce dimensionality** while preserving key features (e.g., PCA).
+* **Discover latent variables** (hidden causes or patterns).
+* **Detect anomalies** (e.g., fraud detection).
+* **Find associations** (e.g., market basket analysis).
 
 ---
 
-#### 5. **Examples of Unsupervised Learning Tasks**
+#### **3. Main Characteristics**
 
-| Task                     | Example                                 |
-| ------------------------ | --------------------------------------- |
-| Customer segmentation    | Grouping users based on buying behavior |
-| Document clustering      | Grouping similar news articles          |
-| Image compression        | Reducing image size without labels      |
-| Gene expression analysis | Finding co-expressed gene clusters      |
+* **No ground truth (no labels)** is used during training.
+* Learning is **data-driven and exploratory**.
+* Often used for **preprocessing or exploratory data analysis (EDA)**.
+* Models try to learn the **underlying structure** of the data.
 
 ---
 
-#### 6. **Common Unsupervised Learning Techniques**
+#### **4. Example Problem**
 
-| Technique                                   | Purpose                                |
-| ------------------------------------------- | -------------------------------------- |
-| **K-Means**                                 | Partition data into clusters           |
-| **Hierarchical Clustering (Agglomerative)** | Build nested clusters                  |
-| **DBSCAN**                                  | Density-based clustering               |
-| **PCA**                                     | Dimensionality reduction               |
-| **t-SNE / UMAP**                            | Visualization of high-dimensional data |
+* Given the following data (without labels):
 
----
+  ```python
+  import numpy as np
+  X = np.array([[1.0, 2.0],
+                [1.2, 1.8],
+                [5.0, 8.0],
+                [6.0, 9.0]])
+  ```
 
-#### 7. **Nature of Output**
-
-* Outputs are not labels but **group assignments**, **embeddings**, or **clusters**.
-* Often require **human interpretation** to label or understand the discovered groups.
-
----
-### **Types of Unsupervised Learning**
+  A clustering algorithm like K-means can group the first two points and the last two into separate clusters based on distance.
 
 ---
 
-Unsupervised learning algorithms can be broadly classified based on **what they aim to do** with the data. The main types include:
+#### **5. Common Unsupervised Learning Algorithms**
+
+* **Clustering**
+
+  * K-Means
+  * DBSCAN
+  * Agglomerative Hierarchical Clustering
+* **Dimensionality Reduction**
+
+  * PCA (Principal Component Analysis)
+  * t-SNE
+  * Autoencoders
+* **Association Rule Mining**
+
+  * Apriori algorithm
+  * FP-growth
 
 ---
 
-### **1. Clustering**
-
-* **Definition**: Grouping similar data points into clusters based on similarity or distance.
-* **Goal**: Points in the same cluster are more similar to each other than to those in other clusters.
-
-#### Examples:
-
-* **K-Means Clustering**
-* **Hierarchical Clustering (Agglomerative/Divisive)**
-* **DBSCAN (Density-Based Spatial Clustering)**
-
-#### Applications:
+#### **6. Applications**
 
 * Customer segmentation
-* Document categorization
-* Social network analysis
+* Anomaly detection
+* Data compression
+* Document clustering
+* Image segmentation
+* Pattern recognition
 
 ---
 
-### **2. Dimensionality Reduction**
+#### **7. Comparison with Supervised Learning**
 
-* **Definition**: Reducing the number of variables/features in a dataset while preserving the structure or important information.
-* **Goal**: Simplify data, remove noise, improve visualization and speed up training.
-
-#### Examples:
-
-* **PCA (Principal Component Analysis)**
-* **t-SNE (t-distributed Stochastic Neighbor Embedding)**
-* **UMAP (Uniform Manifold Approximation and Projection)**
-
-#### Applications:
-
-* Visualization of high-dimensional data
-* Feature compression
-* Noise reduction
+| Feature           | Supervised Learning  | Unsupervised Learning |
+| ----------------- | -------------------- | --------------------- |
+| Input Data        | Labeled              | Unlabeled             |
+| Output            | Prediction           | Pattern discovery     |
+| Common Algorithms | SVM, Decision Tree   | K-means, PCA, DBSCAN  |
+| Example           | Email spam detection | Customer segmentation |
 
 ---
 
-### **3. Association Rule Learning**
+#### **8. Visualization Example with PCA + KMeans**
 
-* **Definition**: Discovering **interesting relationships** or **co-occurrences** among variables in large datasets.
-* **Goal**: Identify rules like "If A happens, B is likely to happen."
+```python
+from sklearn.datasets import load_iris
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
 
-#### Examples:
+# Load dataset
+data = load_iris()
+X = data.data
 
-* **Apriori Algorithm**
-* **ECLAT Algorithm**
+# Dimensionality Reduction using PCA
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
 
-#### Applications:
+# Clustering using KMeans
+kmeans = KMeans(n_clusters=3)
+y_kmeans = kmeans.fit_predict(X_pca)
 
-* Market basket analysis (e.g., Amazon or supermarket recommendation systems)
-* Medical diagnosis rules
-* Web usage mining
-
----
-
-### **4. Anomaly Detection (Outlier Detection)**
-
-* **Definition**: Identifying **rare**, **unusual**, or **abnormal data points** that deviate from the majority.
-* **Goal**: Detect frauds, faults, or any kind of irregular behavior.
-
-#### Examples:
-
-* Statistical methods (e.g., Z-score, IQR)
-* Clustering-based outlier detection
-* Autoencoders (unsupervised deep learning)
-
-#### Applications:
-
-* Fraud detection in finance
-* Network intrusion detection
-* Medical diagnosis (e.g., tumor detection)
+# Plotting clusters
+plt.scatter(X_pca[:, 0], X_pca[:, 1], c=y_kmeans, cmap='viridis')
+plt.title("K-Means Clustering after PCA")
+plt.xlabel("PCA1")
+plt.ylabel("PCA2")
+plt.show()
+```
 
 ---
 
-### **5. Generative Models**
+#### **9. Limitations**
 
-* **Definition**: Learn the **underlying distribution** of the data and can generate **new, similar data**.
-* **Goal**: Generate realistic synthetic data.
-
-#### Examples:
-
-* **Autoencoders**
-* **GANs (Generative Adversarial Networks)**
-* **Restricted Boltzmann Machines**
-
-#### Applications:
-
-* Image synthesis
-* Text generation
-* Data augmentation
+* Hard to evaluate model accuracy due to no labels.
+* May discover meaningless patterns if data is noisy.
+* Sensitive to data scaling and initial parameters.
 
 ---
 
-### **Challenges in Unsupervised Learning**
+#### **10. Summary**
+
+* Unsupervised learning explores **unknown structure** in unlabeled data.
+* Often used for **clustering**, **compression**, and **pattern discovery**.
+* **Essential for exploratory data analysis and representation learning**.
 
 ---
 
-#### 1. **Lack of Ground Truth**
-
-* **No labeled data** makes it hard to **evaluate performance**.
-* Unlike supervised learning, we can’t directly compare predictions to known outputs.
+## **1. Types of Unsupervised Learning**
 
 ---
 
-#### 2. **Choosing the Right Algorithm**
+### **1.1. Clustering**
 
-* Many unsupervised algorithms exist (e.g., k-means, DBSCAN, PCA), but:
+* **Objective**: Group data points into clusters where points in the same cluster are similar.
+* **Algorithms**:
 
-  * **No universal best** algorithm
-  * The effectiveness of an algorithm depends heavily on **data structure**, **scale**, and **distribution**
+  * **K-Means**
+  * **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)**
+  * **Agglomerative Hierarchical Clustering**
+* **Use cases**:
 
----
-
-#### 3. **Determining the Number of Clusters or Components**
-
-* Most clustering algorithms (e.g., k-means) require the number of clusters as input.
-* **No prior knowledge** of how many groups/classes exist.
-* Techniques like **Elbow Method**, **Silhouette Score** help but are not always definitive.
-
----
-
-#### 4. **High Dimensionality**
-
-* Real-world data often has **many features** (dimensions), making it:
-
-  * Hard to visualize
-  * Prone to **noise** and **irrelevant features**
-* Known as the **curse of dimensionality**.
+  * Customer segmentation
+  * Document grouping
+  * Image segmentation
 
 ---
 
-#### 5. **Interpretability of Results**
+### **1.2. Dimensionality Reduction**
 
-* Clusters or components may not correspond to meaningful categories.
-* It’s hard to **explain** what a discovered cluster actually represents without labels.
+* **Objective**: Reduce the number of input variables or features while preserving the information.
+* **Algorithms**:
 
----
+  * **PCA (Principal Component Analysis)**
+  * **t-SNE (t-distributed Stochastic Neighbor Embedding)**
+  * **Autoencoders (Neural Networks)**
+* **Use cases**:
 
-#### 6. **Scalability and Computational Cost**
-
-* Some methods (e.g., hierarchical clustering) are **computationally expensive**.
-* Difficult to scale to **very large datasets** without optimization.
-
----
-
-#### 7. **Sensitivity to Parameters and Initialization**
-
-* Results can vary based on:
-
-  * **Initial centroid positions** (in k-means)
-  * **Epsilon and MinPts** in DBSCAN
-* **Random initialization** can lead to inconsistent clustering.
+  * Data visualization
+  * Noise reduction
+  * Feature extraction for supervised models
 
 ---
 
-#### 8. **Handling Noise and Outliers**
+### **1.3. Anomaly Detection**
 
-* Algorithms like k-means are sensitive to **outliers**, which can distort the cluster centroids.
-* Need robust methods like **DBSCAN** or **median-based** clustering.
+* **Objective**: Detect rare or unusual data points (outliers).
+* **Algorithms**:
 
----
+  * One-class SVM
+  * Isolation Forest
+  * DBSCAN (can identify noise)
+* **Use cases**:
 
-#### 9. **Cluster Shape Assumptions**
-
-* Some algorithms assume specific cluster shapes (e.g., spherical in k-means).
-* Fails when data has **arbitrary or non-convex** shapes.
-
----
-
-#### 10. **Data Preprocessing Dependency**
-
-* Unsupervised methods heavily rely on:
-
-  * **Feature scaling**
-  * **Normalization**
-  * **Missing value handling**
-* Poor preprocessing leads to **poor quality results**.
+  * Fraud detection
+  * Fault detection in manufacturing
+  * Network intrusion detection
 
 ---
 
-#### 11. **Validation Difficulty**
+### **1.4. Association Rule Mining**
 
-* Cannot directly compute accuracy, precision, recall.
-* Need to use **internal validation metrics** like:
+* **Objective**: Discover interesting relationships or associations between variables in large datasets.
+* **Algorithms**:
 
-  * **Silhouette Score**
-  * **Calinski-Harabasz Index**
-  * **Davies–Bouldin Index**
+  * Apriori algorithm
+  * FP-Growth
+* **Use cases**:
 
----
-### **Preprocessing in Unsupervised Learning**
-
----
-
-#### 1. **Definition**
-
-* **Preprocessing** is the process of **cleaning and transforming raw data** into a suitable format for unsupervised learning algorithms.
-* Essential because most unsupervised algorithms are **sensitive to the scale, distribution, and structure** of the input data.
+  * Market basket analysis
+  * Recommender systems
 
 ---
 
-#### 2. **Goals of Preprocessing**
+### **1.5. Generative Models**
 
-* Improve **algorithm performance** and **convergence**
-* Reduce **noise**, **bias**, and **inconsistencies**
-* Make data **comparable**, especially when using distance-based methods (e.g., k-means)
+* **Objective**: Learn to model the underlying distribution of data and generate new samples.
+* **Examples**:
 
----
+  * GANs (Generative Adversarial Networks)
+  * Variational Autoencoders (VAE)
+* **Use cases**:
 
-#### 3. **Key Preprocessing Steps**
-
----
-
-### **A. Handling Missing Data**
-
-* Missing values must be dealt with before applying any unsupervised algorithm.
-
-| Technique          | Description                                                               |
-| ------------------ | ------------------------------------------------------------------------- |
-| **Remove Rows**    | Drop rows with missing entries                                            |
-| **Imputation**     | Fill missing values with mean, median, mode, or using model-based methods |
-| **KNN Imputation** | Use neighbors to estimate missing data                                    |
+  * Image generation
+  * Data augmentation
+  * Style transfer
 
 ---
 
-### **B. Handling Categorical Data**
-
-* Algorithms like k-means or PCA require numerical input.
-
-| Method                 | Description                               |
-| ---------------------- | ----------------------------------------- |
-| **One-Hot Encoding**   | Convert each category into binary vectors |
-| **Label Encoding**     | Assign integer values to categories       |
-| **Frequency Encoding** | Replace category with its frequency       |
+## **2. Challenges in Unsupervised Learning**
 
 ---
 
-### **C. Feature Scaling**
+### **2.1. Lack of Ground Truth**
 
-* Ensures all features contribute **equally** to distance metrics.
-
-| Method              | Description                                                     |
-| ------------------- | --------------------------------------------------------------- |
-| **Standardization** | Convert features to have **mean = 0** and **std = 1** (Z-score) |
-| **Normalization**   | Scale features to a **fixed range** (e.g., \[0, 1])             |
-| **Max Abs Scaling** | Scale using maximum absolute value (for sparse data)            |
+* **Problem**: No labeled output means no way to directly evaluate model performance.
+* **Impact**: Difficult to validate clustering or structure learned by the model.
 
 ---
 
-### **D. Removing Outliers**
+### **2.2. Interpretability**
 
-* Outliers can distort results of distance-based clustering.
-
-| Method                | Description                        |   |     |
-| --------------------- | ---------------------------------- | - | --- |
-| **Z-Score**           | Remove points with                 | z | > 3 |
-| **IQR Method**        | Use interquartile range thresholds |   |     |
-| **Isolation Forests** | Learn-based anomaly filtering      |   |     |
+* **Problem**: Unsupervised models often find latent features that may not have intuitive meaning.
+* **Impact**: Makes explaining results to humans or stakeholders harder.
 
 ---
 
-### **E. Feature Selection / Extraction**
+### **2.3. Choosing the Number of Clusters or Components**
 
-* Reduce irrelevant or redundant features.
-
-| Method                    | Description                         |
-| ------------------------- | ----------------------------------- |
-| **Variance Threshold**    | Remove low-variance features        |
-| **Correlation Filtering** | Remove highly correlated features   |
-| **Autoencoders**          | Learn compact, informative features |
+* **Problem**: Algorithms like K-Means or PCA require specification of number of clusters/components.
+* **Impact**: Improper selection may lead to poor results.
+* **Solution**: Use metrics like Silhouette Score, Elbow Method, or Variance Explained.
 
 ---
 
-### **F. Dimensionality Reduction (Optional Pre-step)**
+### **2.4. Sensitivity to Scaling**
 
-* Helps visualize and speed up training.
-
-| Method    | Description                             |
-| --------- | --------------------------------------- |
-| **PCA**   | Projects data to fewer dimensions       |
-| **t-SNE** | Non-linear projection for visualization |
-| **UMAP**  | Preserves global and local structures   |
+* **Problem**: Many algorithms (e.g., K-Means, PCA) are sensitive to the scale of input features.
+* **Impact**: Features with larger scales dominate distance-based metrics.
+* **Solution**: Apply preprocessing like **StandardScaler** or **MinMaxScaler**.
 
 ---
 
-### **G. Noise Reduction**
+### **2.5. High Dimensionality (Curse of Dimensionality)**
 
-* Removes random variation in the dataset.
-
-| Method                | Description                              |
-| --------------------- | ---------------------------------------- |
-| **Smoothing filters** | Apply for image/temporal data            |
-| **Autoencoders**      | Use denoising versions to clean features |
+* **Problem**: As the number of dimensions increases, data becomes sparse, and distances lose meaning.
+* **Impact**: Clustering and nearest neighbor methods become ineffective.
+* **Solution**: Use dimensionality reduction (PCA, t-SNE).
 
 ---
 
-#### 4. **Why Preprocessing is Critical in Unsupervised Learning**
+### **2.6. Initialization Sensitivity**
 
-* No labels to guide the learning, so **data quality directly impacts results**.
-* Many unsupervised algorithms use **Euclidean distance** or **cosine similarity**, which are highly sensitive to:
-
-  * Feature scale
-  * Outliers
-  * Noise
+* **Problem**: Algorithms like K-Means can converge to local minima based on initial centroids.
+* **Impact**: May produce different results on different runs.
+* **Solution**: Run multiple times with different seeds or use smarter initialization (e.g., KMeans++).
 
 ---
 
-#### 5. **Order of Preprocessing (Typical Flow)**
+### **2.7. Noisy Data and Outliers**
 
-1. Handle missing data
-2. Convert categorical data
-3. Normalize or standardize features
-4. Remove outliers
-5. Feature selection or dimensionality reduction (if needed)
+* **Problem**: Outliers can distort clustering and dimensionality reduction.
+* **Impact**: Poor model performance.
+* **Solution**: Preprocess to remove or handle outliers.
 
 ---
 
-### **Scaling of Dataset in Unsupervised Learning**
+### **2.8. Scalability to Large Datasets**
+
+* **Problem**: Algorithms like Agglomerative clustering have high computational complexity.
+* **Impact**: Long training times on big data.
+* **Solution**: Use scalable algorithms (e.g., MiniBatch K-Means).
 
 ---
 
-#### 1. **Definition**
+### **2.9. Overfitting in Generative Models**
 
-* **Scaling** is the process of transforming feature values so that they are on the **same scale or range**.
-* It ensures that **no single feature dominates** others due to larger numeric values.
-
----
-
-#### 2. **Why Scaling is Important**
-
-* Many unsupervised algorithms (especially clustering) rely on **distance metrics** (e.g., Euclidean distance).
-* Features with larger values can **bias** the results and lead to incorrect clustering or projection.
-* Without scaling:
-
-  * **K-means** may group based on dominant features only.
-  * **PCA** might be skewed by high-magnitude features.
+* **Problem**: Models like Autoencoders can memorize training data.
+* **Impact**: Poor generalization to new samples.
+* **Solution**: Use regularization, dropout, or increase dataset size.
 
 ---
 
-#### 3. **When to Use Scaling**
+### **2.10. Evaluation Metrics**
 
-* **Always required** for:
+* **Problem**: No labels make it difficult to assess model quality.
+* **Solutions**:
 
-  * K-means clustering
-  * DBSCAN
-  * PCA
-  * Hierarchical clustering (with distance metrics)
-* **Not always required** for:
-
-  * Tree-based models (not distance-based)
+  * Internal metrics (Silhouette score, Davies-Bouldin index)
+  * Visualizations
+  * External metrics (if some ground truth is available): Adjusted Rand Index, Mutual Information
 
 ---
 
-#### 4. **Common Scaling Techniques**
+## **3. Summary Table**
+
+| Type                     | Goal                       | Common Algorithms        | Challenge Example                    |
+| ------------------------ | -------------------------- | ------------------------ | ------------------------------------ |
+| Clustering               | Group similar data points  | K-Means, DBSCAN          | Choosing number of clusters          |
+| Dimensionality Reduction | Reduce features, keep info | PCA, t-SNE, Autoencoders | Interpreting new dimensions          |
+| Anomaly Detection        | Detect unusual patterns    | Isolation Forest, DBSCAN | High false positives                 |
+| Association Mining       | Find co-occurring items    | Apriori, FP-Growth       | Too many uninteresting rules         |
+| Generative Modeling      | Generate new similar data  | GANs, VAEs               | Overfitting and training instability |
 
 ---
 
-### **A. Min-Max Normalization (Rescaling)**
+## **Conclusion**
 
-* Scales values to a fixed range, usually **\[0, 1]**.
+* Unsupervised learning has **diverse types** and is critical for **hidden pattern discovery**.
+* Challenges mainly arise due to **lack of labels**, **high dimensionality**, **sensitivity to parameters**, and **interpretability**.
+* **Proper preprocessing**, **metric evaluation**, and **algorithm choice** are essential.
 
-$$
-X_{\text{scaled}} = \frac{X - X_{\min}}{X_{\max} - X_{\min}}
-$$
-
-* **Preserves shape**, but not outlier resistant.
-
-#### Used in:
-
-* Image data
-* Algorithms requiring **bounded input**
+### **Unit 3 – Unsupervised Learning: Preprocessing and Scaling of Dataset**
 
 ---
 
-### **B. Standardization (Z-score Normalization)**
+## **1. Introduction to Preprocessing**
 
-* Transforms data to have:
-
-  * **Mean = 0**
-  * **Standard Deviation = 1**
-
-$$
-X_{\text{scaled}} = \frac{X - \mu}{\sigma}
-$$
-
-* **Removes mean** and scales by variance.
-* Better when data follows a **Gaussian distribution**.
-
-#### Used in:
-
-* PCA
-* K-means
-* DBSCAN
+Data preprocessing is the critical first step in any machine learning task. In unsupervised learning, preprocessing is especially important due to the absence of labeled data. Poorly preprocessed data can lead to misleading clusters, distorted feature spaces, or meaningless patterns.
 
 ---
 
-### **C. Max-Abs Scaling**
+## **2. Objectives of Preprocessing**
 
-* Scales each feature by its **maximum absolute value**.
-
-$$
-X_{\text{scaled}} = \frac{X}{|X_{\max}|}
-$$
-
-* Keeps **zero-centered** sparse data unchanged.
-
-#### Used in:
-
-* Sparse data (e.g., text, frequency vectors)
+* Remove noise and inconsistencies
+* Handle missing or redundant values
+* Standardize or normalize feature values
+* Prepare data for clustering or dimensionality reduction algorithms
+* Improve performance and reliability of algorithms
 
 ---
 
-### **D. Robust Scaling**
-
-* Uses **median** and **interquartile range (IQR)**:
-
-$$
-X_{\text{scaled}} = \frac{X - \text{median}}{\text{IQR}}
-$$
-
-* **Robust to outliers**
-
-#### Used in:
-
-* Datasets with **extreme values**
+## **3. Common Preprocessing Steps**
 
 ---
 
-#### 5. **Comparison Table**
+### **3.1. Handling Missing Values**
 
-| Technique       | Sensitive to Outliers | Output Range      | Common Uses             |
-| --------------- | --------------------- | ----------------- | ----------------------- |
-| Min-Max Scaling | Yes                   | \[0, 1]           | Image data, neural nets |
-| Z-score         | No (moderate)         | Mean = 0, Std = 1 | PCA, K-means            |
-| Max-Abs Scaling | Yes                   | \[-1, 1]          | Sparse data             |
-| Robust Scaling  | No (very robust)      | Depends on IQR    | Skewed data             |
+* **Techniques**:
 
----
+  * **Removal**: Delete rows/columns with missing values (if proportion is low)
+  * **Imputation**:
 
-#### 6. **Practical Considerations**
-
-* Always **fit the scaler on training data**, then transform both train and test/validation data.
-* Scaling should be part of **preprocessing pipelines** (e.g., using `Pipeline` in Scikit-learn).
-* Never apply **scaling after** applying algorithms — it must be done **before** model fitting.
-
----
-### **Dimensionality Reduction**
+    * **Mean/Median/Mode Imputation** for numeric data
+    * **Most Frequent** or **Constant** for categorical data
+    * **KNN Imputation**: Use similarity to estimate missing value
+* **Impact**: Prevents loss of data and ensures mathematical operations are defined
 
 ---
 
-#### 1. **Definition**
+### **3.2. Removing Duplicates**
 
-* The process of **reducing the number of input variables (features)** in a dataset while retaining as much important information as possible.
-* Helps simplify data, reduce noise, improve computational efficiency, and aid visualization.
-
----
-
-#### 2. **Why Dimensionality Reduction is Important**
-
-* High-dimensional data often suffers from the **curse of dimensionality**, where:
-
-  * Data becomes sparse.
-  * Distances become less meaningful.
-  * Models tend to overfit.
-* Reducing dimensions helps to:
-
-  * Improve **model performance**.
-  * Make data **easier to visualize**.
-  * Speed up **training and inference**.
+* **Method**: Identify and remove duplicate rows to avoid overemphasis on repeated data
+* **Tool**: `pandas.DataFrame.drop_duplicates()`
 
 ---
 
-#### 3. **Types of Dimensionality Reduction**
+### **3.3. Removing Noise and Outliers**
+
+* **Techniques**:
+
+  * **Z-Score method** (values with Z > 3 considered outliers)
+  * **IQR Method** (Q1 - 1.5×IQR and Q3 + 1.5×IQR)
+  * **Visual tools**: Box plots, scatter plots
+* **Impact**: Reduces skewed distances in clustering algorithms
 
 ---
 
-### **A. Feature Selection**
+### **3.4. Encoding Categorical Data**
 
-* Select a **subset of original features** based on criteria like variance or importance.
+* **One-Hot Encoding**: Converts categories into binary columns
+* **Label Encoding**: Converts categories into integers (can mislead distance-based methods)
+* **Impact**: Allows inclusion of categorical data in numerical algorithms
+
+---
+
+### **3.5. Feature Selection**
+
+* Remove irrelevant or highly correlated features
+* Methods:
+
+  * **Variance Threshold** (drop low-variance features)
+  * **Correlation Matrix**
+* Improves clustering and PCA effectiveness
+
+---
+
+## **4. Feature Scaling**
+
+Feature scaling ensures that no single feature dominates others due to scale. Many unsupervised algorithms rely on distance measures (e.g., Euclidean distance), so inconsistent feature ranges can distort outcomes.
+
+---
+
+### **4.1. Why Scaling is Important**
+
+* Prevents **biased distance calculations**
+* Required for **K-Means**, **PCA**, **DBSCAN**, etc.
+* Ensures **fair contribution** of all features
+
+---
+
+## **5. Common Scaling Techniques**
+
+---
+
+### **5.1. Min-Max Scaling (Normalization)**
+
+* **Formula**:
+
+  $$
+  X_{\text{scaled}} = \frac{X - X_{\text{min}}}{X_{\text{max}} - X_{\text{min}}}
+  $$
+* **Range**: Scales features to \[0, 1]
+* **Best for**: When data does not contain outliers
+* **Tool**: `sklearn.preprocessing.MinMaxScaler`
+
+---
+
+### **5.2. Standardization (Z-score Scaling)**
+
+* **Formula**:
+
+  $$
+  X_{\text{scaled}} = \frac{X - \mu}{\sigma}
+  $$
+* **Range**: Mean = 0, Std. Dev. = 1
+* **Best for**: When data contains outliers and is normally distributed
+* **Tool**: `sklearn.preprocessing.StandardScaler`
+
+---
+
+### **5.3. MaxAbs Scaling**
+
+* **Formula**:
+
+  $$
+  X_{\text{scaled}} = \frac{X}{|X_{\text{max}}|}
+  $$
+* Scales features to \[-1, 1]
+* Preserves sparsity (non-zero structure)
+* Useful for sparse data (e.g., text features)
+* **Tool**: `sklearn.preprocessing.MaxAbsScaler`
+
+---
+
+### **5.4. Robust Scaling**
+
+* Uses **median** and **IQR** instead of mean and std. dev.
+* **Formula**:
+
+  $$
+  X_{\text{scaled}} = \frac{X - \text{median}}{\text{IQR}}
+  $$
+* Best for **datasets with outliers**
+* **Tool**: `sklearn.preprocessing.RobustScaler`
+
+---
+
+## **6. Dimensionality Reduction Preprocessing**
+
+Before applying algorithms like PCA or t-SNE:
+
+* **Centering the data** (mean = 0) is necessary
+* **Feature scaling** is essential for **PCA**
+* Remove multicollinearity among features
+* Apply **log or square-root transforms** for skewed data
+
+---
+
+## **7. Summary Table**
+
+| Preprocessing Step     | Purpose                          | Key Tools                        |
+| ---------------------- | -------------------------------- | -------------------------------- |
+| Missing Value Handling | Avoid loss or corruption of data | `SimpleImputer`, `KNNImputer`    |
+| Outlier Removal        | Eliminate distortion in patterns | Z-score, IQR, Box plots          |
+| Feature Scaling        | Uniform contribution to distance | `MinMaxScaler`, `StandardScaler` |
+| Categorical Encoding   | Convert to numerical form        | `OneHotEncoder`, `LabelEncoder`  |
+| Noise Reduction        | Improve quality of data          | Filters, visual checks           |
+| Feature Selection      | Reduce redundancy                | Variance threshold, correlation  |
+
+---
+
+## **8. Conclusion**
+
+* Preprocessing and scaling are **essential** for effective unsupervised learning.
+* Proper preprocessing ensures **robust clustering**, **accurate dimensionality reduction**, and **meaningful structure detection**.
+* Always apply **scaling before** algorithms that depend on distances or magnitudes.
+
+### **Unit 3 – Unsupervised Learning: Dimensionality Reduction**
+
+---
+
+## **1. Definition**
+
+Dimensionality reduction refers to the process of reducing the number of input variables or features in a dataset while preserving the essential structure and information. It simplifies datasets, removes noise, and makes patterns more interpretable.
+
+---
+
+## **2. Objectives**
+
+* Reduce computational cost and memory
+* Remove multicollinearity and noise
+* Visualize high-dimensional data (2D/3D)
+* Improve clustering or classification performance
+* Prevent overfitting and enhance generalization
+
+---
+
+## **3. Types of Dimensionality Reduction Techniques**
+
+Dimensionality reduction is generally categorized into:
+
+---
+
+### **3.1. Feature Selection (Filter-based)**
+
+* Selects a subset of the original features
+* Keeps the most informative variables
 * Examples:
 
-  * Removing low-variance features.
-  * Selecting features based on correlation or importance scores.
+  * Variance Thresholding
+  * Mutual Information
+  * Correlation-based Selection
 
 ---
 
-### **B. Feature Extraction**
+### **3.2. Feature Extraction (Projection-based)**
 
-* Create **new features** by transforming the original features.
-* New features are usually a combination or projection of the original features.
+* Transforms data to a lower-dimensional space
+* Combines or compresses original features into new ones
+* Techniques:
 
----
-
-#### 4. **Popular Dimensionality Reduction Techniques**
-
-| Technique                              | Type              | Description                                                 |
-| -------------------------------------- | ----------------- | ----------------------------------------------------------- |
-| **Principal Component Analysis (PCA)** | Linear Projection | Projects data to directions maximizing variance             |
-| **Linear Discriminant Analysis (LDA)** | Supervised Linear | Maximizes class separability (supervised)                   |
-| **t-SNE**                              | Non-linear        | Visualizes high-dimensional data preserving local structure |
-| **UMAP**                               | Non-linear        | Faster and preserves global structure better than t-SNE     |
-| **Autoencoders**                       | Neural Network    | Learn compressed representations in an unsupervised manner  |
+  * **Principal Component Analysis (PCA)**
+  * **Linear Discriminant Analysis (LDA)** (supervised)
+  * **t-Distributed Stochastic Neighbor Embedding (t-SNE)**
+  * **Autoencoders** (Neural networks-based)
 
 ---
 
-#### 5. **Principal Component Analysis (PCA) (Most Common)**
+## **4. Why Dimensionality Reduction is Needed**
 
-* Finds **orthogonal directions (principal components)** that capture maximum variance.
-* Projects data onto fewer principal components with minimal loss of information.
-* Reduces dimensions while **maximizing variance retained**.
-* Commonly used as a **preprocessing step** before clustering or visualization.
-
----
-
-#### 6. **Benefits**
-
-* Removes **noise** and **redundant features**.
-* Facilitates **data visualization** in 2D or 3D.
-* Improves **computational efficiency**.
-* Helps in overcoming the **curse of dimensionality**.
+* High-dimensional datasets (curse of dimensionality) make clustering inefficient and less accurate.
+* Many features may be redundant or irrelevant.
+* Visual interpretation becomes impossible beyond 3D.
 
 ---
 
-#### 7. **Challenges**
+## **5. Curse of Dimensionality**
 
-* Sometimes difficult to interpret transformed features.
-* Linear methods (like PCA) cannot capture complex nonlinear structures.
-* Need to choose how many components to keep (trade-off between compression and information loss).
+* As dimensions increase:
 
----
-### **Feature Extraction**
-
----
-
-#### 1. **Definition**
-
-* The process of **transforming raw data** into a set of **informative, non-redundant features** that can be effectively used for machine learning tasks.
-* Unlike feature selection (which chooses existing features), feature extraction **creates new features** from the original data.
+  * Distance metrics lose meaning
+  * Data becomes sparse
+  * Overfitting increases
+  * Computation becomes expensive
 
 ---
 
-#### 2. **Purpose**
+## **6. Principal Component Analysis (PCA)**
 
-* Simplify the data by **capturing the essential information**.
-* Reduce **dimensionality** while retaining key characteristics.
-* Improve model performance and reduce computational cost.
-* Make complex data more **interpretable** and structured.
+### **Definition**:
 
----
+PCA is a statistical technique that transforms original correlated features into a set of linearly uncorrelated features called **principal components**.
 
-#### 3. **Feature Extraction vs Feature Selection**
+### **Key Concepts**:
 
-| Aspect                  | Feature Extraction                     | Feature Selection             |
-| ----------------------- | -------------------------------------- | ----------------------------- |
-| Creates new features    | Yes                                    | No                            |
-| Combines input features | Often combines features                | Selects a subset of features  |
-| Goal                    | Transform data into new representation | Choose most relevant features |
-| Example                 | PCA, Autoencoders                      | Filter, Wrapper methods       |
+* First component captures the maximum variance
+* Each subsequent component captures remaining variance orthogonal to the previous one
+* Components are eigenvectors of the covariance matrix
 
----
+### **Steps**:
 
-#### 4. **Common Feature Extraction Techniques**
+1. Standardize the data
+2. Compute covariance matrix
+3. Compute eigenvectors and eigenvalues
+4. Sort eigenvalues and select top-k components
+5. Project data onto new axes
 
----
+### **Advantages**:
 
-### **A. Principal Component Analysis (PCA)**
-
-* Projects data onto new axes (principal components) that maximize variance.
-* Transforms original correlated features into uncorrelated features.
+* Fast and interpretable
+* Preserves variance
+* Used before clustering (e.g., K-means)
 
 ---
 
-### **B. Linear Discriminant Analysis (LDA)**
+## **7. t-SNE (t-distributed Stochastic Neighbor Embedding)**
 
-* Finds linear combinations that best separate classes (supervised).
-* Useful when class labels are available.
+### **Definition**:
 
----
+Non-linear dimensionality reduction technique for visualizing high-dimensional data in 2D or 3D.
 
-### **C. Autoencoders**
+### **Key Features**:
 
-* Neural networks trained to **reconstruct input** at output.
-* Middle layer (bottleneck) acts as compressed feature representation.
-* Can capture **nonlinear relationships** in data.
+* Captures local structure and patterns
+* Preserves neighborhood relationships
+* Common in image and text data visualization
 
----
+### **Limitations**:
 
-### **D. Wavelet Transform and Fourier Transform**
-
-* Used especially for **signal processing** and **image data**.
-* Extract frequency or time-frequency domain features.
+* Computationally expensive
+* Not suitable for scaling or clustering directly
 
 ---
 
-### **E. Bag-of-Words (BoW) and TF-IDF (for text data)**
+## **8. Autoencoders**
 
-* Convert text documents into numerical feature vectors.
-* Capture word occurrence and importance.
+### **Definition**:
 
----
+Neural network-based unsupervised technique that learns to compress and then reconstruct the input data.
 
-#### 5. **Steps in Feature Extraction**
+### **Structure**:
 
-1. **Input raw data** (images, text, signals, tabular data)
-2. **Apply transformation or projection** to extract features
-3. **Obtain new feature vectors** with reduced dimension or enhanced representation
-4. **Use extracted features** as inputs for learning algorithms
+* Encoder: compresses data to lower dimensions
+* Decoder: reconstructs data from compressed representation
+* Bottleneck layer holds compressed data
 
----
+### **Use Case**:
 
-#### 6. **Advantages**
-
-* Can capture **complex, nonlinear structures** (with methods like autoencoders).
-* Reduces data dimensionality efficiently.
-* Often improves downstream **model accuracy** and **generalization**.
+* Effective for large-scale, complex, nonlinear datasets
 
 ---
 
-#### 7. **Limitations**
+## **9. UMAP (Uniform Manifold Approximation and Projection)**
 
-* Extracted features may be **hard to interpret**.
-* Feature extraction process might be **computationally intensive**.
-* Requires **careful tuning** of parameters (e.g., number of components).
-
----
-### **Principal Component Analysis (PCA)**
+* Similar to t-SNE but faster and scalable
+* Preserves both global and local structure
+* Suitable for real-time visualization
 
 ---
 
-#### 1. **Definition**
+## **10. Comparison Table**
 
-* PCA is a **linear dimensionality reduction technique** that transforms the original data into a new coordinate system.
-* The new axes (called **principal components**) are orthogonal and capture the **maximum variance** in the data.
-* PCA reduces the number of features while preserving the most important information.
-
----
-
-#### 2. **Objectives**
-
-* Find a set of uncorrelated variables (principal components) from correlated variables.
-* Capture the **largest variance** in the data in the fewest components.
-* Reduce noise and redundancy.
+| Technique    | Linear/Non-linear | Use Case                      | Suitable for Visualization |
+| ------------ | ----------------- | ----------------------------- | -------------------------- |
+| PCA          | Linear            | Fast, large datasets          | Limited (2D/3D)            |
+| t-SNE        | Non-linear        | Small/medium, visualization   | Yes                        |
+| Autoencoders | Non-linear        | Deep learning, large datasets | No (used for compression)  |
+| UMAP         | Non-linear        | Fast visualization            | Yes                        |
 
 ---
 
-#### 3. **How PCA Works (Step-by-step)**
+## **11. Evaluation Metrics**
 
-1. **Standardize the data**
-
-   * Center the data by subtracting the mean and scale (usually) to unit variance.
-
-2. **Compute the covariance matrix**
-
-   * Measures how features vary together.
-
-3. **Calculate eigenvalues and eigenvectors of covariance matrix**
-
-   * Eigenvectors represent directions of principal components.
-   * Eigenvalues represent the magnitude of variance along those directions.
-
-4. **Sort eigenvectors by eigenvalues in descending order**
-
-   * The top eigenvectors correspond to principal components with highest variance.
-
-5. **Select top-k eigenvectors** to form a projection matrix.
-
-6. **Project the original data onto this lower-dimensional subspace**
-
-   * Resulting data has fewer dimensions but retains most variance.
+* **Explained Variance Ratio**: In PCA, percentage of data variance captured by each principal component
+* **Reconstruction Error**: Used in autoencoders, measures difference between input and output
+* **Clustering Accuracy (Post-reduction)**: How well clusters are formed after reduction
 
 ---
 
-#### 4. **Mathematical Formulation**
+## **12. Conclusion**
 
-* Given data matrix $X$ of size $n \times d$ (n samples, d features):
+* Dimensionality reduction is crucial for efficient and interpretable unsupervised learning.
+* PCA is the most commonly used linear method.
+* For complex datasets, nonlinear methods like t-SNE, UMAP, and autoencoders are preferred.
+* Reduction must be preceded by preprocessing and scaling.
+
+### **Unit 3 – Unsupervised Learning: Feature Extraction**
+
+---
+
+## **1. Definition**
+
+Feature extraction is the process of transforming raw data into a set of informative and non-redundant features that can be effectively used in machine learning tasks. It reduces the dimensionality by generating new features that capture the essential characteristics of the original data.
+
+---
+
+## **2. Objectives of Feature Extraction**
+
+* Reduce the number of input variables
+* Increase learning accuracy
+* Improve computational efficiency
+* Extract hidden structures and patterns
+* Enable better visualization and clustering
+
+---
+
+## **3. Feature Extraction vs Feature Selection**
+
+| Feature Selection                      | Feature Extraction                          |
+| -------------------------------------- | ------------------------------------------- |
+| Selects a subset of existing features  | Creates new features from original features |
+| No transformation of original features | Transforms data into a new feature space    |
+| Simpler, interpretable                 | May be complex but more powerful            |
+
+---
+
+## **4. Types of Feature Extraction Techniques**
+
+---
+
+### **4.1. Linear Techniques**
+
+#### a. **Principal Component Analysis (PCA)**
+
+* Projects data onto a new coordinate system with reduced dimensions.
+* Captures maximum variance in fewer features (principal components).
+* Features are uncorrelated and ordered by importance.
+
+#### b. **Independent Component Analysis (ICA)**
+
+* Similar to PCA but finds statistically independent components instead of uncorrelated ones.
+* Suitable for blind source separation (e.g., audio signal decomposition).
+
+#### c. **Linear Discriminant Analysis (LDA)**
+
+* Supervised method for maximizing class separability.
+* Projects data onto a lower-dimensional space with maximum class distinction.
+
+---
+
+### **4.2. Non-Linear Techniques**
+
+#### a. **t-SNE (t-distributed Stochastic Neighbor Embedding)**
+
+* Preserves local relationships between points.
+* Mainly used for data visualization in 2D/3D.
+* Not suitable for general-purpose feature extraction.
+
+#### b. **Isomap**
+
+* Maintains geodesic distances on a data manifold.
+* Useful for nonlinear dimensionality reduction.
+
+#### c. **UMAP (Uniform Manifold Approximation and Projection)**
+
+* Preserves both local and global structure.
+* Faster and more scalable than t-SNE.
+
+---
+
+### **4.3. Neural Network-Based Techniques**
+
+#### a. **Autoencoders**
+
+* Use deep learning to compress and reconstruct data.
+* Bottleneck layer acts as the feature extractor.
+* Handles nonlinear relationships.
+
+#### b. **Convolutional Neural Networks (CNNs)**
+
+* Extract spatial features from images.
+* Lower layers extract edges/textures; higher layers extract abstract patterns.
+* Used in computer vision, object recognition, etc.
+
+#### c. **Recurrent Neural Networks (RNNs)**
+
+* Extract sequential features from time-series data.
+* Suitable for language modeling, audio signals, etc.
+
+---
+
+## **5. Feature Extraction in Text Data**
+
+* **Bag-of-Words (BoW)**: Represents text by word frequency vectors.
+* **TF-IDF**: Weighs words based on importance (term frequency × inverse document frequency).
+* **Word Embeddings**: Captures semantic meaning using vectors (e.g., Word2Vec, GloVe).
+* **Transformers (BERT)**: Extract contextual embeddings of words.
+
+---
+
+## **6. Feature Extraction in Image Data**
+
+* **Edge detection**: Using Sobel, Canny, etc.
+* **Histogram of Oriented Gradients (HOG)**: Extracts edge orientation patterns.
+* **Scale-Invariant Feature Transform (SIFT)**: Detects local features invariant to scale/rotation.
+* **CNN features**: Automatically learned features through convolutional layers.
+
+---
+
+## **7. Applications of Feature Extraction**
+
+* **Computer Vision**: Object recognition, facial recognition
+* **Natural Language Processing**: Sentiment analysis, document classification
+* **Speech Processing**: Speaker identification, emotion detection
+* **Bioinformatics**: Gene expression analysis, disease classification
+
+---
+
+## **8. Evaluation of Extracted Features**
+
+* **Variance Explained** (PCA)
+* **Reconstruction Error** (Autoencoders)
+* **Clustering Accuracy** (Post-extraction performance)
+* **Silhouette Score** (Clustering compactness)
+
+---
+
+## **9. Advantages**
+
+* Captures complex structures in data
+* Reduces redundancy and noise
+* Enables effective clustering and classification
+* Improves model generalization
+
+---
+
+## **10. Conclusion**
+
+* Feature extraction is essential for simplifying complex data and enabling efficient unsupervised learning.
+* Linear techniques (e.g., PCA) are fast and interpretable.
+* Nonlinear and neural-based methods are powerful for capturing deeper patterns.
+* Proper preprocessing (e.g., normalization, scaling) is necessary before applying extraction techniques.
+
+### **Unit 3 – Unsupervised Learning: Principal Component Analysis (PCA)**
+
+---
+
+## **1. Definition**
+
+Principal Component Analysis (PCA) is a statistical technique used for **dimensionality reduction** by transforming a large set of correlated variables into a smaller set of **uncorrelated variables** called **principal components**. These components capture the maximum variance in the data.
+
+---
+
+## **2. Objectives**
+
+* Reduce dimensionality while preserving variance
+* Remove redundancy and multicollinearity
+* Improve performance of machine learning models
+* Visualize high-dimensional data in 2D or 3D
+* Extract meaningful features from noisy data
+
+---
+
+## **3. Key Concepts**
+
+| Concept                  | Description                                       |
+| ------------------------ | ------------------------------------------------- |
+| **Variance**             | Amount of information spread in data              |
+| **Covariance Matrix**    | Measures how two variables vary together          |
+| **Eigenvectors**         | Directions of the new feature space               |
+| **Eigenvalues**          | Amount of variance carried by each eigenvector    |
+| **Principal Components** | Ordered set of orthogonal axes capturing variance |
+
+---
+
+## **4. PCA Process (Step-by-Step)**
+
+1. **Standardize the Data**
+
+   * Subtract the mean and divide by standard deviation for each feature.
+   * Required to treat all features equally.
+
+2. **Compute Covariance Matrix**
+
+   * Calculate covariance between all pairs of features.
+   * Matrix is of size $n \times n$ for $n$ features.
+
+3. **Compute Eigenvectors and Eigenvalues**
+
+   * Eigenvectors define the direction of new axes (principal components).
+   * Eigenvalues define the magnitude (variance) along those axes.
+
+4. **Sort and Select Top-k Components**
+
+   * Sort eigenvalues in descending order.
+   * Select top $k$ eigenvectors (principal components) with highest eigenvalues.
+
+5. **Project Data**
+
+   * Multiply original data matrix by selected eigenvectors.
+   * New data has reduced dimensions but preserves maximum variance.
+
+---
+
+## **5. Mathematical Representation**
+
+Let:
+
+* $X$: mean-centered data matrix of size $m \times n$
+* $C = \frac{1}{m-1} X^T X$: covariance matrix
+* $\mathbf{v}_i$: eigenvectors (principal components)
+* $\lambda_i$: eigenvalues (variances)
+
+PCA projection:
 
 $$
-\text{Covariance matrix} \quad C = \frac{1}{n-1} X^T X
+X_{\text{new}} = X \cdot W_k
 $$
 
-* Solve:
-
-$$
-C \mathbf{v} = \lambda \mathbf{v}
-$$
-
-where $\mathbf{v}$ is an eigenvector and $\lambda$ its eigenvalue.
+where $W_k$ is a matrix of top $k$ eigenvectors.
 
 ---
 
-#### 5. **Principal Components**
+## **6. Explained Variance Ratio**
 
-* First PC: direction with maximum variance.
-* Second PC: direction orthogonal to the first with next highest variance.
-* Continues similarly for all PCs.
+* Measures how much variance each principal component captures.
+* Useful for selecting the number of components:
 
----
-
-#### 6. **Choosing Number of Components**
-
-* Based on **explained variance ratio** — cumulative sum of eigenvalues normalized.
-* Choose minimum components capturing, e.g., **95%** of total variance.
+  $$
+  \text{Explained Variance Ratio}_i = \frac{\lambda_i}{\sum_{j=1}^{n} \lambda_j}
+  $$
+* **Scree Plot** is used to visualize this and decide the optimal number of components.
 
 ---
 
-#### 7. **Advantages**
+## **7. Advantages of PCA**
 
-* Reduces dimensionality with minimal information loss.
-* Removes correlated features, leading to uncorrelated principal components.
-* Helps visualize high-dimensional data (2D or 3D plots).
-* Enhances efficiency of learning algorithms.
-
----
-
-#### 8. **Limitations**
-
-* PCA assumes **linear relationships** between variables.
-* Sensitive to **scaling** — features must be normalized.
-* Principal components may lack intuitive interpretation.
-* Does not work well if data lies on a **nonlinear manifold**.
+* Reduces computation time
+* Removes noise and multicollinearity
+* Improves visualization
+* Helps in compressing data
+* Useful before clustering and classification
 
 ---
 
-#### 9. **Applications**
+## **8. Disadvantages of PCA**
 
-* Preprocessing for clustering or classification.
-* Image compression.
-* Data visualization.
-* Noise reduction.
-
----
-### **k-Means Clustering**
+* Assumes linearity
+* Components are difficult to interpret
+* Loses some information (though minimal)
+* Affected by outliers
+* Doesn’t work well with categorical variables
 
 ---
 
-#### 1. **Definition**
+## **9. Applications**
 
-* A popular **unsupervised clustering algorithm** that partitions data into **k distinct, non-overlapping clusters**.
-* Each data point belongs to the cluster with the nearest mean (centroid).
-
----
-
-#### 2. **Goal**
-
-* Minimize the **within-cluster sum of squares (WCSS)** or variance:
-
-$$
-\sum_{i=1}^k \sum_{x \in C_i} \|x - \mu_i\|^2
-$$
-
-where $C_i$ is the cluster $i$, and $\mu_i$ is its centroid.
+* **Image Compression**: Reduces dimensions of pixel data
+* **Genomics**: Visualizes gene expression data
+* **Finance**: Analyzes financial time series
+* **Natural Language Processing**: Reduces word embedding dimensions
+* **Recommender Systems**: Compresses user-item matrices
 
 ---
 
-#### 3. **Algorithm Steps**
+## **10. Comparison with Other Methods**
 
-1. **Initialize**: Choose k initial centroids randomly or using methods like k-means++.
-
-2. **Assign Points**: Assign each data point to the nearest centroid based on distance (usually Euclidean).
-
-3. **Update Centroids**: Calculate the new centroid of each cluster as the mean of all points assigned to it.
-
-4. **Repeat** steps 2 and 3 until convergence:
-
-   * No change in assignments or centroids
-   * Or max iterations reached
+| Technique   | Linearity  | Interpretability | Use Case                      |
+| ----------- | ---------- | ---------------- | ----------------------------- |
+| PCA         | Linear     | Moderate         | General-purpose               |
+| t-SNE       | Non-linear | Low              | Visualization                 |
+| LDA         | Linear     | High             | Classification                |
+| Autoencoder | Non-linear | Low              | Deep learning-based reduction |
 
 ---
 
-#### 4. **Features**
+## **11. Example**
 
-* Partitions data into **Voronoi cells**.
-* Assumes clusters are **spherical and equally sized**.
-* Sensitive to **initial centroid selection**.
+Given a dataset with 3 correlated features:
 
----
-
-#### 5. **Initialization Techniques**
-
-* **Random Initialization**: Pick k points randomly.
-* **k-means++**: Improves initialization by spreading initial centroids.
+1. PCA transforms it into 3 uncorrelated principal components.
+2. You can keep top 2 components that explain, say, 95% variance.
+3. You reduce the data from 3D to 2D while preserving the structure.
 
 ---
 
-#### 6. **Advantages**
+## **12. Conclusion**
 
-* Simple and easy to implement.
-* Efficient and scales well to large datasets.
-* Works well when clusters are well-separated.
+PCA is a powerful and commonly used unsupervised technique for simplifying high-dimensional data while retaining the most important information. It is essential for exploratory data analysis, visualization, and preprocessing in machine learning pipelines.
 
----
-
-#### 7. **Limitations**
-
-| Limitation                  | Explanation                                   |
-| --------------------------- | --------------------------------------------- |
-| Must specify **k**          | Number of clusters must be known a priori     |
-| Sensitive to outliers       | Outliers can skew centroids                   |
-| Assumes spherical clusters  | Fails for non-convex or varying size clusters |
-| Sensitive to initialization | Different runs can yield different clusters   |
+### **Unit 3 – Unsupervised Learning: K-Means Clustering (with Python Example)**
 
 ---
 
-#### 8. **Applications**
+## **1. Definition**
 
-* Market segmentation
+K-Means is an **unsupervised clustering algorithm** used to **partition data into `k` clusters**, where each data point belongs to the cluster with the **nearest mean** (centroid).
+
+---
+
+## **2. Objectives**
+
+* Group data into meaningful clusters
+* Minimize **intra-cluster variance**
+* Maximize **inter-cluster separation**
+
+---
+
+## **3. Key Concepts**
+
+| Concept          | Description                                      |
+| ---------------- | ------------------------------------------------ |
+| **Centroid**     | Center of a cluster (mean of points)             |
+| **Inertia**      | Sum of squared distances to the closest centroid |
+| **Elbow Method** | Used to determine optimal value of `k`           |
+| **Convergence**  | When centroids stop moving or change is minimal  |
+
+---
+
+## **4. Algorithm Steps**
+
+1. Choose number of clusters `k`
+2. Initialize `k` random centroids
+3. Assign each data point to the nearest centroid
+4. Compute new centroids by averaging points in each cluster
+5. Repeat steps 3–4 until centroids stabilize (convergence)
+
+---
+
+## **5. Advantages**
+
+* Simple and fast
+* Scales to large datasets
+* Often gives good results
+
+---
+
+## **6. Disadvantages**
+
+* Must specify `k` in advance
+* Sensitive to initialization
+* Struggles with non-spherical clusters and noise
+* Assumes equal cluster sizes
+
+---
+
+## **7. Applications**
+
+* Customer segmentation
+* Market basket analysis
 * Document clustering
-* Image segmentation
-* Customer profiling
+* Image compression
+* Anomaly detection
 
 ---
 
-#### 9. **Extensions**
+## **8. Python Example**
 
-* **k-medoids**: Uses actual data points as centers, more robust to outliers.
-* **Fuzzy c-means**: Assigns probabilities of belonging to clusters.
-* **Mini-batch k-means**: Uses small batches for faster computation.
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
 
----
-### **Agglomerative Clustering**
+# Generate sample data
+X, y_true = make_blobs(n_samples=300, centers=3, cluster_std=0.60, random_state=42)
 
----
+# Fit KMeans
+kmeans = KMeans(n_clusters=3, random_state=42)
+kmeans.fit(X)
+y_kmeans = kmeans.predict(X)
 
-#### 1. **Definition**
-
-* A type of **hierarchical clustering** method that builds clusters **bottom-up**.
-* Starts with each data point as its own cluster and **iteratively merges** the closest pairs until one cluster or desired number of clusters remains.
-
----
-
-#### 2. **Process**
-
-1. **Initialization**: Each data point is a separate cluster.
-
-2. **Calculate Distances**: Compute the pairwise distances between all clusters.
-
-3. **Merge Clusters**: Merge the two clusters with the smallest distance.
-
-4. **Update Distances**: Recalculate distances between the new cluster and all remaining clusters.
-
-5. **Repeat** steps 3 and 4 until stopping criteria is met:
-
-   * Only one cluster remains, or
-   * Desired number of clusters is reached.
+# Plot the clusters
+plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')
+centers = kmeans.cluster_centers_
+plt.scatter(centers[:, 0], centers[:, 1], c='red', s=200, alpha=0.75, marker='X')
+plt.title("K-Means Clustering Example")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.grid(True)
+plt.show()
+```
 
 ---
 
-#### 3. **Distance Metrics**
+## **9. Explanation of Code**
 
-* Common distance measures between clusters:
-
-  * **Single linkage**: Minimum distance between points of clusters (nearest neighbor).
-  * **Complete linkage**: Maximum distance between points (farthest neighbor).
-  * **Average linkage**: Average distance between points.
-  * **Ward’s method**: Minimize variance increase after merging.
-
----
-
-#### 4. **Output**
-
-* Results in a **dendrogram** (tree diagram showing cluster merges at different distances).
-* Cut the dendrogram at a chosen height to get the desired number of clusters.
+* `make_blobs`: generates synthetic data for clustering
+* `KMeans(n_clusters=3)`: model with 3 clusters
+* `fit(X)`: trains the model
+* `predict(X)`: assigns each point to a cluster
+* `cluster_centers_`: gives coordinates of cluster centers
+* `plt.scatter`: visualizes clusters and centroids
 
 ---
 
-#### 5. **Advantages**
+## **10. Elbow Method for Optimal `k`**
 
-* Does not require pre-specifying the number of clusters.
-* Captures **nested cluster structure**.
-* Works with **arbitrary cluster shapes**.
-* Easy to visualize with dendrograms.
+```python
+inertias = []
+for k in range(1, 10):
+    model = KMeans(n_clusters=k, random_state=42)
+    model.fit(X)
+    inertias.append(model.inertia_)
 
----
+plt.plot(range(1, 10), inertias, marker='o')
+plt.xlabel('Number of clusters (k)')
+plt.ylabel('Inertia')
+plt.title('Elbow Method for Optimal k')
+plt.grid(True)
+plt.show()
+```
 
-#### 6. **Limitations**
-
-| Limitation                        | Description                                                    |
-| --------------------------------- | -------------------------------------------------------------- |
-| Computationally expensive         | $O(n^3)$ in naive implementations; less for optimized versions |
-| Sensitive to noise/outliers       | Outliers can cause incorrect merges                            |
-| Choice of linkage affects results | Different linkage methods yield different clusters             |
-| No objective function to optimize | May lead to unstable clusters                                  |
-
----
-
-#### 7. **Applications**
-
-* Gene expression analysis
-* Document clustering
-* Image segmentation
-* Social network analysis
+* Plot `k` vs inertia
+* Look for the **"elbow"** point where inertia stops decreasing significantly
 
 ---
 
-### **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)**
+## **11. Mathematical Formulation**
+
+Given:
+
+* Dataset $X = \{x_1, x_2, \ldots, x_n\}$
+* Cluster centroids $\mu_1, \mu_2, \ldots, \mu_k$
+
+Objective:
+
+$$
+\min \sum_{i=1}^{k} \sum_{x \in C_i} \|x - \mu_i\|^2
+$$
 
 ---
 
-#### 1. **Definition**
+## **12. Conclusion**
 
-* DBSCAN is a **density-based clustering algorithm** that forms clusters based on the **density of data points**.
-* It can find clusters of **arbitrary shapes** and is **robust to noise and outliers**.
+K-Means is a foundational and effective clustering method for exploratory data analysis. It is computationally efficient but needs careful preprocessing and parameter selection (like `k`) for optimal results.
 
----
-
-#### 2. **Key Concepts**
-
-| Term             | Meaning                                                                      |
-| ---------------- | ---------------------------------------------------------------------------- |
-| **ε (epsilon)**  | Radius that defines the neighborhood around a point                          |
-| **MinPts**       | Minimum number of points required in ε-neighborhood to form a cluster        |
-| **Core Point**   | A point with at least MinPts points (including itself) in its ε-neighborhood |
-| **Border Point** | A point that is within ε of a core point but has fewer than MinPts points    |
-| **Noise Point**  | A point that is neither a core nor a border point (i.e., an outlier)         |
+### **Agglomerative and DBSCAN Clustering Algorithms (Unit 3 – Unsupervised Learning)**
 
 ---
 
-#### 3. **Algorithm Steps**
-
-1. For each point in the dataset:
-
-   * Count how many points are within distance **ε**.
-   * If the count ≥ **MinPts**, mark it as a **core point**.
-
-2. Group each core point with all **density-reachable points** (connected via other core points).
-
-3. Expand clusters by recursively adding all directly density-reachable points.
-
-4. Points not assigned to any cluster are marked as **noise**.
+## **A. Agglomerative Clustering**
 
 ---
 
-#### 4. **Important Properties**
+### **1. Definition**
 
-* **Density-Reachable**: A point A is density-reachable from B if there is a path of core points from B to A.
-* **Cluster shape**: Can identify **non-convex and irregular-shaped clusters**.
-* **Noise handling**: Naturally identifies and excludes outliers.
+Agglomerative clustering is a **hierarchical bottom-up clustering** algorithm where:
 
----
-
-#### 5. **Advantages**
-
-| Advantage                             | Explanation                         |
-| ------------------------------------- | ----------------------------------- |
-| No need to specify number of clusters | Unlike k-means                      |
-| Detects arbitrary shapes              | Works with non-convex clusters      |
-| Robust to outliers                    | Automatically excludes noise points |
-| Works well for uneven density         | With tuning of ε and MinPts         |
+* Each data point starts in its **own cluster**
+* Pairs of clusters are **merged** iteratively based on their **distance**
 
 ---
 
-#### 6. **Limitations**
+### **2. Algorithm Steps**
 
-| Limitation                                    | Explanation                         |
-| --------------------------------------------- | ----------------------------------- |
-| Sensitive to **ε and MinPts**                 | Poor choice leads to bad clustering |
-| Not good with **varying densities**           | One ε may not fit all clusters      |
-| Performance degrades on high-dimensional data | Due to curse of dimensionality      |
-
----
-
-#### 7. **Parameter Selection Guidelines**
-
-* **ε**:
-
-  * Use **k-distance graph** (plot distance to k-th nearest neighbor) to find elbow point.
-
-* **MinPts**:
-
-  * General rule: MinPts ≥ **D+1**, where **D** is the number of dimensions.
-  * Typical values: **4–10**
+1. Start with `n` clusters (each data point is its own cluster)
+2. Compute the **distance matrix** between all clusters
+3. Merge the **closest pair** of clusters
+4. Recalculate the distance matrix
+5. Repeat steps 3–4 until only **one cluster** remains or a **stopping condition** is met
 
 ---
 
-#### 8. **Time Complexity**
+### **3. Linkage Criteria (Distance between clusters)**
 
-* With spatial indexing (like KD-Tree or Ball Tree):
-
-  $$
-  O(n \log n)
-  $$
-* Without indexing:
-
-  $$
-  O(n^2)
-  $$
+| Type                 | Definition                                                    |
+| -------------------- | ------------------------------------------------------------- |
+| **Single linkage**   | Minimum distance between any 2 points from different clusters |
+| **Complete linkage** | Maximum distance between any 2 points from different clusters |
+| **Average linkage**  | Average of all pairwise distances between clusters            |
+| **Ward’s method**    | Minimize increase in total intra-cluster variance             |
 
 ---
 
-#### 9. **Applications**
+### **4. Advantages**
 
-* Geospatial clustering (e.g., identifying urban areas)
-* Anomaly detection (e.g., fraud, network intrusion)
-* Image segmentation
-* Clustering gene expression data
+* Produces **dendrograms** (tree structures)
+* No need to pre-define number of clusters (optional)
+* Works with various distance metrics
 
 ---
+
+### **5. Disadvantages**
+
+* **Computationally expensive**: $O(n^3)$
+* Sensitive to **noisy data and outliers**
+* Not suitable for **very large** datasets
+
+---
+
+### **6. Python Example**
+
+```python
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_blobs
+from sklearn.cluster import AgglomerativeClustering
+from scipy.cluster.hierarchy import dendrogram, linkage
+
+# Generate sample data
+X, _ = make_blobs(n_samples=100, centers=3, random_state=42)
+
+# Agglomerative clustering
+model = AgglomerativeClustering(n_clusters=3, linkage='ward')
+labels = model.fit_predict(X)
+
+# Plot clusters
+plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='rainbow')
+plt.title("Agglomerative Clustering")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.grid(True)
+plt.show()
+
+# Optional dendrogram
+linked = linkage(X, 'ward')
+plt.figure(figsize=(10, 5))
+dendrogram(linked, truncate_mode='lastp', p=10)
+plt.title("Hierarchical Clustering Dendrogram")
+plt.xlabel("Cluster Index")
+plt.ylabel("Distance")
+plt.show()
+```
+
+---
+
+## **B. DBSCAN (Density-Based Spatial Clustering of Applications with Noise)**
+
+---
+
+### **1. Definition**
+
+DBSCAN is a **density-based clustering** algorithm:
+
+* Groups together **points with many nearby neighbors**
+* Marks points in **low-density** regions as **outliers**
+
+---
+
+### **2. Core Concepts**
+
+| Concept          | Definition                                      |
+| ---------------- | ----------------------------------------------- |
+| **ε (epsilon)**  | Neighborhood radius                             |
+| **MinPts**       | Minimum number of points to form a dense region |
+| **Core Point**   | Has at least MinPts in its ε-neighborhood       |
+| **Border Point** | Not a core, but within ε of a core point        |
+| **Noise Point**  | Neither core nor border                         |
+
+---
+
+### **3. Algorithm Steps**
+
+1. For each point, check ε-neighborhood
+2. If ≥ MinPts → mark as **core point**
+3. Group all reachable core and border points into a cluster
+4. Mark all unclustered points as **noise**
+
+---
+
+### **4. Advantages**
+
+* Can find **arbitrarily shaped** clusters
+* Automatically detects **outliers**
+* No need to specify number of clusters
+
+---
+
+### **5. Disadvantages**
+
+* Struggles when **densities vary**
+* Choosing appropriate `ε` and `MinPts` is critical
+
+---
+
+### **6. Python Example**
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_moons
+from sklearn.cluster import DBSCAN
+
+# Create sample data
+X, _ = make_moons(n_samples=300, noise=0.05, random_state=0)
+
+# DBSCAN
+model = DBSCAN(eps=0.2, min_samples=5)
+labels = model.fit_predict(X)
+
+# Plot results
+plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis')
+plt.title("DBSCAN Clustering")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.grid(True)
+plt.show()
+```
+
+---
+
+### **7. Key Differences (Agglomerative vs. DBSCAN)**
+
+| Feature            | Agglomerative              | DBSCAN             |
+| ------------------ | -------------------------- | ------------------ |
+| Type               | Hierarchical               | Density-based      |
+| Cluster Shape      | Spherical or chain-like    | Arbitrary          |
+| Outlier Detection  | No                         | Yes                |
+| Predefine Clusters | Optional                   | No need            |
+| Runtime Complexity | High (slow for large data) | Fast with indexing |
+
+---
+
+### **8. Applications**
+
+* **Agglomerative**: Gene analysis, taxonomy, social network hierarchy
+* **DBSCAN**: Geospatial data, anomaly detection, image segmentation, crime pattern analysis
+
+---
+
+### **9. Conclusion**
+
+Agglomerative is useful for **hierarchical clustering**, while DBSCAN excels in **discovering non-linear shapes** and **ignoring noise**. Choice depends on **data structure** and **desired output**.
+
 

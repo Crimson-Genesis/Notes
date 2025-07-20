@@ -11,7 +11,7 @@ Introduction, Classifiaction and Linear Regression, k-Nearedt Neighbor, Linear m
 Visual Cortex Architecture, Convolution Layers, Filter, Common CNN architecture, LexNet, AlexNet, GoogleNet and ResNet.
 
 ## Unit - 3 -> Unsupervised learning
-Introduction, tupes and challenges, preprocessing and scaling of dataset, Dimensinality reduction, feature extraction, Principal Compinet Analysis (PCA), k-means, Agglomerative and DBSCAN clustering algorithms.
+Introduction, types and challenges, preprocessing and scaling of dataset, Dimensinality reduction, feature extraction, Principal Compinet Analysis (PCA), k-means, Agglomerative and DBSCAN clustering algorithms.
 
 ## Unit - 4 -> Reinforcement Learning
 Introduction, Learning How to Optimize Rewards, Policy Search, Neural Network Policies, Action Evaluation: Credit Assignment problem, Using Policy Gradients, Markow Decision Processes, Q Learning
