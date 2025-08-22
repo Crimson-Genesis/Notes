@@ -11,26 +11,14 @@
             "id": "fa4f0867fbee42ff",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "output.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
-            }
-          }
-        ]
-      },
-      {
-        "id": "025982cf827a137a",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "a768bebb0863605c",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "output"
             }
           }
         ]
@@ -167,7 +155,7 @@
       {
         "id": "2d2c93cae49bf5bc",
         "type": "tabs",
-        "dimension": 31.851851851851855,
+        "dimension": 31.85185185185185,
         "children": [
           {
             "id": "7148e05e1a815250",
@@ -188,6 +176,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -198,8 +187,13 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "a768bebb0863605c",
+  "active": "fa4f0867fbee42ff",
   "lastOpenFiles": [
+    "B_5_CNN_accuracy_and_Loss.png",
+    "A_2_correlation_heatmap.png",
+    "output.md",
+    "Untitled.base",
+    "output.md",
     "lkasjdfkljalksdjfc.md",
     "reva/sem_2/content/1_machine_learning/Unit_1.md",
     "reva/sem_1/exam/1_maths.md",
@@ -217,7 +211,6 @@
     "reva/sem_1/exam/Assignment 2.pdf",
     "reva/sem_1/exam/Assignment 2.pdf.crdownload",
     "reva/sem_1/exam/Assignment 1.pdf",
-    "reva/sem_1/exam/Assignment 1.pdf.crdownload",
-    "reva/sem_1/exam/M23DE0101_03.pdf"
+    "reva/sem_1/exam/Assignment 1.pdf.crdownload"
   ]
 }
