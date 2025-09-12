@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "output.md",
+                "file": "reva/sem_2/content/6_advanced_database_managment_systems/A2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "output"
+              "title": "A2"
             }
           }
         ]
@@ -189,11 +189,11 @@
   },
   "active": "fa4f0867fbee42ff",
   "lastOpenFiles": [
-    "B_5_CNN_accuracy_and_Loss.png",
+    "reva/sem_2/content/6_advanced_database_managment_systems/Unit_1.md",
     "A_2_correlation_heatmap.png",
+    "B_5_CNN_accuracy_and_Loss.png",
     "output.md",
     "Untitled.base",
-    "output.md",
     "lkasjdfkljalksdjfc.md",
     "reva/sem_2/content/1_machine_learning/Unit_1.md",
     "reva/sem_1/exam/1_maths.md",
