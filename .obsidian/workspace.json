@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reva/sem_2/content/6_advanced_database_managment_systems/A2.md",
+                "file": "cyber/project_2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "A2"
+              "title": "project_2"
             }
           }
         ]
@@ -189,6 +189,20 @@
   },
   "active": "fa4f0867fbee42ff",
   "lastOpenFiles": [
+    "cyber/project_2.md~",
+    "cyber/project_2.pdf",
+    "reva/sem_2/content/9_java_lab/Project/Doc.md",
+    "reva/sem_2/content/9_java_lab/Project/Doc.md~",
+    "reva/sem_2/content/9_java_lab/Project/SCHOOL OF COMPUTER SCIENCE APPLICATION.docx",
+    "reva/sem_2/content/9_java_lab/Project/Unconfirmed 222121.crdownload",
+    "reva/sem_2/content/9_java_lab/Project/Detailed explanation line-by-line.pdf",
+    "cyber/report_reva.edu.in.pdf",
+    "cyber/report_reva.edu.in.md",
+    "cyber/reva_site_scan.md~",
+    "reva/sem_2/content/9_java_lab/Project/Detailed explanation line-by-line.md",
+    "reva/sem_2/content/6_advanced_database_managment_systems/A2.md",
+    "reva/sem_2/content/9_java_lab/Project",
+    "Untitled",
     "reva/sem_2/content/6_advanced_database_managment_systems/Unit_1.md",
     "A_2_correlation_heatmap.png",
     "B_5_CNN_accuracy_and_Loss.png",
@@ -202,15 +216,6 @@
     "git/branch_detail.md",
     "README.md",
     "Untitled Kanban.md",
-    "Untitled.canvas",
-    "reva/sem_1/exam/1_maths.md~",
-    "reva/sem_1/exam/Unit 2 - Correlations and Regressions.pdf",
-    "reva/sem_1/exam/Unit 2 - Correlations and Regressions.pdf.crdownload",
-    "reva/sem_1/exam/Assignment 4.pdf",
-    "reva/sem_1/exam/Assignment 4.pdf.crdownload",
-    "reva/sem_1/exam/Assignment 2.pdf",
-    "reva/sem_1/exam/Assignment 2.pdf.crdownload",
-    "reva/sem_1/exam/Assignment 1.pdf",
-    "reva/sem_1/exam/Assignment 1.pdf.crdownload"
+    "Untitled.canvas"
   ]
 }
