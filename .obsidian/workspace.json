@@ -13,15 +13,54 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cyber/project_2.md",
+                "file": "cyber/project_3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "project_2"
+              "title": "project_3"
+            }
+          },
+          {
+            "id": "2ad2bad8868acc4b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "resume.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "resume"
+            }
+          },
+          {
+            "id": "83ad9353f27e7a9d",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.6"
+            }
+          },
+          {
+            "id": "53816d7643af7842",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "cyber/images/2025-11-20-215626_hyprshot.png"
+              },
+              "icon": "lucide-image",
+              "title": "2025-11-20-215626_hyprshot"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -187,27 +226,40 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "fa4f0867fbee42ff",
+  "active": "83ad9353f27e7a9d",
   "lastOpenFiles": [
+    "resume.pdf",
+    "reva/sem_1/rdbms_lab/lab_solutions.md",
+    "personal_1_to_1.md~",
+    "personal_1_to_1.md",
+    "reva/sem_1/rdbms_lab/solutions_code_only.md~",
+    "reva/sem_1/rdbms_lab/lab_solutions.pdf",
+    "Untitled.base",
+    "cyber/project_4.md",
+    "cyber/project_4.pdf",
+    "cyber/project_4.md~",
+    "cyber/images/2025-11-20-215610_hyprshot.png",
+    "cyber/images/2025-11-20-214832_hyprshot.png",
+    "cyber/images/2025-11-20-214843_hyprshot.png",
+    "cyber/images/2025-11-20-215626_hyprshot.png",
+    "cyber/images/2025-11-20-215619_hyprshot.png",
+    "cyber/images/2025-11-20-215344_hyprshot.png",
+    "cyber/images/2025-11-20-214850_hyprshot.png",
+    "cyber/images/2025-11-20-214411_hyprshot.png",
+    "cyber/images/2025-11-16-205604_hyprshot.png",
+    "cyber/images/2025-11-16-211607_hyprshot.png",
+    "cyber/project_3.md",
+    "cyber/images",
+    "cyber/project_2.md",
     "cyber/project_2.md~",
     "cyber/project_2.pdf",
     "reva/sem_2/content/9_java_lab/Project/Doc.md",
     "reva/sem_2/content/9_java_lab/Project/Doc.md~",
-    "reva/sem_2/content/9_java_lab/Project/SCHOOL OF COMPUTER SCIENCE APPLICATION.docx",
-    "reva/sem_2/content/9_java_lab/Project/Unconfirmed 222121.crdownload",
-    "reva/sem_2/content/9_java_lab/Project/Detailed explanation line-by-line.pdf",
-    "cyber/report_reva.edu.in.pdf",
     "cyber/report_reva.edu.in.md",
-    "cyber/reva_site_scan.md~",
     "reva/sem_2/content/9_java_lab/Project/Detailed explanation line-by-line.md",
     "reva/sem_2/content/6_advanced_database_managment_systems/A2.md",
-    "reva/sem_2/content/9_java_lab/Project",
-    "Untitled",
     "reva/sem_2/content/6_advanced_database_managment_systems/Unit_1.md",
-    "A_2_correlation_heatmap.png",
-    "B_5_CNN_accuracy_and_Loss.png",
     "output.md",
-    "Untitled.base",
     "lkasjdfkljalksdjfc.md",
     "reva/sem_2/content/1_machine_learning/Unit_1.md",
     "reva/sem_1/exam/1_maths.md",
